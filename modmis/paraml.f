@@ -106,7 +106,7 @@ C
       CALL PAGE2 (FIRST)        
       FIRST = 5        
       WRITE  (NOUT,40) UIM,OP        
-   40 FORMAT (A29,' FROM PARAML MODULE  - ',2A4,2H -, /5X,        
+   40 FORMAT (A29,' FROM PARAML MODULE  - ',2A4, ' -', /5X,        
      1       '(ALL PARAML MESSAGES CAN BE SUPPRESSED BY DIAG 37)',/)    
 C        
 C     IDENTIFY OPCODE        
@@ -200,7 +200,7 @@ C
       IF (.NOT.PRT) GO TO 350        
       IF (.NOT.TB1) GO TO 330        
       WRITE  (NOUT,320) FNM,RECNO,INDEX        
-  320 FORMAT (5X,'INPUT FILE ',2A4,' RECORD',I6,' WORD',I6,13X,1H=)     
+  320 FORMAT (5X,'INPUT FILE ',2A4,' RECORD',I6,' WORD',I6,13X, '=')
       GO TO 350        
   330 WRITE  (NOUT,340) FNM,RECNO,INDEX,ATX,IXP1        
   340 FORMAT (5X,'INPUT FILE ',2A4,' RECORD',I6,' WORDS',I6,1X,A4,I5,   
@@ -224,13 +224,13 @@ CWKBI
       K = NUMTYP(RSP)+1        
       IF (K.EQ.2 .OR. K.EQ.4) GO TO 400        
   360 IF (PRT) WRITE (NOUT,370) RSP,NMVPS        
-  370 FORMAT (1H+,70X,E15.8,'   = ',2A4)        
+  370 FORMAT ('+', 70X,E15.8,'   = ',2A4)        
       VPS(IL4) = RSP        
       GO TO 500        
 C        
   400 IF (.NOT.PRT) GO TO 500        
       WRITE  (NOUT,410) NMVPS        
-  410 FORMAT (1H+,70X,'(INVALID REQUEST) = ',2A4)        
+  410 FORMAT ('+',70X,'(INVALID REQUEST) = ',2A4)        
       IF (K .GT. 0) WRITE (NOUT,420) UWM,NTY(K),NMVPS        
       IF (K .EQ.-1) WRITE (NOUT,430) UWM,NMVPS        
   420 FORMAT (A25,' - ILLEGAL OUTPUT REQUESTED. ORIG. DATA TYPE IS ',A7,
@@ -253,7 +253,7 @@ C
       IF (K .GT. 2) GO TO 520        
       IVPS(IL5) = INTEG        
       IF (PRT) WRITE (NOUT,510) INTEG,NMVPS        
-  510 FORMAT (1H+,70X,I15,'   = ',2A4)        
+  510 FORMAT ('+',70X,I15,'   = ',2A4)        
       GO TO 540        
 C        
   520 IF (.NOT.PRT) GO TO 540        
@@ -297,7 +297,7 @@ CWKBR  570 RDP = DP(1)
       VPS(IL6  ) = SP(1)        
       VPS(IL6+1) = SP(2)        
       IF (PRT) WRITE (NOUT,580) RDP,NMVPS        
-  580 FORMAT (1H+,70X,D15.8,'   = ',2A4)        
+  580 FORMAT ('+',70X,D15.8,'   = ',2A4)        
       GO TO 600        
 C        
   590 IF (.NOT.PRT) GO TO 600        
@@ -330,7 +330,7 @@ C
   610 IVPS(IL7  ) = BCD(1)        
       IVPS(IL7+1) = BCD(2)        
       IF (PRT) WRITE (NOUT,620) BCD,NMVPS        
-  620 FORMAT (1H+,70X,2A4,'   = ',2A4)        
+  620 FORMAT ('+',70X,2A4,'   = ',2A4)        
       GO TO 650        
 C        
   630 IF (.NOT.PRT) GO TO 650        
@@ -372,7 +372,7 @@ C
       VPS(IL8  ) = SPLX(1)        
       VPS(IL8+1) = SPLX(2)        
       IF (PRT) WRITE (NOUT,680) SPLX,NMVPS        
-  680 FORMAT (1H+,70X,1H(,E15.8,1H,,E15.8,1H),'  = ',2A4)        
+  680 FORMAT ('+',70X,'(',E15.8,',',E15.8,')','  = ',2A4)        
       GO TO 700        
 C        
   690 IF (.NOT.PRT) GO TO 700        
@@ -422,7 +422,7 @@ C
       VPS(IL9+2) = SP(3)        
       VPS(IL9+3) = SP(4)        
       IF (PRT) WRITE (NOUT,730) DPLX,NMVPS        
-  730 FORMAT (1H+,70X,1H(,D15.8,1H,,D15.8,1H),'  = ',2A4)        
+  730 FORMAT ('+', 70X, '(', D15.8, ',', D15.8, ')', '  = ',2A4)
       GO TO 1100        
 C        
   740 IF (.NOT.PRT) GO TO 1100        
@@ -446,7 +446,7 @@ C
       NMVPS(2) = IVPS(IL5-2)        
       IF (.NOT.PRT) GO TO 840        
       WRITE  (NOUT,820) NMVPS        
-  820 FORMAT (1H+,70X,'(INVALID INTEGER) = ',2A4)        
+  820 FORMAT ('+',70X,'(INVALID INTEGER) = ',2A4)        
       WRITE  (NOUT,830) UWM,NMVPS        
   830 FORMAT (A25,' - OUTPUT PARAMETER ',2A4,' NOT SAVED')        
   840 IF (IL7 .LE. 0) GO TO 860        
@@ -455,7 +455,7 @@ C
       NMVPS(2) = IVPS(IL7-2)        
       IF (.NOT.PRT) GO TO 860        
       WRITE  (NOUT,850) NMVPS        
-  850 FORMAT (1H+,70X,'(INVALID BCD WORD)= ',2A4)        
+  850 FORMAT ('+',70X,'(INVALID BCD WORD)= ',2A4)        
       WRITE  (NOUT,830) UWM,NMVPS        
 C        
   860 IF (IL4.LE.0 .AND. IL6.LE.0 .AND. IL8.LE.0 .AND. IL9.LE.0)        
@@ -530,14 +530,14 @@ C
       NMVPS(2) = IVPS(IL4-2)        
       IF (.NOT.PRT) GO TO 970        
       WRITE  (NOUT,960) NMVPS        
-  960 FORMAT (1H+,70X,' (INVALID S.P. REAL NUMBER)  = ',2A4)        
+  960 FORMAT ('+',70X,' (INVALID S.P. REAL NUMBER)  = ',2A4)        
       WRITE  (NOUT,830) UWM,NMVPS        
   970 IF (IL6 .LE. 0) GO TO 990        
       IF (PRT) WRITE (NOUT,810) ROW,COL,TYPE(ITYP),FNM        
       NMVPS(1) = IVPS(IL6-3)        
       NMVPS(2) = IVPS(IL6-2)        
       IF (PRT) WRITE (NOUT,980) NMVPS        
-  980 FORMAT (1H+,70X,' (INVALID D.P.REAL NUMBER)  = ',2A4)        
+  980 FORMAT ('+',70X,' (INVALID D.P.REAL NUMBER)  = ',2A4)        
   990 IF (IL8.LE.0 .AND. IL9.LE.0) GO TO 1100        
       IF (ITYP .EQ. 4) GO TO 1010        
 C        

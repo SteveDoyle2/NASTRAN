@@ -362,18 +362,18 @@ C
   440 FORMAT (98H0***USER REQUESTS LINK SPECIFICATION TABLE BE PUNCHED O
      1UT FOR USE IN RECOMPILING SUBROUTINE XLNKDD )        
       WRITE  (LPCH,450)        
-  450 FORMAT (70(1H*),/38HLINK SPEC. TABLE FOR SUBROUTINE XLNKDD )      
+  450 FORMAT (70('*'),/38HLINK SPEC. TABLE FOR SUBROUTINE XLNKDD )      
       J  = LNKBOT - LNKTOP + 5        
       N  = J/90        
       WRITE  (LPCH,460) J        
-  460 FORMAT (6X,16HDIMENSION LINK (,I4,1H))        
+  460 FORMAT (6X,16HDIMENSION LINK (,I4,')')        
       K  = 90        
       IF (N .EQ. 0) GO TO 490        
       DO 480 I = 1,N        
       I10= I/10        
       I1 = I - 10*I10        
       WRITE  (LPCH,470) I10,I1,K        
-  470 FORMAT (5X,2H1,,9X,4HLINK,2I1,1H(,I4,1H))        
+  470 FORMAT (5X,2H1,,9X,4HLINK,2I1,'(',I4,')')        
   480 CONTINUE        
   490 K  = MOD(J,90)        
       I  = N + 1        
@@ -381,7 +381,7 @@ C
       I1 = I - 10*I10        
       IF (K .GT. 0) WRITE (LPCH,470) I10,I1,K        
       WRITE  (LPCH,500) J        
-  500 FORMAT (6X,28HCOMMON/XLKSPC/ LLINK, KLINK(,I4,1H),/,        
+  500 FORMAT (6X,28HCOMMON/XLKSPC/ LLINK, KLINK(,I4,')',/,        
      1        6X,34HEQUIVALENCE (LINK(   1),LINK01(1)) )        
       IF (K .GT. 0) N = N + 1        
       IF (N .LT. 2) GO TO 530        
@@ -401,9 +401,9 @@ C
       M1 = M - 10*M10        
       K  = MIN0(J+89,LNKBOT+4)        
       WRITE  (LPCH,550) M10,M1,(LNKSPC(I),I=J,K)        
-  550 FORMAT (6X,9HDATA LINK,2I1,1H/, /,        
-     1        5X,4H1 4H,A4,3H,4H,A4,4H, 4H,A4,3H,4H,A4,1H,,I6,/,        
-     2       (5X,4H1,4H,A4,3H,4H,A4,4H, 4H,A4,3H,4H,A4,1H,,I6))        
+  550 FORMAT (6X,9HDATA LINK,2I1,'/', /,        
+     1        5X,4H1 4H,A4,3H,4H,A4,4H, 4H,A4,3H,4H,A4,',',I6,/,        
+     2       (5X,4H1,4H,A4,3H,4H,A4,4H, 4H,A4,3H,4H,A4,',',I6))        
       WRITE  (LPCH,560)        
   560 FORMAT (5X,2H1/)        
       J = K        
@@ -514,7 +514,7 @@ C
   910 FORMAT ('0USER REQUESTS PUNCHED OUTPUT FOR THE FOLLOWING LINK ',  
      1        'DRIVER SUBROUTINES')        
       WRITE  (LPCH,920)        
-  920 FORMAT (70(1H*), /,' INSERT FOLLOWING FORTRAN CODE IN RESPECTIVE',
+  920 FORMAT (70('*'), /,' INSERT FOLLOWING FORTRAN CODE IN RESPECTIVE',
      1       ' LINK DRIVER ROUTINES')        
       DO 1170 J = 1,MAXLNK        
       CALL SSWTCH (J,L)        
@@ -522,8 +522,8 @@ C
       J10= J/10        
       J1 = J - 10*J10        
       WRITE  (LPCH,930) J10,J1,J        
-  930 FORMAT (70(1H*), /6X,15HSUBROUTINE XSEM,2I1, /6X,12HDATA THISLK,  
-     1        /,I2,1H/)        
+  930 FORMAT (70('*'), /6X,15HSUBROUTINE XSEM,2I1, /6X,12HDATA THISLK,  
+     1        /,I2,'/')        
       WRITE  (LPCH,940) J10,J1        
   940 FORMAT (6X,21HDATA SUBNAM/4HXSEM,4H,2I1,3H  /)        
       NLINES = NLINES + 2        
@@ -563,7 +563,7 @@ C
  1020 IF (FRSTIN .EQ. LL(1)-2000) WRITE (LPCH,970) NXTGRP        
       LK = MIN0(L,10)        
       WRITE  (LPCH,1030) (LL(K),K=1,LK)        
- 1030 FORMAT (5X,1H1,10(I5,1H,))        
+ 1030 FORMAT (5X,'1',10(I5,','))        
       L  = L - LK        
       DO 1040 K = 1,L        
  1040 LL(K) = LL(K+10)        
@@ -573,13 +573,13 @@ C
       IF (FRSTIN .EQ. LASTIN) GO TO 1070        
       FRSTIN = FRSTIN - 1        
       WRITE  (LPCH,1060) LL(15),LSTGRP,LASTIN,LAST,FRSTIN,NXTGRP        
- 1060 FORMAT (5X, 1H1, I5, 4H ),I ,/,        
+ 1060 FORMAT (5X, '1', I5, 4H ),I ,/,        
      1        I5, 14H IF (MODX .GT. ,I3, 8H) GO TO ,I5, /,        
      1        6X, 10HI = MODX - , I3, /,        
      1        6X, 17HIF (I ) 940, 940, ,I5)        
       GO TO 1090        
  1070 WRITE  (LPCH,1080) LSTGRP,FRSTIN,LL(15),LAST        
- 1080 FORMAT (I5,12H IF (MODX - ,I3,7H ) 940,,I5,1H,,I5)        
+ 1080 FORMAT (I5,12H IF (MODX - ,I3,7H ) 940,,I5,',',I5)        
  1090 NXTGRP = LAST        
       FRSTIN = -1        
  1100 CONTINUE        
@@ -593,7 +593,7 @@ C     CANNOT FIND ANY MODULES IN THIS LINK
 C        
       NLINES = NLINES + 2        
       WRITE  (OPTAP,1110) J        
- 1110 FORMAT (1H0,10X,29HTHERE ARE NO MODULES IN LINK  ,I3)        
+ 1110 FORMAT ('0',10X,29HTHERE ARE NO MODULES IN LINK  ,I3)        
       GO TO 1170        
  1120 IF (LAST .NE. 970) WRITE (LPCH,1130) NXTGRP        
  1130 FORMAT (I5,34H IF (MODX - LXLINK ) 940, 940, 970 )        
@@ -616,7 +616,7 @@ C
       IF (J .GT. LXLINK) WRITE (OPTAP,1180) SWM,J,LXLINK        
  1180 FORMAT (A27,' 54, THE NUMBER OF MODULES SPECIFIED IN THE LINK ',  
      1       'SPECIFICATION TABLE,',I5, /20X,'EXCEEDS THE ALLOWABLE ',  
-     2       'NUMBER SPECIFIED BY SEMDBD,',I5,1H.)        
+     2       'NUMBER SPECIFIED BY SEMDBD,',I5,'.')        
       CALL PEXIT        
 C        
 C     ERROR MESSAGES -        

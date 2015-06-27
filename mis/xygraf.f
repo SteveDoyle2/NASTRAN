@@ -56,10 +56,10 @@ C
       LINES = LINES + 21        
       ITLNS = ITLNS + 21        
       WRITE  (L,20) (NU(I,N1),NU(I,N2),NU(I,N3),NU(I,N4),NU(I,N5),I=1,5)
-   20 FORMAT (1H0,60X,25HF     R     A     M     E, //,        
+   20 FORMAT ('0',60X,'F     R     A     M     E', //,        
      1       5(59X,A4,2X,A4,2X,A4,2X,A4,2X,A4,/))        
       WRITE  (L,30) TITLEC,(XTITLE(I),I=1,28)        
-   30 FORMAT (1H0,4X,31A4,A3, /1H0,4X,15HX-AXIS TITLE = ,28A4,/1H0)     
+   30 FORMAT ('0',4X,31A4,A3, /'0',4X,15HX-AXIS TITLE = ,28A4,/'0')     
 C        
       IF (I123 .EQ. 1) GO TO 70        
 C        
@@ -67,11 +67,11 @@ C     DUAL FRAME TITLE FRAME
 C        
       WRITE  (L,60)        
       WRITE  (L,40) TITLEL, TITLER        
-   40 FORMAT (13X,1HI,57X,3HI I,57X,1HI, /13X,2HI ,14A4,4HI I ,14A4,1HI,
-     1       /13X,1HI,57X,3HI I,57X,1HI)        
+   40 FORMAT (13X,'I',57X,3HI I,57X,'I', /13X,2HI ,14A4,4HI I ,14A4,'I',
+     1       /13X,'I',57X,3HI I,57X,'I')        
       WRITE  (L,50) (GRAPH(I,6),GRAPH(I,7),GRAPH(I,8),I=2,3)        
    50 FORMAT (12X,2(2H I,1P,E14.6,1P,E21.6,1P,E21.6,2H I))        
-   60 FORMAT (13X,1H+,57(1H-),3H+ +,57(1H-),1H+)        
+   60 FORMAT (13X,'+',57('-'),3H+ +,57('-'),'+')        
       WRITE  (L,60)        
       GO TO 110        
 C        
@@ -79,10 +79,10 @@ C     WHOLE FRAME TITLE FRAME
 C        
    70 WRITE  (L,80)        
       WRITE  (L,90) TITLEL        
-   80 FORMAT (13X,1H+,117(1H-),1H+)        
-   90 FORMAT (13X,1HI,117X,1HI/13X,2HI ,14A4,60X,1HI, /13X,1HI,117X,1HI)
+   80 FORMAT (13X,'+',117('-'),'+')        
+   90 FORMAT (13X,'I',117X,'I'/13X,2HI ,14A4,60X,'I', /13X,'I',117X,'I')
       WRITE  (L,100) GRAPH(1,6),GRAPH(1,7),GRAPH(1,8)        
-  100 FORMAT (13X,1HI,1P,E14.6,37X,1P,E14.6,37X,1P,E14.6,2H I)        
+  100 FORMAT (13X,'I',1P,E14.6,37X,1P,E14.6,37X,1P,E14.6,2H I)        
       WRITE  (L,80)        
 C        
 C     DUMP GRAPH        
@@ -101,7 +101,7 @@ C
       GO TO 160        
   140 LINES = 1        
       WRITE  (L,150) TEMP,(Z(J),J=I1,I2)        
-  150 FORMAT (1H1,1P,E11.4,1X,29A4,A3)        
+  150 FORMAT ('1',1P,E11.4,1X,29A4,A3)        
   160 CONTINUE        
 C        
       IF (I123 .EQ. 1) GO TO 170        
