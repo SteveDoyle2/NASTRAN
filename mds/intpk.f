@@ -42,35 +42,22 @@ C    7,                (BLOCK( 16),BEOL  )
      1                 0         , 4095      , 9         , 4H        /  
       DATA             DZERO     , DEBUG     , SUB                   /  
      1                 0.0D+0    ,.FALSE.    , 4HINTP    , 4HK       /  
-C VAX:        
-      DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
-     1                'F1111000'X,'F2222000'X,'F5555000'X,'F7777000'X/  
-      DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
-     1                'F8888000'X,'F9999000'X,'FAAAA000'X,'FBBBB000'X/  
-      DATA             CHEAD     , CTRAIL    , MASKD     , MASKE     /  
-     1                '40000000'X,'80000000'X,'FF00FFFF'X,'0000FF00'X/  
-      DATA             MASK1     , MASK2     , MASK5     , MASK7     /  
-     1                '00001111'X,'00002222'X,'00005555'X,'00007777'X/  
-      DATA             MASK8     , MASKA     , MASKB     , MASKF     /  
-     1                '00008888'X,'0000AAAA'X,'0000BBBB'X,'0000FFFF'X/  
-      DATA             MASK3F    , MASK6F    , MASK2F    , MASKC     /  
-     1                '00000FFF'X,'00FFFFFF'X,'FF000000'X,'FF0000FF'X/  
 C UNIX:        
-C     DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
-C    1                X'F1111000',X'F2222000',X'F5555000',X'F7777000'/  
-C     DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
-C    1                X'F8888000',X'F9999000',X'FAAAA000',X'FBBBB000'/  
-C     DATA             CHEAD     , CTRAIL    , MASKD     , MASKE     /  
-C    1                X'40000000',X'80000000',X'FF00FFFF',X'0000FF00'/  
-C     DATA             MASK1     , MASK2     , MASK5     , MASK7     /  
-C    1                X'00001111',X'00002222',X'00005555',X'00007777'/  
-C     DATA             MASK8     , MASKA     , MASKB     , MASKF     /  
-C    1                X'00008888',X'0000AAAA',X'0000BBBB',X'0000FFFF'/  
-C     DATA             MASK3F    , MASK6F    , MASK2F    , MASKC     /  
-C    1                X'00000FFF',X'00FFFFFF',X'FF000000',X'FF0000FF'/  
-C        
-C     MASKF = '0000FFFF'X (OR X'0000FFFF') = 65535        
-C        
+      DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
+     1                X'F1111000',X'F2222000',X'F5555000',X'F7777000'/  
+      DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
+     1                X'F8888000',X'F9999000',X'FAAAA000',X'FBBBB000'/  
+      DATA             CHEAD     , CTRAIL    , MASKD     , MASKE     /  
+     1                X'40000000',X'80000000',X'FF00FFFF',X'0000FF00'/  
+      DATA             MASK1     , MASK2     , MASK5     , MASK7     /  
+     1                X'00001111',X'00002222',X'00005555',X'00007777'/  
+      DATA             MASK8     , MASKA     , MASKB     , MASKF     /  
+     1                X'00008888',X'0000AAAA',X'0000BBBB',X'0000FFFF'/  
+      DATA             MASK3F    , MASK6F    , MASK2F    , MASKC     /  
+     1                X'00000FFF',X'00FFFFFF',X'FF000000',X'FF0000FF'/  
+        
+     MASKF = '0000FFFF'X (OR X'0000FFFF') = 65535        
+        
 C*****        
       ANDF(I,J)   = IAND(I,J)        
       ORF (I,J)   = IOR (I,J)        

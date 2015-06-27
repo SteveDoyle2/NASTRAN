@@ -58,25 +58,16 @@ C
      1                 0         , 4096      , 4095      , 0.0D+0    /  
       DATA             CLR0      , BLANK     , DEBUG     , ERRCNT    /  
      1                 9         , 4H        , .FALSE.   , 0         /  
-C VAX:        
-      DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
-     1                'F1111000'X,'F2222000'X,'F5555000'X,'F7777000'X/  
-      DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
-     1                'F8888000'X,'F9999000'X,'FAAAA000'X,'FBBBB000'X/  
-      DATA             CHEAD     , CTRAIL    , MASK2F    , MASKF     /  
-     1                '40000000'X,'80000000'X,'FF000000'X,'FF00FFFF'X/  
-      DATA             MASK6F    , MASK1     , MASK2     , MASK3     /  
-     1                '00FFFFFF'X,'10000000'X,'20000000'X,'30000000'X/  
 C UNIX:        
-C     DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
-C    1                X'F1111000',X'F2222000',X'F5555000',X'F7777000'/  
-C     DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
-C    1                X'F8888000',X'F9999000',X'FAAAA000',X'FBBBB000'/  
-C     DATA             CHEAD     , CTRAIL    , MASK2F    , MASKF     /  
-C    1                X'40000000',X'80000000',X'FF000000',X'FF00FFFF'/  
-C     DATA             MASK6F    , MASK1     , MASK2     , MASK3     /  
-C    1                X'00FFFFFF',X'10000000',X'20000000',X'30000000'/  
-C        
+      DATA             RECHDR    , MTXHDR    , LASTCW    , EQF       /  
+     1                X'F1111000',X'F2222000',X'F5555000',X'F7777000'/  
+      DATA             SHEAD     , STRAIL    , DUMSTR    , LSTSTR    /  
+     1                X'F8888000',X'F9999000',X'FAAAA000',X'FBBBB000'/  
+      DATA             CHEAD     , CTRAIL    , MASK2F    , MASKF     /  
+     1                X'40000000',X'80000000',X'FF000000',X'FF00FFFF'/  
+      DATA             MASK6F    , MASK1     , MASK2     , MASK3     /  
+     1                X'00FFFFFF',X'10000000',X'20000000',X'30000000'/  
+
 C*****        
       ANDF(I,J)   = IAND(I,J)        
       ORF (I,J)   = IOR (I,J)        

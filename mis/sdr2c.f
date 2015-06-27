@@ -48,7 +48,7 @@ CZZ   COMMON /ZZSDC2/ Z(1)
      3                (BUF(1),BUFR(1)),(Z(1),ZZ(1)),(PBUFF(1),PBUFR(1)) 
       DATA    BUF   / 50*0     /        
       DATA    BLANKS/ 4H       /        
-      DATA    XSET0 / 100000000/        
+      XSET0 = 100000000
       DATA    PLATIT/ 4HLOAD,4H FAC,4HTOR ,9*0/        
       DATA    MMREIG/ 4HMMRE   /        
 C        

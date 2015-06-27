@@ -171,8 +171,7 @@ C
 C     ORIGINAL BYTE PACKING LOGIC        
 C        
  100  IF (NW .GT. N) GO TO 110        
-CUNIX IF (A(NW) .NE. 0) WORD =  OR(ISHFT(A(NW),SHIFT),WORD)        
-      IF (A(NW) .NE. 0) WORD = IOR(ISHFT(A(NW),SHIFT),WORD)             
+      IF (A(NW) .NE. 0) WORD =  OR(ISHFT(A(NW),SHIFT),WORD)        
       NW  = NW + 1        
       IF (SHIFT .EQ. 0) GO TO 105        
       SHIFT = SHIFT - NBPC        
