@@ -250,8 +250,8 @@ C
       IBIT  = OLDNUM - 31*(IWORD-1) + 1        
       MEDMSK(IWORD) = ORF(MEDMSK(IWORD),TWO(IBIT))        
       WRITE  (OPTAPE,240) OLDSOL(1),NEWSOL(1),OLDNUM        
- 240  FORMAT (51H0*** SWITCHED SOLUTION FOR RESTART - OLD SOLUTION =,I4,
-     1        16H, NEW SOLUTION =,I4,14H, BIT NUMBER =,I4)        
+ 240  FORMAT ('0*** SWITCHED SOLUTION FOR RESTART - OLD SOLUTION =',I4,
+     1        ', NEW SOLUTION =',I4,', BIT NUMBER =',I4)        
  270  IF (IRESTR .NE. 0) GO TO 280        
       NUMENT = 1        
       IFILL  = 1        

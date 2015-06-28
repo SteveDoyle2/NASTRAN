@@ -238,7 +238,7 @@ C152  IF (INFLAG .EQ.   0) REWIND IN
       CALL PAGE2 (-2)        
       NOECHO = NOECHO - 1        
       IF (NOECHO .GE. 0) WRITE (NOUT,165) NOECHO        
- 165  FORMAT (12X,1H(,I4,' CARDS READ)')        
+ 165  FORMAT (12X,'(',I4,' CARDS READ)')        
       WRITE  (NOUT,460) CARD        
       NOECHO = 0        
       GO TO 60        
@@ -262,7 +262,7 @@ C
       WRITE (SCREEN,3060) A8        
       IF (MACH.EQ.4 .AND. IN.EQ.5) REWIND IN        
  200  IF (PROM .NE. 0) WRITE (SCREEN,210)        
- 210  FORMAT (7H ENTER )        
+ 210  FORMAT (' ENTER ')        
       READ   (IN,220,END=190) (CX(J),J=1,L94)        
  220  FORMAT (94A1)        
       NCARD = NCARD + 1        
@@ -301,7 +301,7 @@ C
       IF (IECHOU.EQ.0 .OR. KOUNT.GE.1) GO TO 320        
       CALL PAGE2 (-1)        
       WRITE  (NOUT,310) A        
- 310  FORMAT (30X,4H-FF-,4X,94A1)        
+ 310  FORMAT (30X,'-FF-',4X,94A1)        
  320  IF (LOOP .EQ. -1) GO TO 340        
       DO 330 J = 1,10        
  330  CARD(J) = SAVE(J)        
@@ -372,13 +372,9 @@ C     J  = J - 1
  422  IF (MACH .EQ. 3) GO TO 425        
       IF (INFLAG .LT. IWO) INFLAG = IWO - 1        
       INFLAG = INFLAG + 1        
-      IF (IBMCDC.EQ.0) OPEN(UNIT=INFLAG,FILE=A8(1),STATUS='OLD',ERR=470)
-      IF (IBMCDC.NE.0) OPEN(UNIT=INFLAG,FILE=A48  ,STATUS='OLD',ERR=470,
-     1                      READONLY)        
-C        
-C     VAX - THE PARAMETER  'READONLY' IS NEEDED IF FILE PROTECTION IS   
-C           SET FOR READ (=R) ONLY.        
-C        
+      IF (IBMCDC.EQ.0) OPEN(UNIT=INFLAG,FILE=A8(1),STATUS='OLD',ERR=470,
+     1                      action='read')
+
       IF (MACH .EQ. 4) REWIND INFLAG        
       GO TO 450        
 C        
@@ -409,22 +405,22 @@ C
       IF (IECHOS .EQ. -2) GO TO 465        
       CALL PAGE2 (-1)        
       WRITE  (NOUT,460) CARD        
- 460  FORMAT (5H0*** ,10A8)        
+ 460  FORMAT ('0*** ',10A8)        
       GO TO 60        
  465  PROM = +1        
       GO TO 60        
 C        
  470  WRITE  (NOUT,475) INFLAG,(A(I),I=1,J)        
- 475  FORMAT (//,29H *** CAN NOT OPEN FILE (UNIT=,I3,4H) - ,48A1)       
+ 475  FORMAT (//,' *** CAN NOT OPEN FILE (UNIT=',I3,') - ',48A1)       
       GO TO 500        
  480  J = J - 1        
       WRITE  (NOUT,485) (A(I),I=1,J)        
- 485  FORMAT (//,23H *** FILE NAME ERROR - ,48A1)        
+ 485  FORMAT (//,' *** FILE NAME ERROR - ',48A1)        
       IF (J .GE. 48) WRITE (NOUT,490)        
- 490  FORMAT (5X,31HFILE NAME EXCEEDS 48 CHARACTERS)        
+ 490  FORMAT (5X,'FILE NAME EXCEEDS 48 CHARACTERS')
  500  NOGO = 1        
       IF (MACH.EQ.3 .OR. MACH.GE.5) WRITE (NOUT,505)        
- 505  FORMAT (5X,38HSUGGESTION- CHECK USER ID OR QUALIFIER)        
+ 505  FORMAT (5X,'SUGGESTION- CHECK USER ID OR QUALIFIER')
       INFLAG = INFLAG - 1        
       IF (INFLAG .LE. IWO) INFLAG = 0        
       CARD(1) = BLANK        
@@ -508,7 +504,7 @@ C
  660  IF (LASH.EQ.0 .AND. KK.EQ. 0) GO TO 680        
       J = KK + 1        
       WRITE  (NOUT,670) J        
- 670  FORMAT (34H *** ILLEGAL USE OF SLASH IN FIELD,I3)        
+ 670  FORMAT (' *** ILLEGAL USE OF SLASH IN FIELD',I3)
       GO TO 540        
 C        
 C     A DELETE CARD (/) READ        
@@ -734,7 +730,7 @@ C
       IF (KOUNT.LT.7  .OR. KOUNT.GT.LOOP4) WRITE (SCREEN,2450) CARD     
       IF (KOUNT.EQ.7 .AND. KOUNT.LE.LOOP4) WRITE (SCREEN,2460)        
  2450 FORMAT (1X,10A8)        
- 2460 FORMAT (9X,1H.,2(/,9X,1H.))        
+ 2460 FORMAT (9X,'.',2(/,9X,'.'))        
  2500 IF (LOOP .EQ. -1) GO TO 2700        
       DO 2600 KK = 1,10        
  2600 SAVE(KK) = CARD(KK)        
@@ -755,19 +751,19 @@ C
 C     ERRORS        
 C        
  3000 WRITE  (SCREEN,3020)        
- 3020 FORMAT (31H *** CARD ERROR - INPUT IGNORED)        
+ 3020 FORMAT (' *** CARD ERROR - INPUT IGNORED')
  3050 IF (IECHOS .EQ. -2) GO TO 170        
       IF (IERR   .LE. 15) WRITE (SCREEN,3060) A8        
- 3060 FORMAT (5X,1H',10A8,1H',/)        
+ 3060 FORMAT (5X,''',10A8,''',/)        
       NOGO = 1        
       IERR = IERR + 1        
       IF (IERR .LT. 30) GO TO 170        
  3070 WRITE  (SCREEN,3080)        
- 3080 FORMAT (48H0*** JOB TERMINATED DUE TO TOO MANY INPUT ERRORS)      
+ 3080 FORMAT ('0*** JOB TERMINATED DUE TO TOO MANY INPUT ERRORS')
       STOP        
  3100 JE = II - 1        
       WRITE  (SCREEN,3150) KK,CARD(KK),(A(J),J=JJ,JE)        
- 3150 FORMAT (5X,5HFIELD,I3,2H (,A8,') OF PREVIOUS CARD SHOULD NOT BE ',
+ 3150 FORMAT (5X,'FIELD',I3,' (',A8,') OF PREVIOUS CARD SHOULD NOT BE ',
      1       'USED FOR', /5X,'INCREMENTATION (BY ',8A1,        
      2       ').  ZERO IS ASSUMED')        
       IF (INT .GT. 0) JC(KK) = 0        
@@ -779,16 +775,16 @@ C
      1        16A1)        
       GO TO  3000        
  3300 WRITE  (SCREEN,3350)        
- 3350 FORMAT (5X,44HPREVIOUS CARD WAS NOT SET UP FOR DUPLICATION)       
+ 3350 FORMAT (5X,'PREVIOUS CARD WAS NOT SET UP FOR DUPLICATION')
       GO TO  3000        
  3400 WRITE  (SCREEN,3450) A8        
- 3450 FORMAT (35H *** INDEX ERROR.  NO VALUE AFTER ))        
+ 3450 FORMAT (' *** INDEX ERROR.  NO VALUE AFTER )')
       GO TO  3050        
  3500 WRITE  (SCREEN,3550)        
- 3550 FORMAT (49H *** INPUT ERROR - TOO MANY FIELDS.  REPEAT INPUT)     
+ 3550 FORMAT (' *** INPUT ERROR - TOO MANY FIELDS.  REPEAT INPUT')
       GO TO  3050        
  3600 WRITE  (SCREEN,3650)        
- 3650 FORMAT (37H *** INPUT ERROR AFTER EQUAL SIGN (=))        
+ 3650 FORMAT (' *** INPUT ERROR AFTER EQUAL SIGN (=)')
       IF (IECHOS .EQ. -2) GO TO 60        
       WRITE  (SCREEN,3060) A8        
       NOGO = 1        
@@ -798,58 +794,58 @@ C
       GO TO  3050        
  3800 JE = II - 1        
       WRITE  (SCREEN,3850) (A(J),J=JJ,JE)        
- 3850 FORMAT (5X,18HINVALID INTEGER - ,16A1)        
+ 3850 FORMAT (5X,'INVALID INTEGER - ',16A1)        
       GO TO  3000        
  3900 JE = II - 1        
       WRITE  (SCREEN,3950) (A(J),J=JJ,JE)        
- 3950 FORMAT (5X,22HINVALID F.P. NUMBER - ,16A1)        
+ 3950 FORMAT (5X,'INVALID F.P. NUMBER - ',16A1)        
       GO TO  3000        
  4000 WRITE  (SCREEN,4050)        
- 4050 FORMAT (47H *** INPUT ERROR AFTER STAR (*), OR PERCENT (%))       
+ 4050 FORMAT (' *** INPUT ERROR AFTER STAR (*), OR PERCENT (%)')       
       GO TO  3050        
  4100 WRITE  (SCREEN,4150)        
- 4150 FORMAT (41H *** ZERO LOOP COUNT.  NO CARDS GENERATED)        
+ 4150 FORMAT (' *** ZERO LOOP COUNT.  NO CARDS GENERATED')        
       GO TO  3050        
  4200 WRITE  (SCREEN,4250) KK,L(KK),JC(KK),LOOP        
- 4250 FORMAT (5X,5HFIELD,I3,2H (,I8,1H-,I8,21H) IS NOT DIVIDABLE BY,I4, 
-     1       /5X,12HRESUME INPUT,/)        
+ 4250 FORMAT (5X,'FIELD',I3,' (',I8,'-',I8,') IS NOT DIVIDABLE BY',I4, 
+     1       /5X,'RESUME INPUT',/)        
  4300 IF (IECHOS .NE. -2) NOGO = 1        
       DO 4350 J = 1,10        
  4350 CARD(J) = SAVE(J)        
       GO TO  60        
  4400 WRITE  (SCREEN,4450) (A(J),J=JJ,JE)        
- 4450 FORMAT (5X,27HMORE THAN ONE DEC. PT.,  - ,16A1)        
+ 4450 FORMAT (5X,'MORE THAN ONE DEC. PT.,  - ',16A1)        
       GO TO  3000        
  4500 WRITE  (SCREEN,4550)        
- 4550 FORMAT (39H *** WARNING- NESTED READFILE OPERATION)        
+ 4550 FORMAT (' *** WARNING- NESTED READFILE OPERATION')        
       GO TO  350        
  4600 WRITE  (SCREEN,4650)        
- 4650 FORMAT (45H *** SO BE IT.  TO RUN NASTRAN LINK1 ONLY ***,/)       
+ 4650 FORMAT (' *** SO BE IT.  TO RUN NASTRAN LINK1 ONLY ***',/)       
       GO TO  60        
  4700 WRITE  (SCREEN,4750)        
- 4750 FORMAT (23H *** BLANK LINE IGNORED)        
+ 4750 FORMAT (' *** BLANK LINE IGNORED')        
       GO TO  60        
  4800 WRITE  (SCREEN,4850) TEMP        
  4850 FORMAT (40H *** INTEGER ERROR IN CONTINUATION ID - ,A8)        
       IF (IECHOS .NE. -2) WRITE (SCREEN,3060) A8        
       GO TO  4300        
  4900 WRITE  (SCREEN,4950) (TMP(J),J=1,9)        
- 4950 FORMAT (35H *** CONTINUATION FIELD TOO LONG - ,9A1, /5X,        
-     1        25HLAST GENERATED CARD WAS -,/)        
+ 4950 FORMAT (' *** CONTINUATION FIELD TOO LONG - ',9A1, /5X,        
+     1        'LAST GENERATED CARD WAS -',/)        
       WRITE  (SCREEN,2450) SAVE        
       GO TO  4300        
  5000 WRITE  (SCREEN,5050)        
- 5050 FORMAT (27H *** TOO MANY LEFT BRACKETS)        
+ 5050 FORMAT (' *** TOO MANY LEFT BRACKETS')        
       GO TO  3050        
  5100 WRITE  (NOUT,5150)        
  5150 FORMAT (/,20H *** EOF ENCOUNTERED )        
       IF (MACH.EQ.4 .AND. INFLAG.EQ.5) REWIND INFLAG        
       GO TO  60        
  5200 WRITE  (NOUT,5250)        
- 5250 FORMAT (/,48H *** SKIPFILE IGNORED.  FILE HAS NOT BEEN OPENED)    
+ 5250 FORMAT (/,' *** SKIPFILE IGNORED.  FILE HAS NOT BEEN OPENED')
       GO TO  60        
  5300 WRITE  (NOUT,5350)        
- 5350 FORMAT (/,26H *** FEATURE NOT AVAILABLE)        
+ 5350 FORMAT (/,' *** FEATURE NOT AVAILABLE')
       IF (IECHOS .NE. -2) WRITE (SCREEN,3060) A8        
       GO TO  60        
  5400 WRITE  (NOUT,5450)        

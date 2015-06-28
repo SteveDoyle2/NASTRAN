@@ -356,7 +356,7 @@ C
       CALL PAGE1        
       CALL PAGE2 (-4)        
       WRITE  (OUTTAP,660) FIAT(1),FIAT(2),FIAT(3),X,CURSNO        
-  660 FORMAT (15H0FIAT AFTER SFA,3I4,12H  OSCAR STR ,I4,6H, STP ,I4, //,
+  660 FORMAT ('0FIAT AFTER SFA',3I4,'  OSCAR STR ',I4,', STP ',I4, //,
      1        ' EQ AP  LTU  TP  UNIT  NTU  OF SG KN TR DATA-BLK      *',
      2     6X,'*   TRAILER   *      *      *  PRI BLKS   SEC FLS/BLKS', 
      3     3X,'TER FLS/BLKS')        
@@ -399,15 +399,15 @@ C
       IPRT(23) = ANDF(RXMSK,FMAT(IX+4))        
       CALL PAGE2 (-1)        
       WRITE  (OUTTAP,664) (IPRT(IY),IY=1,23)        
-  664 FORMAT (1H ,2(I2,1X),I5,1X,I2,2(1X,I5),4(1X,I2),1X,2A4,6I7,       
-     1        4X,I5,1X,2(7X,I2,1H/,I5))        
+  664 FORMAT (' ',2(I2,1X),I5,1X,I2,2(1X,I5),4(1X,I2),1X,2A4,6I7,       
+     1        4X,I5,1X,2(7X,I2,'/',I5))        
   665 CONTINUE        
       CALL XFLSZD (0,BLKSIZ,0)        
       CALL PAGE2 (-2)        
       WRITE  (OUTTAP,628) BLKSIZ        
-  628 FORMAT (30X,20H EACH BLOCK CONTAINS,I5,7H WORDS.)        
+  628 FORMAT (30X,' EACH BLOCK CONTAINS',I5,' WORDS.')        
       WRITE  (OUTTAP,666)        
-  666 FORMAT (52H POOL FILE CONTENTS   EQ    SIZE   FILE   DATA BLOCK)  
+  666 FORMAT (' POOL FILE CONTENTS   EQ    SIZE   FILE   DATA BLOCK')  
       II = DPD(3)*3        
       DO 668 IX = 1,II,3        
       IPRT(1) = RSHIFT(DFNU(IX),NBPW-1)        
@@ -497,7 +497,7 @@ C
       IF (IX .NE. 1) GO TO 790        
       CALL PAGE2 (-2)        
       WRITE  (OUTTAP,785)        
-  785 FORMAT (38H0* XSFA REPEATS TO USE FREED TAPE FILE)        
+  785 FORMAT ('0* XSFA REPEATS TO USE FREED TAPE FILE')        
 C        
   790 BFF = 0        
       GO TO 150        

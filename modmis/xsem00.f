@@ -39,20 +39,23 @@ C                                                                       00004000
       EQUIVALENCE (XX(1),NOUT)                                          00004100
       EQUIVALENCE (XX(19),PLOTF)                                        00004200
 C                                                                       00004300
-      DATA REW     /     1/,NOREW/     0/,POOL /4HPOOL/                 00004400
+      DATA POOL /4HPOOL/
      3,    SCRTCH  /4HSCRA,4HTCH0,4HTCH0/                               00004512
      4,    NUMBR   /1H1,1H2,1H3,1H4,1H5,1H6,1H7,1H8,1H9,1H0 /           00004614
      5,    WORDB   /4HSEM1,4HBEGN,4H    ,4H    /                        00004700
      5,    WORDE   /4HBEGN,4HEND /                                      00004800
      6,    IBLNK   /4H    /                                             00004900
-     6,    MODX    /   215/                                             00005000
      7,    EXIT    /4HEXIT/                                             00005100
-      DATA THISLK  /     2/                                             00005200
       DATA SUBNAM  /4HXSEM,2H00/                                        00005300
       DATA BCDZRO  /1H0   /                                             00005400
       DATA EQUIV, PURGE /4HEQUI, 4HV   , 4HPURG, 4HE   /                00005500
       DATA XEQU , XPUR  /4HXEQU, 4HXPUR/                                00005600
       DATA XSAV , YCHK  /4HXSAV, 4HXCHK/                                00005700
+
+      REW = 1
+      NOREW = 0
+      MODX = 215
+      THISLK = 2
 C*****                                                                  00005800
 C INITIALIZE MACHINE DEPENDENT CONSTANTS                                00005900
       CALL BTSTRP                                                       00006000

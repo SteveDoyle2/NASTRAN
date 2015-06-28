@@ -326,7 +326,7 @@ C
      1       'SMALL TO PROCESS CARD COMPLETELY')        
   680 NOGO = .TRUE.        
       WRITE  (F6,690) CHAR        
-  690 FORMAT (/5X,1H',72A1,1H')        
+  690 FORMAT (/5X,''',72A1,''')        
       OUT(1) = 0        
 C        
       RETURN        

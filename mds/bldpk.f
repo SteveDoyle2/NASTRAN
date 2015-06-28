@@ -573,7 +573,7 @@ C
       GNBRAV = IAVIAL        
 C     IF (DEBUG) WRITE (NOUT,1231) J,GNBRAV,I,GNBWRT,NBUFF2        
 C1231 FORMAT (10X,'BLDPK GINO-PUTSTR/ @1231 GNBRAV(O/N),GBNWRT(O/N),',  
-C    1        'NBUFF2=',2(I7,1H/,I6),I7)        
+C    1        'NBUFF2=',2(I7,'/',I6),I7)        
       IF (GPREC .NE. 0) GO TO 1235        
       GPOINT = LOCFX(BUFF(CBP+3+JBUFF1)) - LOCFX1 + 1        
 C     IF (DEBUG) WRITE (NOUT,1232) GPOINT        

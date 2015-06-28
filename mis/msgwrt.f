@@ -11,7 +11,8 @@ C
       COMMON /MSGX  / N,M,MSG(4,1)        
       EQUIVALENCE     (XMSG(1,1),MSG(1,1))        
       DATA   POS,NEG/ 4HWARN,4HING ,4HFATA,4HL    /        
-      DATA   NMSGS  / 117/ , IPAG / 4H PAG,4HE2   /        
+      DATA   IPAG / 4H PAG,4HE2   /
+      NMSGS = 117
 C        
       DO 99 I = 1,N        
       L = IABS(MSG(1,I))        

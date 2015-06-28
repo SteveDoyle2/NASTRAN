@@ -206,7 +206,7 @@ C
       CALL PAGE2 (-1)        
       WRITE  (OUTTAP,200)(BUF(I),I=N1,N2)        
   200 FORMAT (30X,20A4)        
-  210 FORMAT (13X,I8,1H-,8X,20A4)        
+  210 FORMAT (13X,I8,'-',8X,20A4)        
 C        
 C     IGNORE BLANK CARDS        
 C        
@@ -451,7 +451,7 @@ C
       IF (ECHOU .NE. 1) GO TO 572        
       CALL PAGE2 (2)        
       WRITE  (OUTTAP,570) ICCNT        
-  570 FORMAT (//24X,12HTOTAL COUNT=,I5)        
+  570 FORMAT (//24X,'TOTAL COUNT=',I5)        
   572 CONTINUE        
 C        
 C     TEST FOR COLD-START WITH NO BULK DATA        
@@ -1079,7 +1079,7 @@ C
  1650 IF (IBUF1(1) .EQ. 0) GO TO 1690        
       CALL PAGE2 (2)        
       WRITE  (OUTTAP,1660)        
- 1660 FORMAT (1H0)        
+ 1660 FORMAT ('0')        
 C        
 C     IDENTIFY DUPLICATE OR PARENTLESS CONTINUATION CARDS        
 C        

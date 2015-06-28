@@ -339,8 +339,7 @@ C           FILE WAS CREATED SEQUENTIAL, FORMATTED, NO CARRIAGE CONTROL,
 C           AND 3000 BYTE LONG RECORDSIZE        
 C        
   160 OPEN (UNIT=FIL,FILE=NAM32,ERR=850,STATUS='OLD',FORM='FORMATTED',  
-     1      ACCESS='SEQUENTIAL',
-     2                          RECL=RL)        
+     1      ACCESS='SEQUENTIAL',RECL=RL)        
       IF (K12 .EQ. K1) GO TO 200        
 C        
 C     IF PLT2 IS USED, INQUIRE WHAT MACHINE THE TAPE WAS GENERATED      
@@ -600,10 +599,7 @@ C
   580 NA1(DOT+2) = KNUM1        
       NA1(DOT+3) = KNUM(2)        
       NA1(DOT+4) = KB        
-  585 OPEN (UNIT=LU,FILE=NAM32,FORM='FORMATTED',STATUS='NEW',ERR=870    
-C    1     )        
-     1     ,CARRIAGECONTROL='LIST')   ! RECOMMANDED FOR VAX TO GENERATE 
-C                                     ! STANDARD LIST FILE        
+  585 OPEN (UNIT=LU,FILE=NAM32,FORM='FORMATTED',STATUS='NEW',ERR=870)
       LUOPEN = 1        
   590 CALL PSINIT (NOLINE)        
       IF (ALL .EQ. YES) NOLINE = 1        
@@ -884,7 +880,7 @@ C
      1            T4,T3,T2,T1,T0,U4,U3,U2,U1,U0        
       COMMON      CMND,CTRL,R,S,T,U        
       EQUIVALENCE (Q(1),PC)        
-      DATA   MAX/ 3000 /        
+      MAX = 3000
 C        
       IF (BI .EQ. BO) STOP ' NO NEED TO CALL GETCMD'        
       IF (BI .NE. BO) STOP ' PRESENTLY, GETCMD DOES NOT WORK'        
@@ -931,7 +927,8 @@ C
       LOGICAL  AXSSET,P16        
       COMMON   CMND,CNTRL,R,S,T,U,XFACT,YFACT,XMAX,YMAX,XHI,YHI,XLO,YLO,
      1         PENCHG,PENCNT,OLDPEN,PENNO(99)        
-      DATA     AXSCNT,P16 / 0, .TRUE. /        
+      AXSCNT = 0
+      P16 = .TRUE.
 C        
 C     CHECK FOR INITIAL COMMAND = 16        
 C        
@@ -996,10 +993,15 @@ C
       LOGICAL   CHRSET        
       REAL      XFACT,YFACT,X,Y,ANGLE,HITE        
       CHARACTER CHR94*52,CHRSAV*57,BLNK1,QUES1        
-      DIMENSION CHRCOD(53)        
+      DIMENSION CHRCOD(53)
       COMMON    CMND,CNTRL,R,S,T,U,XFACT,YFACT,XMAX,YMAX,XHI,YHI,XLO,YLO
-      DATA      LINE,SAVCNT,CHRCNT,UNKCNT / 1, 0, 0, 0/        
-      DATA      CHRSAV,BLNK1,QUES1    / ' ', ' ', '?' /        
+      LINE = 1
+      SAVCNT = 0
+      CHRCNT = 0
+      UNKCNT = 0
+      CHRSAV = ' '
+      BLNK1 = ' '
+      QUES1 = '?'
       DATA      CHR94 /        
      1          '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ()+-*/=.,$" O[<^'/ 
       DATA      CHRCOD /32,33,34,35,36,37,38,39,40,41,        

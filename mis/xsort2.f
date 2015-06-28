@@ -424,7 +424,7 @@ C
       BUF4(4) = BUF4(4) - 2000000000        
       CALL WRITE (TAPE1,BUF4(3),2,0)        
       IF (DEBUG) WRITE (NOUT,260) BUF4(3),BUF4(4)        
-  260 FORMAT (5X,'A DELETE CARD -',I11,1H,,I11)        
+  260 FORMAT (5X,'A DELETE CARD -',I11,',',I11)        
       NDELE  = NDELE + 1        
       GO TO 200        
   270 WRITE  (NOUT,280) UFM        
@@ -622,7 +622,7 @@ C
       CALL PAGE2 (-1)        
       IF (ECHOS .NE. 0) WRITE (NOUT,2300)        
       IF (ECHOS .EQ. 0) WRITE (NOUT, 635) UIM,NCARD        
-  635 FORMAT (A29,1H,,I8,' SORTED BULKD DATA CARDS PROCESSED FROM OPTP',
+  635 FORMAT (A29,',',I8,' SORTED BULKD DATA CARDS PROCESSED FROM OPTP',
      1        ' FILE TO NPTP, UN-MODIFIED')        
       GO TO 2700        
 C        
@@ -716,7 +716,7 @@ C
       IMHERE  = 830        
       IF (DEBUG .AND. ONOFF.EQ.-1) WRITE (NOUT,830) IMHERE,KOUNT,       
      1                             (BUF(J),J=1,6)        
-  830 FORMAT (' IMHERE=',I5,'.  DELETED FROM OPTP ==>',I5,2H- ,6A4)     
+  830 FORMAT (' IMHERE=',I5,'.  DELETED FROM OPTP ==>',I5,'- ',6A4)     
       IF (BUF41 .EQ. -2) GO TO 870        
       IF (ONOFF .EQ. +1) GO TO 840        
 C        
@@ -1184,7 +1184,7 @@ C
       IF (ECHOS .EQ. 0) GO TO 1740        
       CALL PAGE2 (-1)        
       WRITE  (NOUT,1730) NCARD,(Z(I),I=K,L)        
- 1730 FORMAT (13X,I8,1H-,8X,20A4)        
+ 1730 FORMAT (13X,I8,'-',8X,20A4)        
  1740 IF (ECHOP .NE. 0) WRITE (LPCH,1750) (Z(I),I=K,L)        
  1750 FORMAT (20A4)        
       K = K + 24        
@@ -1352,7 +1352,7 @@ C
  2155 WRITE  (NOUT,2160) UFM        
  2160 FORMAT (A23,' 208, PREVIOUS CARD IS A DUPLICATE PARENT.')        
       IF (DEBUG) WRITE (NOUT,2170) LOC,BSIZE,IC,K,L,TEMPX,TEMP(2)       
- 2170 FORMAT ('  LOC,BSIZE,IC,K,L =',5I8,2(2H /,A4),1H/)        
+ 2170 FORMAT ('  LOC,BSIZE,IC,K,L =',5I8,2(' /',A4),'/')        
  2180 NOGO = -1        
 C        
 C     REPLACE THE MERGED RECORD BY THE NEXT RECORD OF THE SAME FILE     
@@ -1375,7 +1375,7 @@ C     NOGO = -1
       IF (.NOT.DEBUG) GO TO 2200        
       DO 2250 K = 1,NFILER        
       WRITE  (NOUT,2240) K,(Y(J,K),J=1,24)        
- 2240 FORMAT (1X,I2,3H)  ,20A4,2H /,4I8)        
+ 2240 FORMAT (1X,I2,')  ',20A4,' /',4I8)        
  2250 CONTINUE        
       WRITE  (NOUT,2260) II,L        
  2260 FORMAT (//5X,'DUPLICATE  II,L=',2I8)        

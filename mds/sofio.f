@@ -11,7 +11,7 @@ CWKBNB
       COMMON /SOFDSN/ SDSN(10)
       CHARACTER*60  SDSN
 CWKBNE
-      DATA    ONCE  /.FALSE./        
+      ONCE = .FALSE.
       DATA    FLSPEC/        
      1        4HINPT, 4HFT03, 4HFT08, 4HFT09, 4HFT10, 4HFT11,        
      2        4HFT12, 4HFT14, 4HFT15, 4HFT16, 4HFT17, 4HFT18,        
@@ -32,22 +32,18 @@ C
       IBKSZ = BLKSIZ*(MOD(LQRO,100)/10)        
 C                     MOD(LQRO,100)/10 IS BYTE OR WORD COUNT        
 C        
-      OPEN (UNIT   = NUNITS(I),        
-CWKBI
-     1      FILE   = SDSN(I),
-     1      STATUS = 'UNKNOWN',        
-     2      FORM   = 'UNFORMATTED',        
-     3      ACCESS = 'DIRECT',        
-     4      MAXREC = FILSIZ(I),        
-     5      RECL   = IBKSZ)        
-C    6      RECORDTYPE = 'FIXED',        
-C    7      BLOCKSIZE  = IBKSZ,        
-C    8      ORGANIZATION = 'SEQUENTIAL')        
+      OPEN (UNIT=NUNITS(I),FILE=SDSN(I),STATUS='UNKNOWN',
+     1      FORM='UNFORMATTED',ACCESS='DIRECT',
+c     MAXREC=FILSIZ(I),
+     2      RECL=IBKSZ)
+C    3      RECORDTYPE = 'FIXED',
+C    4      BLOCKSIZE  = IBKSZ,
+C    5      ORGANIZATION = 'SEQUENTIAL')
       GO TO 40        
    20 CONTINUE        
       WRITE  (NOUT,30) FILNAM(I),(FLSPEC(J,1),J=1,17)        
    30 FORMAT ('0*** USER FATAL MESSAGE, ',A4,' IS ILLEGAL NAME FOR SOF',
-     1        ' OPERATION.  AVAILABLE FILE NAMES ARE -',/5X,17(A4,2H, ))
+     1        ' OPERATION.  AVAILABLE FILE NAMES ARE -',/5X,17(A4,', '))
       CALL MESAGE (-61,0,0)        
    40 CONTINUE        
 C        

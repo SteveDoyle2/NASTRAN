@@ -28,7 +28,9 @@ C
      3 4HFEWE, 4HR TH, 4HAN R, 4HEQUE, 4HSTED, 4H ROO, 4HTS F, 4HOUND,  
      4 4HROOT, 4HS FO, 4HUND , 4HWITH, 4H REQ, 4H. AC, 4HCURA, 4HCY  ,  
      5 4HNO R, 4HOOTS ,4H FOU, 4HND, , 4HNONE, 4H PAS, 4HSED , 4HTEST/  
-      DATA     SECTN / 4H.3.3, 4H.7.3  /     , TWOPI /6.283185307    /  
+      DATA     SECTN / 4H.3.3, 4H.7.3  /
+
+      TWOPI = 6.283185307
 C        
       LOCAL = LINE - 100        
       IF (LOCAL) 2003,2003,2004        
@@ -475,11 +477,11 @@ C
   502 FORMAT (6X,'POINT ID.   TYPE',10X,'T1',13X,'T2',13X,'T3',13X,
      1       'R1',13X,'R2',13X,'R3')        
   503 FORMAT (46X, 'R E A L   E I G E N V A L U E S',/)
-  504 FORMAT (3X, 4HMODE, 4X, 10HEXTRACTION, 7X, 10HEIGENVALUE, 12X,    
-     1       6HRADIAN, 14X, 6HCYCLIC, 2X, 2(9X, 'GENERALIZED'))
-  505 FORMAT (4X,3HNO., 7X, 5HORDER, 30X, 9HFREQUENCY, 11X, 9HFREQUENCY,
-     1       12X,4HMASS, 14X, 9HSTIFFNESS,/)        
- 5050 FORMAT (/37X,16(4H****), /37X,'*',62X,'*', /37X,'*')
+  504 FORMAT (3X, 'MODE', 4X, 'EXTRACTION', 7X, 'EIGENVALUE', 12X,    
+     1       'RADIAN', 14X, 'CYCLIC', 2X, 2(9X, 'GENERALIZED'))
+  505 FORMAT (4X,'NO.', 7X, 'ORDER', 30X, 'FREQUENCY', 11X, 'FREQUENCY',
+     1       12X,'MASS', 14X, 'STIFFNESS',/)        
+ 5050 FORMAT (/37X,16('****'), /37X,'*',62X,'*', /37X,'*')
  5051 FORMAT ('+',45X,'NASTRAN INFORMATION MESSAGE 3307, POTENTIALLY',
      1       9X,'*', /37X,'*',I10,' EIGENVALUE(S) AT LOW FREQ. END NOT',
      2       ' FOUND',11X,'*')        
@@ -490,58 +492,58 @@ C
      1       'VALUES',6X,'*', /37X,'*', 5X,'NOT NECESSARY FOUND.',37X,
      2       '*')        
  5054 FORMAT (37X,'*',62X,'*', /37X,'*',8X,
-     1       43H(THIS MESSAGE CAN BE SUPPRESSED BY DIAG 37),11X,'*',
-     1       /37X,16(4H****),/)        
-  506 FORMAT (41X,39HR E A L   E I G E N V E C T O R   N O .,I11)       
-  507 FORMAT (7X,7HELEMENT,11X,5HAXIAL,37X,7HELEMENT,11X,5HAXIAL)       
-  508 FORMAT (9X,3HID.,13X,5HFORCE,10X,6HTORQUE,23X,3HID.,13X,5HFORCE,  
-     1       10X,6HTORQUE)        
-  509 FORMAT ('0    ELEMENT',9X,17HBEND-MOMENT END-A,12X,17HBEND-MOMENT
-     1 END-B,16X,9H- SHEAR -,15X,5HAXIAL)        
-  510 FORMAT (4X,9H   ID.   ,3(6X,7HPLANE 1,7X,7HPLANE 2,2X),7X,5HFORCE,
-     1       9X,6HTORQUE)        
-  511 FORMAT (7X,7HELEMENT,11X,5HFORCE,10X,5HFORCE,22X,7HELEMENT,11X,   
-     1       5HFORCE,10X,5HFORCE)        
-  512 FORMAT (9X,3HID.,12X,7HPTS 1,3,8X,7HPTS 2,4,23X,3HID.,12X,        
-     1       7HPTS 1,3,8X,7HPTS 2,4)        
-  513 FORMAT (7X,7HELEMENT,10X,6HMOMENT,9X,6HMOMENT,22X,7HELEMENT,10X,  
-     1       6HMOMENT,9X,6HMOMENT)        
-  514 FORMAT ('0',8X,7HELEMENT,2(11X,'BEND-MOMENT'),10X,'TWIST-MOMENT'
-     1,      2(13X,5HSHEAR,4X))        
-  515 FORMAT (11X,3HID.,17X,'X',21X,'Y',43X,'X',21X,'Y')
-  516 FORMAT (6X,3(7HELEMENT,9X,5HFORCE,12X),7HELEMENT,9X,5HFORCE)      
-  517 FORMAT (8X,3(3HID.,30X),3HID.)        
-  518 FORMAT (2(7X,7HELEMENT,7X,5HAXIAL,7X,6HSAFETY,6X,9HTORSIONAL,5X,  
-     1       6HSAFETY))        
-  519 FORMAT (2(9X,3HID.,8X,6HSTRESS,7X,6HMARGIN,8X,6HSTRESS,6X,        
-     1       6HMARGIN))        
-  520 FORMAT (2X,7HELEMENT,8X,3HSA1,12X,3HSA2,12X,3HSA3,15X,'S',14X,
-     1       6HSA-MAX,9X,6HSA-MIN,11X,6HM.S.-T)        
-  521 FORMAT (4X,3HID.,10X,3HSB1,12X,3HSB2,12X,3HSB3,30X,6HSB-MAX,9X,   
-     1       6HSB-MIN,11X,6HM.S.-C)        
-  522 FORMAT (2(9X,7HELEMENT,12X,3HMAX,12X,3HAVG,8X,6HSAFETY))        
-  523 FORMAT (2(11X,3HID.,13X,5HSHEAR,10X,5HSHEAR,7X,6HMARGIN))        
-  524 FORMAT (2(11X,3HID.,40X,6HMARGIN))        
-  525 FORMAT (2X,7HELEMENT,11X,'STRESSES IN ELEMENT COORD SYSTEM',12X, 
-     1       9HPRINCIPAL,11X,18HPRINCIPAL STRESSES,12X,3HMAX)        
-  526 FORMAT (4X,3HID.,11X,8HNORMAL-X,7X,8HNORMAL-Y,7X,8HSHEAR-XY,6X,   
-     1       'STRESS ANGLE',9X,5HMAJOR,10X,5HMINOR,10X,5HSHEAR)
-  527 FORMAT (2X,7HELEMENT,6X,5HFIBRE,15X,'STRESSES IN ELEMENT COORD ', 
-     1       'SYSTEM',13X,'PRINCIPAL STRESSES (ZERO SHEAR)',12X,3HMAX)  
-  528 FORMAT (4X,3HID.,7X,8HDISTANCE,11X,8HNORMAL-X,7X,8HNORMAL-Y,6X,   
-     1       8HSHEAR-XY,7X,5HANGLE,9X,5HMAJOR,11X,5HMINOR,10X,5HSHEAR)  
-  529 FORMAT (6X,3(7HELEMENT,9X,6HSTRESS,11X),7HELEMENT,9X,6HSTRESS)    
+     1       '(THIS MESSAGE CAN BE SUPPRESSED BY DIAG 37)',11X,'*',
+     1       /37X,16('****'),/)        
+  506 FORMAT (41X,'R E A L   E I G E N V E C T O R   N O .',I11)       
+  507 FORMAT (7X,'ELEMENT',11X,'AXIAL',37X,'ELEMENT',11X,'AXIAL')       
+  508 FORMAT (9X,'ID.',13X,'FORCE',10X,'TORQUE',23X,'ID.',13X,'FORCE',  
+     1       10X,'TORQUE')        
+  509 FORMAT ('0    ELEMENT',9X,'BEND-MOMENT END-A',12X,
+     1       'BEND-MOMENT END-B',16X,'- SHEAR -',15X,'AXIAL')        
+  510 FORMAT (4X,'   ID.   ',3(6X,'PLANE 1',7X,'PLANE 2',2X),7X,'FORCE',
+     1       9X,'TORQUE')
+  511 FORMAT (7X,'ELEMENT',11X,'FORCE',10X,'FORCE',22X,'ELEMENT',11X,   
+     1       'FORCE',10X,'FORCE')        
+  512 FORMAT (9X,'ID.',12X,'PTS 1,3',8X,'PTS 2,4',23X,'ID.',12X,        
+     1       'PTS 1,3',8X,'PTS 2,4')
+  513 FORMAT (7X,'ELEMENT',10X,'MOMENT',9X,'MOMENT',22X,'ELEMENT',10X,  
+     1       'MOMENT',9X,'MOMENT')        
+  514 FORMAT ('0',8X,'ELEMENT',2(11X,'BEND-MOMENT'),10X,'TWIST-MOMENT'
+     1,      2(13X,'SHEAR',4X))        
+  515 FORMAT (11X,'ID.',17X,'X',21X,'Y',43X,'X',21X,'Y')
+  516 FORMAT (6X,3('ELEMENT',9X,'FORCE',12X),'ELEMENT',9X,'FORCE')      
+  517 FORMAT (8X,3('ID.',30X),'ID.')        
+  518 FORMAT (2(7X,'ELEMENT',7X,'AXIAL',7X,'SAFETY',6X,'TORSIONAL',5X,  
+     1       'SAFETY'))        
+  519 FORMAT (2(9X,'ID.',8X,'STRESS',7X,'MARGIN',8X,'STRESS',6X,        
+     1       'MARGIN'))        
+  520 FORMAT (2X,'ELEMENT',8X,'SA1',12X,'SA2',12X,'SA3',15X,'S',14X,
+     1       'SA-MAX',9X,'SA-MIN',11X,'M.S.-T')        
+  521 FORMAT (4X,'ID.',10X,'SB1',12X,'SB2',12X,'SB3',30X,'SB-MAX',9X,   
+     1       'SB-MIN',11X,'M.S.-C')        
+  522 FORMAT (2(9X,'ELEMENT',12X,'MAX',12X,'AVG',8X,'SAFETY'))        
+  523 FORMAT (2(11X,'ID.',13X,'SHEAR',10X,'SHEAR',7X,'MARGIN'))        
+  524 FORMAT (2(11X,'ID.',40X,'MARGIN'))        
+  525 FORMAT (2X,'ELEMENT',11X,'STRESSES IN ELEMENT COORD SYSTEM',12X, 
+     1       'PRINCIPAL',11X,'PRINCIPAL STRESSES',12X,'MAX')        
+  526 FORMAT (4X,'ID.',11X,'NORMAL-X',7X,'NORMAL-Y',7X,'SHEAR-XY',6X,   
+     1       'STRESS ANGLE',9X,'MAJOR',10X,'MINOR',10X,'SHEAR')
+  527 FORMAT (2X,'ELEMENT',6X,'FIBRE',15X,'STRESSES IN ELEMENT COORD ', 
+     1       'SYSTEM',13X,'PRINCIPAL STRESSES (ZERO SHEAR)',12X,'MAX')  
+  528 FORMAT (4X,'ID.',7X,'DISTANCE',11X,'NORMAL-X',7X,'NORMAL-Y',6X,   
+     1       'SHEAR-XY',7X,'ANGLE',9X,'MAJOR',11X,'MINOR',10X,'SHEAR')  
+  529 FORMAT (6X,3('ELEMENT',9X,'STRESS',11X),'ELEMENT',9X,'STRESS')    
   530 FORMAT (30X,'G R I D   P O I N T   S I N G U L A R I T Y   ',     
-     1       'T A B L E',6X,3HSPC,I9,3X,3HMPC,I9)        
-  531 FORMAT (8X,5HPOINT,10X,'SINGULARITY',18X,'LIST OF COORDINATE ',
+     1       'T A B L E',6X,'SPC',I9,3X,'MPC',I9)        
+  531 FORMAT (8X,'POINT',10X,'SINGULARITY',18X,'LIST OF COORDINATE ',
      1       'COMBINATIONS THAT WILL REMOVE SINGULARITY')        
-  532 FORMAT (9X,3HID.,3X,4HTYPE,7X,5HORDER,7X,'STRONGEST COMBINATION',
-     1       15X,18HWEAKER COMBINATION,17X,19HWEAKEST COMBINATION)      
+  532 FORMAT (9X,'ID.',3X,'TYPE',7X,'ORDER',7X,'STRONGEST COMBINATION',
+     1       15X,'WEAKER COMBINATION',17X,'WEAKEST COMBINATION')      
   533 FORMAT (53X,'L O A D   V E C T O R')
-  534 FORMAT (2X,7HELEMENT,8X,3HSA1,12X,3HSA2,12X,3HSA3,12X,3HSA4,11X,  
-     1       5HAXIAL,10X,6HSA-MAX,9X,17HSA-MIN     M.S.-T)        
-  535 FORMAT (4X,3HID.,10X,3HSB1,12X,3HSB2,12X,3HSB3,12X,3HSB4,11X,     
-     1       6HSTRESS,9X,6HSB-MAX,9X,17HSB-MIN     M.S.-C)        
+  534 FORMAT (2X,'ELEMENT',8X,'SA1',12X,'SA2',12X,'SA3',12X,'SA4',11X,  
+     1       'AXIAL',10X,'SA-MAX',9X,'SA-MIN     M.S.-T')        
+  535 FORMAT (4X,'ID.',10X,'SB1',12X,'SB2',12X,'SB3',12X,'SB4',11X,     
+     1       'STRESS',9X,'SB-MAX',9X,'SB-MIN     M.S.-C')
   536 FORMAT (43X,'F O R C E S   I N   R O D   E L E M E N T S',5X,     
      1       '( C R O D )')        
   537 FORMAT (33X,'F O R C E S   I N   B E A M   E L E M E N T S',8X,   
@@ -620,34 +622,34 @@ C
      1       '( C T U B E )')        
   574 FORMAT (20X,'S T R E S S E S   F O R   T H E   T R I A N G U L A',
      1       ' R   R I N G S',5X,'( C T R I A R G )')        
-  575 FORMAT (5X,3HEL ,13X,6HRADIAL,20X,15HCIRCUMFERENTIAL,20X,5HAXIAL, 
-     1       25X,5HSHEAR)        
-  576 FORMAT (5X,3HID ,15X,3H(X),25X,7H(THETA),25X,3H(Z),27X,4H(ZX))    
+  575 FORMAT (5X,'EL ',13X,'RADIAL',20X,'CIRCUMFERENTIAL',20X,'AXIAL', 
+     1       25X,'SHEAR')        
+  576 FORMAT (5X,'ID ',15X,'(X)',25X,'(THETA)',25X,'(Z)',27X,'(ZX)')    
   577 FORMAT (18X,'S T R E S S E S   F O R   T H E   T R A P E Z O I D',
      1       ' A L   R I N G S',5X,'( C T R A P R G )')        
-  578 FORMAT (5X,3HEL ,5X,6HSTRESS,15X,6HRADIAL,16X,15HCIRCUMFERENTIAL, 
-     1       16X,5HAXIAL,21X,5HSHEAR)        
-  579 FORMAT (5X,3HID ,6X,5HPOINT,17X,3H(X),21X,7H(THETA),21X,3H(Z),23X,
-     1       4H(ZX))        
+  578 FORMAT (5X,'EL ',5X,'STRESS',15X,'RADIAL',16X,'CIRCUMFERENTIAL', 
+     1       16X,'AXIAL',21X,'SHEAR')        
+  579 FORMAT (5X,'ID ',6X,'POINT',17X,'(X)',21X,'(THETA)',21X,'(Z)',23X,
+     1       '(ZX)')        
   580 FORMAT (11X,'S T R E S S   R E S U L T A N T S   F O R   T H E  ',
      1       ' T O R O I D A L   R I N G S     ( C T O R D R G )')      
-  581 FORMAT (5X, 3HEL , 8H  STRESS, 15X, 17HMEMBRANE (FORCES), 26X,    
-     1       17HFLEXURE (MOMENTS), 23X, 5HSHEAR)        
-  582 FORMAT (5X,'ID',9H    POINT,8X,10HTANGENTIAL,10X,'CIRCUMFERENTIAL'
-     1,      8X,10HTANGENTIAL,11X,15HCIRCUMFERENTIAL,10X,7H(FORCE))     
+  581 FORMAT (5X, 'EL ', '  STRESS', 15X, 'MEMBRANE (FORCES)', 26X,    
+     1       'FLEXURE (MOMENTS)', 23X, 'SHEAR')        
+  582 FORMAT (5X,'ID','    POINT',8X,'HTANGENTIAL',10X,'CIRCUMFERENTIAL'
+     1,      8X,'TANGENTIAL',11X,'CIRCUMFERENTIAL',10X,'(FORCE)')     
   583 FORMAT (22X,'F O R C E S   F O R   T H E   T R I A N G U L A R  ',
      1       ' R I N G S     ( C T R I A R G )')        
-  584 FORMAT (5X,'EL    CORNER',18X,6HRADIAL,26X,15HCIRCUMFERENTIAL,   
-     1       26X,5HAXIAL)        
-  585 FORMAT (5X,'ID     POINT',20X,3H(X),31X,7H(THETA),31X,3H(Z))     
+  584 FORMAT (5X,'EL    CORNER',18X,'RADIAL',26X,'CIRCUMFERENTIAL',   
+     1       26X,'AXIAL')        
+  585 FORMAT (5X,'ID     POINT',20X,'(X)',31X,'(THETA)',31X,'(Z)')     
   586 FORMAT (21X,'F O R C E S   F O R   T H E   T R A P E Z O I D A L',
      1       '   R I N G S     ( C T R A P R G )')        
   587 FORMAT (23X,'F O R C E S   F O R   T H E   T O R O I D A L   ',   
      1       'R I N G S     ( C T O R D R G )')        
-  588 FORMAT (5X,'EL    CORNER',9X,6HRADIAL,8X,15HCIRCUMFERENTIAL,7X,  
-     1       5HAXIAL,13X,6HMOMENT,9X,13HDIRECT STRAIN,7X,9HCURVATURE)   
-  589 FORMAT (5X,'ID     POINT',11X,3H(X),13X,7H(THETA),12X,3H(Z),15X, 
-     1       4H(ZX),14X,4H(XI),13X,7H(XI,XI))        
+  588 FORMAT (5X,'EL    CORNER',9X,'RADIAL',8X,'CIRCUMFERENTIAL',7X,  
+     1       'AXIAL',13X,'MOMENT',9X,'DIRECT STRAIN',7X,'CURVATURE')   
+  589 FORMAT (5X,'ID     POINT',11X,'(X)',13X,'(THETA)',12X,'(Z)',15X, 
+     1       '(ZX)',14X,'(XI)',13X,'(XI,XI)')        
   590 FORMAT (30X,'E I G E N V A L U E   A N A L Y S I S   S U M M A R',
      1       ' Y     (INVERSE POWER METHOD)')        
  5905 FORMAT (30X,'E I G E N V A L U E   A N A L Y S I S   S U M M A R',
@@ -659,48 +661,48 @@ C
      4       I10,/'0',39X,'TOTAL NUMBER OF VECTOR ITERATIONS ',5(' .'),
      4       I10,//'0',39X,'REASON FOR TERMINATION',11(' .'),I10,'*',/,
      5       /'0',39X,'LARGEST OFF-DIAGONAL MODAL MASS TERM',4(' .'),  
-     6       E10.2, /'0',77X,3(' .'),I10, /50X,9HMODE PAIR ,10(' .'),   
+     6       E10.2, /'0',77X,3(' .'),I10, /50X,'MODE PAIR' ,10(' .'),   
      7       /78X,3(' .'),I10, /'0',39X,'NUMBER OF OFF-DIAGONAL MODAL ',
      8       'MASS', /45X,'TERMS FAILING CRITERION',8(' .'),I10)       
- 5911 FORMAT (/'0',39X,3H(* ,8A4, /41X,'SEE NASTRAN U.M. VOL II, ',     
+ 5911 FORMAT (/'0',39X,'(* ',8A4, /41X,'SEE NASTRAN U.M. VOL II, ',     
      1       'SECTION 2',A4,')')        
   592 FORMAT (26X,'E I G E N V A L U E   A N A L Y S I S   S U M M A R',
      1       ' Y       (DETERMINANT METHOD)')        
   593 FORMAT ('0', /'0',39X,'NUMBER OF EIGENVALUES EXTRACTED ',6(' .'),
-     1       I9,/'0',39X,44HNUMBER OF PASSES THROUGH STARTING POINTS . .
-     2,      I9,/'0',39X,26HNUMBER OF CRITERIA CHANGES,9(' .'),I9,      
-     3       /'0',39X,30HNUMBER OF STARTING POINT MOVES,7(' .'),I9,     
-     4       /'0',39X,36HNUMBER OF TRIANGULAR DECOMPOSITIONS ,4(' .'),  
-     5       I9,/'0',39X,44HNUMBER OF FAILURES TO ITERATE TO A ROOT  . .
-     6,      I9, //'0',39X,'REASON FOR TERMINATION',11(' .'),I9,'*',   
-     7       //,'0',39X,36HLARGEST OFF-DIAGONAL MODAL MASS TERM,4(' .'),
-     8       E9.2,/'0',77X,3(' .'),I9,/50X, 9HMODE PAIR ,10(' .'), /78X,
-     9       3(' .'),I9, /'0',39X,33HNUMBER OF OFF-DIAGONAL MODAL MASS, 
-     O       /45X,23HTERMS FAILING CRITERION,8(' .'),I9)
-  594 FORMAT (10X,14HSTARTING POINT,6X,6HLAMBDA,9X,'RADIAN FREQUENCY  ',
+     1       I9,/'0',39X,'NUMBER OF PASSES THROUGH STARTING POINTS . .',
+     2       I9,/'0',39X,'NUMBER OF CRITERIA CHANGES',9(' .'),I9,      
+     3       /'0',39X,'NUMBER OF STARTING POINT MOVES',7(' .'),I9,     
+     4       /'0',39X,'NUMBER OF TRIANGULAR DECOMPOSITIONS ',4(' .'),  
+     5       I9,/'0',39X,'NUMBER OF FAILURES TO ITERATE TO A ROOT  . .',
+     6       I9, //'0',39X,'REASON FOR TERMINATION',11(' .'),I9,'*',   
+     7       //,'0',39X,'LARGEST OFF-DIAGONAL MODAL MASS TERM',4(' .'),
+     8       E9.2,/'0',77X,3(' .'),I9,/50X, 'MODE PAIR' ,10(' .'), /78X,
+     9       3(' .'),I9, /'0',39X,'NUMBER OF OFF-DIAGONAL MODAL MASS', 
+     O       /45X,'TERMS FAILING CRITERION',8(' .'),I9)
+  594 FORMAT (10X,'STARTING POINT',6X,'LAMBDA',9X,'RADIAN FREQUENCY  ',
      1       '  CYCLIC FREQUENCY    DETERMINANT',9X,'SCALE FACTOR',/)   
   595 FORMAT ('0',40X,'S W E P T   D E T E R M I N A N T   F U N C T I',
      1       ' O N',/)        
   596 FORMAT (20X,'C O M P L E X   E I G E N V A L U E   A N A L Y S I',
      1       ' S   S U M M A R Y     (DETERMINANT METHOD)')        
-  597 FORMAT (42X,5H- P -,35X,10H- DET(P) -, /10X,14HSTARTING POINT,10X,
-     1       4HREAL,13X,4HIMAG,20X,9HMAGNITUDE,9X,5HPHASE,5X,        
+  597 FORMAT (42X,'- P -',35X,'- DET(P) -', /10X,'STARTING POINT',10X,
+     1       'REAL',13X,'IMAG',20X,'MAGNITUDE',9X,'PHASE',5X,        
      2       'SCALE FACTOR')        
-  598 FORMAT ('0', /'0',39X,32HNUMBER OF EIGENVALUES EXTRACTED ,6(' .'),
-     1       I9,/'0',39X,44HNUMBER OF PASSES THROUGH STARTING POINTS . .
-     2,      I9,/'0',39X,26HNUMBER OF CRITERIA CHANGES,9(' .'),I9,      
-     3       /'0',39X,30HNUMBER OF STARTING POINT MOVES,7(' .'),I9,     
-     4       /'0',39X,36HNUMBER OF TRIANGULAR DECOMPOSITIONS ,4(' .'),  
-     5       I9,/'0',39X,44HNUMBER OF FAILURES TO ITERATE TO A ROOT  . .
-     6,      I9,/'0',39X,36HNUMBER OF PREDICTIONS OUTSIDE REGION,4(' .')
-     7,      I9,/'0',/'0',39X,22HREASON FOR TERMINATION,11(' .'),I9,'*')
-  599 FORMAT ('0', /'0', /'0',35X,32HNUMBER OF EIGENVALUES EXTRACTED ,  
-     1       9(' .'),I9, /'0',35X,30HNUMBER OF STARTING POINTS USED,
+  598 FORMAT ('0', /'0',39X,'NUMBER OF EIGENVALUES EXTRACTED ',6(' .'),
+     1       I9,/'0',39X,'NUMBER OF PASSES THROUGH STARTING POINTS . .',
+     2       I9,/'0',39X,'NUMBER OF CRITERIA CHANGES',9(' .'),I9,      
+     3       /'0',39X,'NUMBER OF STARTING POINT MOVES',7(' .'),I9,     
+     4       /'0',39X,'NUMBER OF TRIANGULAR DECOMPOSITIONS ',4(' .'),  
+     5       I9,/'0',39X,'NUMBER OF FAILURES TO ITERATE TO A ROOT  . .',
+     6       I9,/'0',39X,'NUMBER OF PREDICTIONS OUTSIDE REGION',4(' .'),
+     7       I9,/'0',/'0',39X,'REASON FOR TERMINATION',11(' .'),I9,'*')
+  599 FORMAT ('0', /'0', /'0',35X,'NUMBER OF EIGENVALUES EXTRACTED ',  
+     1       9(' .'),I9, /'0',35X,'NUMBER OF STARTING POINTS USED',
      2       10(' .'),I9, /'0',35X,        
-     3       50HNUMBER OF STARTING POINT OR SHIFT POINT MOVES  . .,I9,  
-     4       /'0',35X,42HTOTAL NUMBER OF TRIANGULAR DECOMPOSITIONS ,
-     5       4(' .'),I9, /'0',35X,34HTOTAL NUMBER OF VECTOR ITERATIONS ,
-     6       8(' .'),I9, /'0', /'0',35X,22HREASON FOR TERMINATION,
+     3       'NUMBER OF STARTING POINT OR SHIFT POINT MOVES  . .',I9,  
+     4       /'0',35X,'TOTAL NUMBER OF TRIANGULAR DECOMPOSITIONS ',
+     5       4(' .'),I9, /'0',35X,'TOTAL NUMBER OF VECTOR ITERATIONS ',
+     6       8(' .'),I9, /'0', /'0',35X,'REASON FOR TERMINATION',
      7       14(' .'),I9,'*')        
   600 FORMAT (19X,'C O M P L E X   E I G E N V A L U E   A N A L Y S I',
      1       ' S   S U M M A R Y   (INVERSE POWER METHOD)')        
@@ -708,12 +710,12 @@ C
      1       ' S   S U M M A R Y     (FEER METHOD)')        
  6006 FORMAT (20X,'C O M P L E X   E I G E N V A L U E   A N A L Y S I',
      1       ' S   S U M M A R Y     (HESSENBERG METHOD)')        
- 6007 FORMAT ('0', /'0', /,'0',35X,32HNUMBER OF EIGENVALUES EXTRACTED ,
-     1       9(' .'),I9, /,'0',35X,30HNUMBER OF EIGENVALUES DESIRED ,
-     2       10(' .'),I9, /,'0',35X,22HREASON FOR TERMINATION,14(' .'),
+ 6007 FORMAT ('0', /'0', /,'0',35X,'NUMBER OF EIGENVALUES EXTRACTED ',
+     1       9(' .'),I9, /,'0',35X,'NUMBER OF EIGENVALUES DESIRED ',
+     2       10(' .'),I9, /,'0',35X,'REASON FOR TERMINATION',14(' .'),
      3       I9,'*')        
-  601 FORMAT (6X,'EIGENVALUE =',E14.6,  9H  (FREQ =,E12.5,4H HZ),/)
-  602 FORMAT (6X,'EIGENVALUE =',1P,E14.6,9H  (FREQ =,1P,E12.5,4H HZ),/)
+  601 FORMAT (6X,'EIGENVALUE =',E14.6,  '  (FREQ =',E12.5,' HZ)',/)
+  602 FORMAT (6X,'EIGENVALUE =',1P,E14.6,'  (FREQ =',1P,E12.5,' HZ)',/)
   603 FORMAT (6X,'FREQUENCY =',E14.6)
   604 FORMAT (6X,'FREQUENCY =',1P,E14.6)
   605 FORMAT (6X,'TIME =',E14.6)
@@ -722,61 +724,61 @@ C
   608 FORMAT (6X,'ELEMENT-ID =',I8,/)
   609 FORMAT (6X,'COMPLEX EIGENVALUE =',E14.6,',',E14.6)
   610 FORMAT (6X,'COMPLEX EIGENVALUE =',1P,E14.6,',',1P,E14.6)
-  611 FORMAT (6X,16HFREQUENCY   TYPE,10X,2HT1,13X,2HT2,13X,2HT3,13X,    
-     1       2HR1,13X,2HR2,13X,2HR3)        
-  612 FORMAT (6X,16H TIME       TYPE,10X,2HT1,13X,2HT2,13X,2HT3,13X,    
-     1       2HR1,13X,2HR2,13X,2HR3)        
-  613 FORMAT (48X,30HV E L O C I T Y    V E C T O R )        
-  614 FORMAT (44X,38HA C C E L E R A T I O N    V E C T O R )        
-  615 FORMAT (41X,45HN O N - L I N E A R - F O R C E   V E C T O R )    
+  611 FORMAT (6X,'FREQUENCY   TYPE',10X,'T1',13X,'T2',13X,'T3',13X,
+     1       'R1',13X,'R2',13X,'R3')
+  612 FORMAT (6X,' TIME       TYPE',10X,'T1',13X,'T2',13X,'T3',13X,
+     1       'R1',13X,'R2',13X,'R3')
+  613 FORMAT (48X,'V E L O C I T Y    V E C T O R' )
+  614 FORMAT (44X,'A C C E L E R A T I O N    V E C T O R' )
+  615 FORMAT (41X,'N O N - L I N E A R - F O R C E   V E C T O R' )
   616 FORMAT (40X,'C O M P L E X   E I G E N V A L U E   S U M M A R Y')
-  617 FORMAT ('0',16X,19HROOT     EXTRACTION,18X,10HEIGENVALUE,21X,
-     1       9HFREQUENCY,14X,7HDAMPING)        
+  617 FORMAT ('0',16X,'ROOT     EXTRACTION',18X,'EIGENVALUE',21X,
+     1       'FREQUENCY',14X,'DAMPING')        
   618 FORMAT (18X,'NO.',8X,'ORDER',13X,'(REAL)',11X,'(IMAG)',16X,
      1       '(CYCLES)',12X,'COEFFICIENT')
   619 FORMAT (39X,'C O M P L E X   D I S P L A C E M E N T   V E C T O R
-     1'      )        
-  620 FORMAT (43X,'C O M P L E X   V E L O C I T Y   V E C T O R')      
+     1'      )
+  620 FORMAT (43X,'C O M P L E X   V E L O C I T Y   V E C T O R')
   621 FORMAT (39X,'C O M P L E X   A C C E L E R A T I O N   V E C T O R
-     1'      )        
-  622 FORMAT (25X,'C O M P L E X   F O R C E S   O F   S I N G L E   ', 
-     1       'P O I N T   C O N S T R A I N T')        
-  623 FORMAT (47X,'C O M P L E X   L O A D   V E C T O R')        
-  624 FORMAT (39X,'C O M P L E X   E I G E N V E C T O R   NO.',I11)    
-  625 FORMAT (58X,'(REAL/IMAGINARY)')        
-  626 FORMAT (57X,'(MAGNITUDE/PHASE)')        
+     1'      )
+  622 FORMAT (25X,'C O M P L E X   F O R C E S   O F   S I N G L E   ',
+     1       'P O I N T   C O N S T R A I N T')
+  623 FORMAT (47X,'C O M P L E X   L O A D   V E C T O R')
+  624 FORMAT (39X,'C O M P L E X   E I G E N V E C T O R   NO.',I11)
+  625 FORMAT (58X,'(REAL/IMAGINARY)')
+  626 FORMAT (57X,'(MAGNITUDE/PHASE)')
   627 FORMAT (27X,'C O M P L E X   S T R E S S E S   I N   B A R   E L',
-     1       ' E M E N T S   ( C B A R )')        
+     1       ' E M E N T S   ( C B A R )')
   628 FORMAT (23X,'C O M P L E X   S T R E S S E S   I N   S C A L A R',
-     1       '   S P R I N G S   ( C E L A S 1 )')        
+     1       '   S P R I N G S   ( C E L A S 1 )')
   629 FORMAT (23X,'C O M P L E X   S T R E S S E S   I N   S C A L A R',
-     1       '   S P R I N G S   ( C E L A S 2 )')        
+     1       '   S P R I N G S   ( C E L A S 2 )')
   630 FORMAT (23X,'C O M P L E X   S T R E S S E S   I N   S C A L A R',
-     1       '   S P R I N G S   ( C E L A S 3 )')        
+     1       '   S P R I N G S   ( C E L A S 3 )')
   631 FORMAT (25X,'C O M P L E X   S T R E S S E S   I N   R O D   E L',
-     1       ' E M E N T S   ( C O N R O D )')        
+     1       ' E M E N T S   ( C O N R O D )')
   632 FORMAT (14X,'C O M P L E X   S T R E S S E S   I N   Q U A D R I',
-     1       ' L A T E R A L   M E M B R A N E S   ( C Q D M E M )')    
+     1       ' L A T E R A L   M E M B R A N E S   ( C Q D M E M )')
   633 FORMAT (16X,'C O M P L E X   S T R E S S E S   I N   B E N D I N',
-     1       ' G   Q U A D R I L A T E R A L S   ( C Q D P L T )')      
+     1       ' G   Q U A D R I L A T E R A L S   ( C Q D P L T )')
   634 FORMAT (6X,'C O M P L E X   S T R E S S E S   I N   G E N E R A L'
-     1,      '   Q U A D R I L I A T E R A L   E L E M E N T S   ',     
-     2       '( C Q U A D 1)')        
+     1,      '   Q U A D R I L I A T E R A L   E L E M E N T S   ',
+     2       '( C Q U A D 1)')
   635 FORMAT (6X,'C O M P L E X   S T R E S S E S   I N   G E N E R A L'
-     1,      '   Q U A D R I L I A T E R A L   E L E M E N T S   ',     
-     2       '( C Q U A D 2 )')        
+     1,      '   Q U A D R I L I A T E R A L   E L E M E N T S   ',
+     2       '( C Q U A D 2 )')
   636 FORMAT (27X,'C O M P L E X   S T R E S S E S   I N   R O D   E L',
-     1       ' E M E N T S   ( C R O D )')        
+     1       ' E M E N T S   ( C R O D )')
   637 FORMAT (25X,'C O M P L E X   S T R E S S E S   I N   S H E A R  ',
-     1       ' P A N E L S   ( C S H E A R )')        
+     1       ' P A N E L S   ( C S H E A R )')
   638 FORMAT (14X,'C O M P L E X   S T R E S S E S   I N   B A S I C  ',
-     1       ' B E N D I N G   T R I A N G L E S   ( C T R B S C )')    
+     1       ' B E N D I N G   T R I A N G L E S   ( C T R B S C )')
   639 FORMAT (10X,'C O M P L E X   S T R E S S E S   I N   G E N E R A',
-     1       ' L   T R I A N G U L A R   E L E M E N T S   ',        
-     2       '( C T R I A 1 )')        
+     1       ' L   T R I A N G U L A R   E L E M E N T S   ',
+     2       '( C T R I A 1 )')
   640 FORMAT (11X,'C O M P L E X   S T R E S S E S   I N   G E N E R A',
-     1       ' L  T R I A N G U L A R   E L E M E N T S   ',        
-     2       '( C T R I A 2 )')        
+     1       ' L  T R I A N G U L A R   E L E M E N T S   ',
+     2       '( C T R I A 2 )')
   642 FORMAT (17X,'C O M P L E X   S T R E S S E S   I N   T R I A N G',
      1       ' U L A R   M E M B R A N E S   ( C T R M E M )')        
   643 FORMAT (20X,'C O M P L E X   S T R E S S E S   I N   B E N D I N',
@@ -790,55 +792,55 @@ C
   648 FORMAT (25X,'C O M P L E X   F O R C E S   I N   S C A L A R   ', 
      1       'S P R I N G S   ( C E L A S 1 )')        
   649 FORMAT (25X,'C O M P L E X   F O R C E S   I N   S C A L A R   ', 
-     1       'S P R I N G S   ( C E L A S 2 )')        
+     1       'S P R I N G S   ( C E L A S 2 )')
   650 FORMAT (25X,'C O M P L E X   F O R C E S   I N   S C A L A R   ', 
-     1       'S P R I N G S   ( C E L A S 3 )')        
+     1       'S P R I N G S   ( C E L A S 3 )')
   651 FORMAT (25X,'C O M P L E X   F O R C E S   I N   S C A L A R   ', 
-     1       'S P R I N G S   ( C E L A S 4 )')        
+     1       'S P R I N G S   ( C E L A S 4 )')
   652 FORMAT (27X,'C O M P L E X   F O R C E S   I N   R O D   E L E M',
-     1       ' E N T S   ( C O N R O D )')        
+     1       ' E N T S   ( C O N R O D )')
   653 FORMAT (17X,'C O M P L E X   F O R C E S   I N   B E N D I N G  ',
-     1       ' Q U A D R I L A T E R A L S   ( C Q D P L T )')        
+     1       ' Q U A D R I L A T E R A L S   ( C Q D P L T )')
   654 FORMAT (9X,'C O M P L E X   F O R C E S   I N   G E N E R A L   ',
-     1       'Q U A D R I L A T E R A L   E L E M E N T S   ',        
-     2       '( C Q U A D 1 )')        
+     1       'Q U A D R I L A T E R A L   E L E M E N T S   ',
+     2       '( C Q U A D 1 )')
   655 FORMAT (9X,'C O M P L E X   F O R C E S   I N   G E N E R A L   ',
-     1       'Q U A D R I L A T E R A L   E L E M E N T S   ',        
-     2       '( C Q U A D 2 )')        
+     1       'Q U A D R I L A T E R A L   E L E M E N T S   ',
+     2       '( C Q U A D 2 )')
   656 FORMAT (29X,'C O M P L E X   F O R C E S   I N   R O D   E L E M',
-     1       ' E N T S   ( C R O D )')        
-  657 FORMAT (7X,'C O M P L E X   F O R C E S   A C T I N G   O N   ',  
-     1       'S H E A R   P A N E L   E L E M E N T S   (C S H E A R)') 
+     1       ' E N T S   ( C R O D )')
+  657 FORMAT (7X,'C O M P L E X   F O R C E S   A C T I N G   O N   ',
+     1       'S H E A R   P A N E L   E L E M E N T S   (C S H E A R)')
   658 FORMAT (16X,'C O M P L E X   F O R C E S   I N   B A S I C   B E',
-     1       ' N D I N G   T R I A N G L E S   ( C T R B S C )')        
+     1       ' N D I N G   T R I A N G L E S   ( C T R B S C )')
   659 FORMAT (12X,'C O M P L E X   F O R C E S   I N   G E N E R A L  ',
      1       ' T R I A N G U L A R   E L E M E N T S   ( C T R I A 1 )')
   660 FORMAT (12X,'C O M P L E X   F O R C E S   I N   G E N E R A L  ',
      1       ' T R I A N G U L A R   E L E M E N T S   ( C T R I A 2 )')
   661 FORMAT (22X, 'C O M P L E X   F O R C E S   I N   B E N D I N G ',
-     1       '  T R I A N G L E S   ( C T R P L T )')        
+     1       '  T R I A N G L E S   ( C T R P L T )')
   662 FORMAT (28X,'C O M P L E X   F O R C E S   I N   R O D   E L E M',
-     1       ' E N T S   ( C T U B E )')        
+     1       ' E N T S   ( C T U B E )')
   663 FORMAT (27X,'C O M P L E X   F O R C E S   I N   T W I S T   P A',
-     1       ' N E L S   ( C T W I S T )')        
-  664 FORMAT (12X,7HELEMENT,20X,4(8HLOCATION,7X ),6X,7HAVERAGE, /14X,   
-     1       3HID.,26X,'1',14X,'2',14X,'3',14X,'4',13X,12HAXIAL STRESS) 
-  665 FORMAT (17X,7HELEMENT,29X,5HAXIAL,39X,9HTORSIONAL, /19X,3HID.,30X,
-     1       6HSTRESS,41X,6HSTRESS)        
-  666 FORMAT (17X,7HELEMENT,28X,7HMAXIMUM,39X,7HAVERAGE, /19X,3HID.,31X,
-     1       5HSHEAR,41X,5HSHEAR)        
-  667 FORMAT (17X,7HELEMENT,29X,5HAXIAL,41X,6HTORQUE, /19X,3HID.,31X,   
-     1       5HFORCE)        
-  668 FORMAT (9H  ELEMENT,7X,5HFIBRE,37X,'- STRESSES IN ELEMENT COORDI',
-     1       'NATE SYSTEM -', /4X,3HID.,8X,8HDISTANCE,18X,8HNORMAL-X,   
-     2       26X,8HNORMAL-Y,25X,8HSHEAR-XY)        
-  669 FORMAT (13X,7HELEMENT,33X,'- STRESSES IN ELEMENT COORDINATE SYST',
-     1       'EM -', /15X,3HID.,18X,8HNORMAL-X,26X,8HNORMAL-Y,26X,      
-     2       8HSHEAR-XY)        
-  670 FORMAT (2(16X,7HELEMENT,35X), /2(18X,3HID.,20X,5HFORCE,12X))      
-  671 FORMAT (2(16X,7HELEMENT,35X), /2(18X,3HID.,19X,6HSTRESS,12X))     
-  672 FORMAT (17X,7HELEMENT,29X,5HFORCE,42X,5HFORCE)        
-  673 FORMAT (19X,3HID.,30X,7HPTS 1,3,40X,7HPTS 2,4)        
-  674 FORMAT (17X,7HELEMENT,28X,6HMOMENT,41X,6HMOMENT)        
+     1       ' N E L S   ( C T W I S T )')
+  664 FORMAT (12X,'ELEMENT',20X,4('LOCATION',7X ),6X,'AVERAGE', /14X,   
+     1       'ID.',26X,'1',14X,'2',14X,'3',14X,'4',13X,'AXIAL STRESS')
+  665 FORMAT (17X,'ELEMENT',29X,'AXIAL',39X,'TORSIONAL', /19X,'ID.',30X,
+     1       'STRESS',41X,'STRESS')
+  666 FORMAT (17X,'ELEMENT',28X,'MAXIMUM',39X,'AVERAGE', /19X,'ID.',31X,
+     1       'SHEAR',41X,'SHEAR')
+  667 FORMAT (17X,'ELEMENT',29X,'AXIAL',41X,'TORQUE', /19X,'ID.',31X,   
+     1       'FORCE')
+  668 FORMAT ('  ELEMENT',7X,'FIBRE',37X,'- STRESSES IN ELEMENT COORDI',
+     1       'NATE SYSTEM -', /4X,'ID.',8X,'DISTANCE',18X,'NORMAL-X',
+     2       26X,'NORMAL-Y',25X,'SHEAR-XY')
+  669 FORMAT (13X,'ELEMENT',33X,'- STRESSES IN ELEMENT COORDINATE SYST',
+     1       'EM -', /15X,'ID.',18X,'NORMAL-X',26X,'NORMAL-Y',26X,
+     2       'SHEAR-XY')
+  670 FORMAT (2(16X,'ELEMENT',35X), /2(18X,'ID.',20X,'FORCE',12X))
+  671 FORMAT (2(16X,'ELEMENT',35X), /2(18X,'ID.',19X,'STRESS',12X))
+  672 FORMAT (17X,'ELEMENT',29X,'FORCE',42X,'FORCE')
+  673 FORMAT (19X,'ID.',30X,'PTS 1,3',40X,'PTS 2,4')
+  674 FORMAT (17X,'ELEMENT',28X,'MOMENT',41X,'MOMENT')
 C        
       END        

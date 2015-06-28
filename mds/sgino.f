@@ -36,16 +36,21 @@ C        2. SINCE THE RECORD LENGTH IS 3000 BYTES, A FORMAT
 C           OF (750A4) IS SUFFICIENT)        
 C        
       IMPLICIT INTEGER (A-Z)        
-      LOGICAL         OPEN,NOPACK        
+      LOGICAL         OPEN,NOPACK
       INTEGER         BUF(1),LBUF(1),A(1),NAME(2),FORMAT(3),FORMTX(3)   
-      CHARACTER*7     FORTN,NONE        
+      character(len=7) FORTN,NONE        
       COMMON /SYSTEM/ IDUM1,NOUT,SKPSYS(36),NBPC,NBPW,NCPW        
-      DATA    OPEN  /.FALSE. /, NAME  / 4H SGI, 2HNO /        
-      DATA    PLT1,PLT2,PLTX /  4HPLT1, 4HPLT2,    0 /        
-      DATA    FORMAT/ 4H(10( ,  4H180A, 4H4))        /,        
-     1        FORMTX/ 4H(5(2 ,  4HI3,4, 4HI5))       /        
-      DATA    FORTN , NONE   / 'FORTRAN', 'NONE   '  /        
-      DATA    SHIFT , NBITS  /  0, 0                 /        
+      OPEN = .FALSE.
+      PLTX = 0
+      DATA    NAME/4H SGI, 2HNO                      /,
+     1        PLT1/4HPLT1                            /,
+     2        PLT2/4HPLT2                            /,
+     3        FORMAT/ 4H(10( ,  4H180A, 4H4))        /,        
+     4        FORMTX/ 4H(5(2 ,  4HI3,4, 4HI5))       /        
+      FORTN = 'FORTRAN'
+      NONE  = 'NONE   '
+      SHIFT = 0
+      NBITS = 0
 C        
       GO TO 250        
 C        
@@ -103,53 +108,17 @@ C     DEFINED. RECORDTYPE='FIXED' IS ALSO NOT ALLOWED FOR SEQUENTIAL
 C     FORMATTED FILE.        
 C     FOR UNICOS, RECL IS NOT ALLOWED IF ASSCESS=SEQUENTIAL)        
 C        
-C20   IF (.NOT.OPEN) OPEN (UNIT   = PTAPE,        
-C    1                     STATUS = 'UNKNOWN',        
-C    2                     FORM   = 'FORMATTED',        
-C    3                     RECL   = IRECSZ,        
-C    4                     ACCESS = 'APPEND',        
-C    5                     CARRIAGECONTROL = NONE)        
-C        
-C        
-C     FOR MACHINES THAT DO NOT HAVE 'APPEN' FEATURE        
-C        
- 20   IF (OPEN) GO TO 80        
-C     MA = 'A'        
-C     IF (NONE .EQ. 'NONE') MA = 'M'        
-C     IF (MACH .EQ IBM) CALL FILEDEF (PTAPE,RECFM,FB(MA))        
-      OPEN (UNIT   = PTAPE,        
-     1      STATUS = 'OLD',        
-     2      FORM   = 'FORMATTED',        
-     3      ACCESS = 'SEQUENTIAL',        
-     4      IOSTAT = J,        
-     5      CARRIAGECONTROL = NONE        
-     6      ,RECL  = IRECSZ)        
-C            RECL IS NEEDED BY VAX, AND POSSIBLY OTHER MACHINES)        
-C    6      )        
-      IF (J .NE. 0) GO TO 60        
- 30   READ   (PTAPE,40,END=50) J        
- 40   FORMAT (A1)        
-      GO TO 30        
- 50   BACKSPACE PTAPE        
-      GO TO 80        
-C        
- 60   OPEN (UNIT   = PTAPE,        
-     1      STATUS = 'NEW',        
-     2      FORM   = 'FORMATTED',        
-     3      ACCESS = 'SEQUENTIAL',        
-     4      IOSTAT = J,        
-     5      CARRIAGECONTROL = NONE        
-     6      ,RECL  = IRECSZ)        
-C            RECL IS NEEDED BY VAX, AND POSSIBLY OTHER MACHINES)        
-C    6      )        
-      IF (J .EQ. 0) GO TO 80        
-      WRITE  (NOUT,70) PLTX,PTAPE        
- 70   FORMAT ('0*** SYSTEM FATAL ERROR. SGINO CAN NOT OPEN ',A4,        
-     1        ' FILE, FORTRAN UNIT',I5)        
-      CALL MESAGE (-61,0,0)        
-C        
- 80   OPEN  = .TRUE.        
-      NB    = 1        
+ 20   continue
+      IF (.NOT.OPEN) OPEN (UNIT   = PTAPE,        
+     1                     STATUS = 'UNKNOWN',        
+     2                     FORM   = 'FORMATTED',        
+     3                     RECL   = IRECSZ,        
+     4                     ACCESS = 'APPEND')
+c    5                     CARRIAGECONTROL = NONE
+c     6                     )
+        
+ 80   OPEN = .TRUE.        
+      NB   = 1        
       IF (NOPACK) GO TO 210        
       ASSIGN 100 TO TRA        
       WORD  = 0        

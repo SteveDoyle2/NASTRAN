@@ -58,7 +58,7 @@ def main():
     all_f90_obj_files = [fname.replace('\\', '/') for fname in all_f90_files]
 
     #build_msg += 'gfortran -o nosatran ' + ' '.join(all_f90_obj_files2)
-    build_msg += 'gfortran -o nosatran ' + ' '.join(f90_files2) + '  > nastran.log 2>&1'
+    build_msg += 'gfortran -o nosatran -fno-range-check ' + ' '.join(f90_files2) + '  > nastran.log 2>&1'
 
     with open('build.sh', 'w') as f:
         f.write(build_msg)

@@ -60,9 +60,9 @@ C     ALL OTHERS MACHINES -
 C        
 C     'SHEARED AND READONLY' ARE NEEDED FOR VAX AND ULTRIX        
 C        
-CWKBD 50   IF (J .EQ. 5) OPEN (UNIT=IN,FILE=MB5,ACCESS='SEQUENTIAL',ERR=100, 
-CWKBD1                    FORM='FORMATTED',STATUS='OLD'        
-CWKBD2                                                 ,SHARED,READONLY)
+CWKBD 50   IF (J .EQ. 5) OPEN (UNIT=IN,FILE=MB5,ACCESS='SEQUENTIAL',
+     1                         ERR=100,FORM='FORMATTED',STATUS='OLD',
+     2                         SHARED,action='read')
 CWKBI
 50    CONTINUE
       RFDIR = ' '
@@ -75,10 +75,11 @@ CWKBI
       LENR = 44
 56    DSN = ' '
       DSN = RFDIR(1:LENR) // '/' // MB6
-CWKBR IF (J .EQ. 6) OPEN (UNIT=IN,FILE=MB6,ACCESS='SEQUENTIAL',ERR=100, 
+CWKBR IF (J .EQ. 6) OPEN (UNIT=IN,FILE=MB6,ACCESS='SEQUENTIAL',ERR=100)
       OPEN (UNIT=IN,FILE=DSN,ACCESS='SEQUENTIAL',ERR=100, 
-     1                    FORM='FORMATTED',STATUS='OLD'        
-     2                   ,SHARED,READONLY)
+     1                    FORM='FORMATTED',STATUS='OLD',
+c     2                    SHARED,
+     3                    action='read')
       GO TO 80        
 C        
 C     OTHERS -        
@@ -109,8 +110,10 @@ C
  120  FORMAT (5X,'MACHINE',I4,' IS NOT AVAILABLE/RFOPEN')        
       LU   = 0        
       NOGO = 1        
-C        
- 130  RETURN        
+C     
+      
+ 130  continue
+      RETURN
 C        
 C        
       ENTRY RFCLSE (LU)        

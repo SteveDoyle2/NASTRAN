@@ -9,7 +9,11 @@ C
       EQUIVALENCE     (SYSX( 2),MO   ), (SYSX( 9),MAXLIN),
      1                (SYSX(12),COUNT), (SYSX(39),NBPC  ),
      2                (SYSX(40),NBPW ), (SYSX(41),NCPW  )
-      DATA    LSTMAX, REW,FORMAX,BLANK/ 50,1,100,4H     /
+      DATA  BLANK/4H     /
+
+      LSTMAX = 50
+      REW = 1
+      FORMAX = 100
 C
       N2CPW  = NCPW/2
       N2CPW1 = N2CPW - 1

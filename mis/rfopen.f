@@ -59,11 +59,11 @@ C
 C     'SHEARED AND READONLY' ARE NEEDED FOR VAX AND ULTRIX        
 C        
  50   IF (J .EQ. 5) OPEN (UNIT=IN,FILE=MB5,ACCESS='SEQUENTIAL',ERR=100, 
-     1                    FORM='FORMATTED',STATUS='OLD'        
-     2                                                 ,SHARED,READONLY)
+     1                    FORM='FORMATTED',STATUS='OLD',SHARED,
+     2                    action='read')
       IF (J .EQ. 6) OPEN (UNIT=IN,FILE=MB6,ACCESS='SEQUENTIAL',ERR=100, 
-     1                    FORM='FORMATTED',STATUS='OLD'        
-     2                                                 ,SHARED,READONLY)
+     1                    FORM='FORMATTED',STATUS='OLD',SHARED,
+     2                    action='read')
       GO TO 80        
 C        
 C     OTHERS -        
@@ -93,7 +93,8 @@ C
       LU   = 0        
       NOGO = 1        
 C        
- 130  RETURN        
+ 130  continue
+      RETURN
 C        
 C        
       ENTRY RFCLSE (LU)        

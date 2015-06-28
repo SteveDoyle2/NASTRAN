@@ -134,8 +134,7 @@ C
       NUMCOV = 0        
       POPEN  = .FALSE.        
       OPEN (UNIT=TB,FILE='COV.TAB',ACCESS='SEQUENTIAL',FORM='FORMATTED',
-     1      STATUS='OLD',ERR=130        
-     2      ,READONLY)        
+     1      STATUS='OLD',ERR=130,action='read')
 C        
 C     COV.TAB FILE BEGINS WITH A HEADER RECORD, THEN FOLLOWED BY RECORDS
 C     OF 3 INTEGER WORDS, IN 3I4 FORMAT, WHICH ARE:        
@@ -266,8 +265,7 @@ C
       WAS1 = COMPLF(0)        
       WAS2 = WAS1        
       OPEN (UNIT=LU,FILE=FNAME,ACCESS='SEQUENTIAL',FORM='FORMATTED',    
-     1      STATUS='OLD',ERR=520        
-     2      ,READONLY)        
+     1      STATUS='OLD',ERR=520,action='read')
       IF (CHECK) GO TO 1700        
       IF (PRINT) GO TO 2000        
       SOUNT = 0        
