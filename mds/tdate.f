@@ -1,15 +1,11 @@
       SUBROUTINE TDATE (DATE)        
-C        
-C     VAX VERSION        
-C     ===========        
-C     (ALSO SiliconGraphics, DEC/ultrix, and SUN.        
-C      CRAY AND HP DO NOT HAVE IDATE)        
-C        
+
 C     THIS ROUTINE OBTAINS THE MONTH, DAY AND YEAR, IN INTEGER FORMAT   
 C        
-      INTEGER DATE(3)        
-C        
-      CALL IDATE (DATE(1),DATE(2),DATE(3))        
-C                 MONTH   DAY     YEAR        
+      INTEGER DATE_TIME(8)
+c     (year-4, month-int,day-int,UTC-minutes, hour, minutes,seconds,milliseconds)
+
+      character*10 b(3)
+      call date_and_time(b(1), b(2), b(3), date_time)        
       RETURN        
       END        

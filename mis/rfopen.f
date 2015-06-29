@@ -32,46 +32,19 @@ C
      1        ' '   , '@ADD,E ',' .  ', '@FREE   '/        
 C        
       CALL A42K8 (MEMBER(1),MEMBER(2),MB8)        
-      IF (MACH .EQ. 3) GO TO 30        
+c      IF (MACH .EQ. 3) GO TO 30        
       IN = IN + 1        
       IF (IN .LT. 60) IN = 60        
       J  = 5        
       IF (MB1(6) .NE. BK) J = 6        
-C        
-C           DUMMY  IBM  UNVC  CDC  VAX  ULTRIX  SUN   AIX   HP        
-C             S/G  MAC  CRAY CNVX  NEC  FUJTSU   DG  AMDL PRIME        
-C             486 DUMMY ALFA RESV        
-C            ---- ----  ---- ---- ----  ------ ----  ---- -----        
-      GO TO (  60,  50,   30,  50,  50,     50,  50,   50,  50,        
-     1         50,  70,   70,  70,  70,     70,  70,   70,  70,        
-     2         50,  60,   50,  70), MACH        
-C        
-C     UNIVAC ONLY -        
-C     ADD FILE TO INPUT STREAM        
-C        
- 30   ADD(2) = MB8        
-      J = FACSF(ADD)        
-      LU = 5        
-      GO TO 130        
 C        
 C     ALL OTHERS MACHINES -        
 C        
 C     'SHEARED AND READONLY' ARE NEEDED FOR VAX AND ULTRIX        
 C        
  50   IF (J .EQ. 5) OPEN (UNIT=IN,FILE=MB5,ACCESS='SEQUENTIAL',ERR=100, 
-     1                    FORM='FORMATTED',STATUS='OLD',SHARED,
+     1                    FORM='FORMATTED',STATUS='OLD',
      2                    action='read')
-      IF (J .EQ. 6) OPEN (UNIT=IN,FILE=MB6,ACCESS='SEQUENTIAL',ERR=100, 
-     1                    FORM='FORMATTED',STATUS='OLD',SHARED,
-     2                    action='read')
-      GO TO 80        
-C        
-C     OTHERS -        
-C        
- 60   GO TO 100        
-C        
- 70   OPEN (UNIT=IN,FILE=MB8,ACCESS='SEQUENTIAL',ERR=100,STATUS='OLD',  
-     1      FORM='FORMATTED')        
 C        
 C     VERIFY FILE EXISTANCE        
 C        
@@ -79,8 +52,8 @@ C
  90   FORMAT (A1)        
       REWIND IN        
       LU = IN        
-      GO TO 130        
-C        
+      GO TO 130
+
  100  WRITE  (NOUT,110) SFM,MB8        
  110  FORMAT (A25,', RFOPEN CAN NOT OPEN ',A8)        
       IF (MACH.EQ.5 .OR. MACH.EQ.21) WRITE (NOUT,115)        
@@ -97,9 +70,8 @@ C
       RETURN
 C        
 C        
-      ENTRY RFCLSE (LU)        
-C     =================        
-C        
+      ENTRY RFCLSE (LU)
+C     =================
       IF (MACH .EQ. 3) GO TO 150        
       IF (LU  .LT. 60) WRITE (NOUT,140) SFM,LU        
  140  FORMAT (A25,'. RFCLSE/RFOPEN ERROR.  LU =',I4)        

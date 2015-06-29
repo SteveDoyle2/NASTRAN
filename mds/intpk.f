@@ -38,7 +38,12 @@ C    7,                (BLOCK( 16),BEOL  )
      1                 (XELEM (1) ,DELEM1   ,XELEM1)              ,     
      2                 (XELEM (3) ,DELEM2)  ,(XELEM2    ,XELEM(2))      
       DATA             TYPES     / 1,  2,   2,  4                    /  
-      DATA             BUFLGX    , TWO121    , CLR0      , BLANK     /  
+c      BUFLGX = 0
+c      TWO121 = 4095
+c      CLR0 = 9
+c      DZERO = 0.0D+0
+c      DEBUG = .FALSE.
+      DATA             BUFLGX    , TWO121    , CLR0      , BLANK     /
      1                 0         , 4095      , 9         , 4H        /  
       DATA             DZERO     , DEBUG     , SUB                   /  
      1                 0.0D+0    ,.FALSE.    , 4HINTP    , 4HK       /  
@@ -55,8 +60,10 @@ C UNIX:
      1                X'00008888',X'0000AAAA',X'0000BBBB',X'0000FFFF'/  
       DATA             MASK3F    , MASK6F    , MASK2F    , MASKC     /  
      1                X'00000FFF',X'00FFFFFF',X'FF000000',X'FF0000FF'/  
-        
-     MASKF = '0000FFFF'X (OR X'0000FFFF') = 65535        
+     
+c    we'll use little endian; set MASKF to 65535
+c    MASKF = '0000FFFF'X (OR X'0000FFFF') = 65535
+     MASKF = X'0000FFFF'
         
 C*****        
       ANDF(I,J)   = IAND(I,J)        

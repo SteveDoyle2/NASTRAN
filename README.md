@@ -9,6 +9,7 @@ Based on the source code, this is based off a version of COSMIC Nastran that was
 
 NOTE: There is no technical support available for this software.
 
+
 I'd like this software to someday be useable to solve problems with the classic elements (e.g. CROD, CBAR, CBEAM, CTRIA3, CQUAD4, CTETRA, CHEXA) and the classic solutions (statics, modal, frequency, transient, static aero, flutter).  It's a ways off from that though.  It doesn't even build yet on a modern machine.  I'd like it to work on Windows using gfortran, which will also allow for porting to Linux and Mac.
 
 To achieve that:
