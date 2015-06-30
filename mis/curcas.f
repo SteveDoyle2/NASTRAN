@@ -16,8 +16,8 @@ C
       COMMON /NAMES / IRD,IRDRW,IWT,IWTRW, KREW,KNRW,KNERW
       COMMON /SYSTEM/ ISBZ
       EQUIVALENCE (ICNT,RCNT)
-      DATA PARM(3),PARM(4) / 4HCURC,2HAS  /                             
-C                                                                       
+      DATA PARM(3),PARM(4) / 4HCURC,2HAS  /
+C
       PARM(2) = TRL(1)
       IF (NSKIP.LE.1) GO TO 55
 C  . FOR STATICS THE NUMBER OF SUBCASES SKIPPED = NO. COLUMNS SKIPPED.

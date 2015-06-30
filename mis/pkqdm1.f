@@ -20,7 +20,7 @@ C
       EQUIVALENCE (R(1),IVEC(1)),(NGRID(1),ECPTSA(2)),
      1   (COORD(1),ECPTSA(10))  ,  (S(1),PH1OUT(10))
 C
-      DATA  M / 1, 2, 4, 2, 3, 1, 3, 4, 2, 4, 1, 3 /                    
+      DATA  M / 1, 2, 4, 2, 3, 1, 3, 4, 2, 4, 1, 3 /
 C     ******************************************************************
 C          ECPT                       ECPT
 C       RECEIVED BY                REQUIRED BY

@@ -10,9 +10,9 @@ C
       DIMENSION PN(3),P1(3),FN(3),F1(3),S1(3),SN(3),TBLT(3),TBLR(3)
       DIMENSION DATA(7)
 C
-      DATA FILE/301/,NAME  /4HAPDB,4H2A  /                              
-C                                                                       
-C---------------------------------------------------------------------  
+      DATA FILE/301/,NAME  /4HAPDB,4H2A  /
+C
+C---------------------------------------------------------------------
 C     INPUT VARIABLES--
 C     NLINE      TOTAL NO. OF STREAMLINES
 C     NL         PRESENT STEAMLINE

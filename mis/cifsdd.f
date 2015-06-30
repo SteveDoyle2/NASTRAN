@@ -20,8 +20,8 @@ C
       COMMON /CIFS4P/ J(20), KM4, LFLSYM, FFPHYS
       COMMON /CIFS5P/ KM5, IC, IP, ICONT, IAERO, IPOPT
 C
-      DATA ICC/1HC/, IPP/1HP/                                           
-C                                                                       
+      DATA ICC/1HC/, IPP/1HP/
+C
       B1 = 1
       BARDF2 = 0
       BARDF5 = 0

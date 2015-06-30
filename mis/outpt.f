@@ -12,7 +12,7 @@ C
 C
       COMMON /BLANK/ PARM
 C
-C     DATA INFILE /101/                                                 
-C                                                                       
+C     DATA INFILE /101/
+C
       RETURN
       END

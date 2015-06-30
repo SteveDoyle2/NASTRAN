@@ -126,7 +126,7 @@ C
 C
 C     DOUBLE CORNER BOXES
 C
-      IF (YL.LE.Y(2) .AND. YR.GE.Y(2) .AND. XT.LT.X(2) .AND. 
+      IF (YL.LE.Y(2) .AND. YR.GE.Y(2) .AND. XT.LT.X(2) .AND.
      1    XB.GE.X(2) .AND. YL.LE.Y(1) .AND. YR.GE.Y(1) .AND.
      2    XT.LT.X(1) .AND. XB.GE.X(1)) GO TO 4820
 C

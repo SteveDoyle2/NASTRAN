@@ -22,9 +22,9 @@ C     ECPT COMMON BLOCK
 C
       COMMON /SMA2ET/ ECPT(200)
 C
-      DATA    NLINKS/ 10 /                                                   
-      DATA    NOGO  / 0  /                                                     
-      DATA    IFCSTM, IFMPT,IFECPT,IFGPCT,IFDIT  / 101,102,103,104,105 / 
-      DATA    IFMGG , IFBGG       /     201,202  / 
-      DATA    INRW  , CLSRW,CLSNRW,EOR,NEOR,OUTRW/ 0,1,2,1,0,1 /    
+      DATA    NLINKS/ 10 /
+      DATA    NOGO  / 0  /
+      DATA    IFCSTM, IFMPT,IFECPT,IFGPCT,IFDIT  / 101,102,103,104,105 /
+      DATA    IFMGG , IFBGG       /     201,202  /
+      DATA    INRW  , CLSRW,CLSNRW,EOR,NEOR,OUTRW/ 0,1,2,1,0,1 /
       END

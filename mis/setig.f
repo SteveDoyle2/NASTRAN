@@ -11,8 +11,8 @@ C
       COMMON /BANDS /  NN,       MM,       DUM2(2),  MAXGRD,   MAXDEG,
      1                 DUM3(3),  NEDGE
       COMMON /SYSTEM/  IBUF,     NOUT
-      DATA             SUB /     4HSETI,   4HG       /                  
-C                                                                       
+      DATA             SUB /     4HSETI,   4HG       /
+C
       IF (KG1.EQ.0 .OR. KG2.EQ.0 .OR. KG1.EQ.KG2) GO TO 80
       L=KG1
       K=KG2
@@ -34,8 +34,8 @@ C
       GO TO 80
 C
    60 WRITE (NOUT,70) NORIG(L),MAXDEG
-   70 FORMAT (34H0***  FATAL ERROR - - - GRID POINT,I10,                
-     1        48H  HAS DEGREE EXCEEDING THE NODAL DEGREE LIMIT OF,I8)   
+   70 FORMAT (34H0***  FATAL ERROR - - - GRID POINT,I10,
+     1        48H  HAS DEGREE EXCEEDING THE NODAL DEGREE LIMIT OF,I8)
       CALL MESAGE (-8,0,SUB)
    80 RETURN
       END

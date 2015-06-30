@@ -31,13 +31,13 @@ C
       INTEGER         SUB(2),   JX(6),    KX(12),   TYPE(6)
       REAL            V(1),     G(1),     A(6)
       COMMON /BLANK/  DUMMY(16),VOLUME,   SURFAC
-      DATA    TETRA,  S2D8,     TRIM6,    TRPL1,    TRSHL  /            
-     1        4HCTET, 4HCIS2,   4HCTRI,   4HCTRP,   4HCTRS /            
-      DATA     JX  /  129, 133, 137, 141, 145, 149 /                    
-      DATA    TYPE /    4,   3,   8,   6,  20,  32 /                    
+      DATA    TETRA,  S2D8,     TRIM6,    TRPL1,    TRSHL  /
+     1        4HCTET, 4HCIS2,   4HCTRI,   4HCTRP,   4HCTRS /
+      DATA     JX  /  129, 133, 137, 141, 145, 149 /
+      DATA    TYPE /    4,   3,   8,   6,  20,  32 /
       DATA     KX  /  9, 33, 5, 89, 17, 101, 29, 113, 41, 125, 89, 113 /
-      DATA     SUB /  4HSFAR,   4HEA      /                             
-C                                                                       
+      DATA     SUB /  4HSFAR,   4HEA      /
+C
 C     AREA(I,J,K)=.5*SQRT(
 C    1 ((G(J+2)-G(I+2))*(G(K+3)-G(I+3))-(G(J+3)-G(I+3))*(G(K+2)-G(I+2)))
 C    2 **2

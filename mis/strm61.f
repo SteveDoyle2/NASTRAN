@@ -31,9 +31,9 @@ C
       EQUIVALENCE (NPH1OU(1),PH1OUT(1)),(IEST(1),EST(1))
       EQUIVALENCE (TM(1,1),TMM(1))
 C
-      DATA NAME /4HSTRM,4H61  / , BLANK  /4H    /                       
-      DATA DEGRA /0.0174532925/                                         
-C                                                                       
+      DATA NAME /4HSTRM,4H61  / , BLANK  /4H    /
+      DATA DEGRA /0.0174532925/
+C
       IDELE=IEST(1)
       DO 109 I=1,6
       NL(I)=IEST(I+1)

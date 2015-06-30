@@ -3,7 +3,7 @@ C
 C     MBMODE BUILDS THE MODE LIKE DATA ON OUT FROM SURFACE SPLINE INTER
 C
       DIMENSION Z(1),XD(1),YD(1),NAME(2)
-      DATA NAME /4HMBMO,4HDE  /                                         
+      DATA NAME /4HMBMO,4HDE  /
       NNI = NI*2
       NND = ND*2
       IF(ICOR+NNI+NND.GT.NCOR) CALL MESAGE(-8,0,NAME)

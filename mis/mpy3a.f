@@ -44,10 +44,10 @@ C
 C
 C
 C
-      DATA NAME / 4HMPY3,4HA    /                                       
-C*****                                                                  
-C    FILE OPENING.                                                      
-C*****                                                                  
+      DATA NAME / 4HMPY3,4HA    /
+C*****
+C    FILE OPENING.
+C*****
       FILE = SCR1
       CALL OPEN(*901,SCR1,Z(BUF2),1)
       FILE = FILEB(1)

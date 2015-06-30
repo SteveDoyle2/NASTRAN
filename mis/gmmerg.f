@@ -34,10 +34,10 @@ C
 C
       DIMENSION NSUB(4)
 C
-      DATA NAME / 4HGMME , 4HRG   /                                     
-C                                                                       
+      DATA NAME / 4HGMME , 4HRG   /
+C
 C***********************************************************************
-C                                                                       
+C
 C     GET TRAILERS FOR INPUTS
 C
       RP(1) = RPART

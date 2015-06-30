@@ -11,11 +11,11 @@ C
 C     PARAMETERS 1 INTEGER
       INTEGER CASECC,XYCB,DIT,IFILE(5),PSDL,PSDF,AUTO
       COMMON /BLANK/ ICOUP
-      DATA XYCB,DIT,PSDL,IFILE,CASECC/101,102,103,104,105,106,107,108,  
-     1   109/                                                           
-      DATA PSDF,AUTO /201,202/                                          
-      DATA NFILE              /5/                                       
-C                                                                       
+      DATA XYCB,DIT,PSDL,IFILE,CASECC/101,102,103,104,105,106,107,108,
+     1   109/
+      DATA PSDF,AUTO /201,202/
+      DATA NFILE              /5/
+C
 C     INITIALIZE + SET UP
 C
       CALL RAND7(IFILE,NFILE,PSDL,DIT,ICOUP,NFREQ,NPSDL,NTAU,LTAB,

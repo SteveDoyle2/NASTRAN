@@ -38,10 +38,10 @@ C
       IF(NEVAL(I).LT.0.AND.IPRTC.EQ.1) WRITE(LOG2,110) L1,I,L2
 100   FORMAT(2X,/,8X,57HLOSS COEFFICIENT DETERMINATION FOR BLADE BETWEEN
      1 STATIONS,I3,4H AND,I3,47H - AS INCORPORATED IN ABOVE RESULTS  BLA
-     1DE TYPE,I2,/,8X,116(1H*),/,2X)                                    
+     1DE TYPE,I2,/,8X,116(1H*),/,2X)
 110   FORMAT(2X,/,8X,57HLOSS COEFFICIENT DETERMINATION FOR BLADE BETWEEN
      1 STATIONS,I3,4H AND,I3,47H - FOR PURPOSES OF COMPARISON ONLY   BLA
-     2DE TYPE,I2,/,8X,116(1H*),/,2X)                                    
+     2DE TYPE,I2,/,8X,116(1H*),/,2X)
 116   L2=NDIMEN(I)+1
       GO TO(120,140,160,180),L2
 120   DO 130 J=1,NSTRMS
@@ -159,7 +159,7 @@ C
       CALL ALG03(LNCT,1)
       WRITE(LOG2,370)IPASS,I,J
 370   FORMAT(5X,4HPASS,I3,9H  STATION,I3,12H  STREAMLINE,I3,58H  PRANDTL
-     1-MEYER FUNCTION NOT CONVERGED - USE INLET MACH NO)                
+     1-MEYER FUNCTION NOT CONVERGED - USE INLET MACH NO)
 374   X10=SQRT(X6-1.0)
 376   HIGHM(J)=SQRT(1.0+X10*X10)
       X1=(HIGHM(J)+SQRT(X6))/2.0
@@ -183,26 +183,26 @@ C
       L2=L2-1
       DO 390 J=1,NSTRMS
       K=L2+J
-      DATAC(K)=XX6(J)                                                   
+      DATAC(K)=XX6(J)
       IF(NWORK(I).GE.5)
      1DATA6(K)=XX5(J)
-      DATA1(K)=XX1(J)                                                   
+      DATA1(K)=XX1(J)
       IF(WT(J).GT.WMAX)WT(J)=WMAX
-      DATA2(K)=WT(J)                                                    
-      DATA3(K)=XX3(J)                                                   
-      DATA4(K)=XX4(J)                                                   
-390   DATA5(K)=SOL(J)                                                   
+      DATA2(K)=WT(J)
+      DATA3(K)=XX3(J)
+      DATA4(K)=XX4(J)
+390   DATA5(K)=SOL(J)
       GO TO 450
 400   IF(LNCT+3.LE.NPAGE)GO TO 420
       IF(IPRTC.NE.0) WRITE(LOG2,410)
-410   FORMAT(1H1)                                                       
+410   FORMAT(1H1)
       LNCT=4+NSTRMS
   420 IF(IPRTC.EQ.1) WRITE(LOG2,430)
-430   FORMAT(5X,120HSTREAM  INLET   OUTLET  CASCADE   DIFF       LOSS   
+430   FORMAT(5X,120HSTREAM  INLET   OUTLET  CASCADE   DIFF       LOSS
      1DIFFUSION  BLADE  INCIDENCE  EXPANSION INLET  EXPANDED SHOCK   TOT
-     2AL,/,5X,120H-LINE   RADIUS  RADIUS  SOLIDITY  FACTOR  PARAMETER   
-     3LOSS     ANGLE    ANGLE      ANGLE    M.NO  MACH NO   LOSS   LOSS 
-     4,/,2X)                                                            
+     2AL,/,5X,120H-LINE   RADIUS  RADIUS  SOLIDITY  FACTOR  PARAMETER
+     3LOSS     ANGLE    ANGLE      ANGLE    M.NO  MACH NO   LOSS   LOSS
+     4,/,2X)
       LNCT=LNCT+3
       DO 440 J=1,NSTRMS
       X1=BETA1(J)*C1*Q
@@ -213,6 +213,6 @@ C
      1,X3,XMR(J),HIGHM(J),WS(J),WT(J)
 450   CONTINUE
 460   FORMAT(I9,F10.3,F8.3,2F9.4,F10.5,F9.5,2F9.3,F10.3,F10.4,F8.4,F8.5,
-     1F9.5)                                                             
+     1F9.5)
       RETURN
       END

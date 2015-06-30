@@ -31,9 +31,9 @@ C
 C
 C
 C
-      DATA  NEOR/ 0 /                                                   
-      DATA NAME / 4HDETC,4HKX   /                                       
-C                                                                       
+      DATA  NEOR/ 0 /
+      DATA NAME / 4HDETC,4HKX   /
+C
       DTOL = TOLEL
       IARG = JARG
       IF (IARG) 35,10,52

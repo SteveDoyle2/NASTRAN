@@ -6,14 +6,14 @@ C
       INTEGER Q(2)
       INTEGER MID1(2,7)
       COMMON /OUTPUT/ HEAD(1)
-      DATA MID1/2001,4HDISP,                                            
-     1          2010,4HVELO,                                            
-     2          2011,4HACCE,                                            
-     3          2002,4HLOAD,                                            
-     4          2003,4HSPCF,                                            
-     5          2004,4HELFO,                                            
-     6          2005,4HSTRE/                                            
-      DATA IDR /50*0/                                                   
+      DATA MID1/2001,4HDISP,
+     1          2010,4HVELO,
+     2          2011,4HACCE,
+     3          2002,4HLOAD,
+     4          2003,4HSPCF,
+     5          2004,4HELFO,
+     6          2005,4HSTRE/
+      DATA IDR /50*0/
       IDR(1)= 50
       IDR(3) = MID
       DO 10 I = 1,7

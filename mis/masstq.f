@@ -63,8 +63,8 @@ C     COMMON /MATOUT/RHO
      T                  ,DUMMY(504)
       EQUIVALENCE ( NECPT(1) , ECPT(1) )
       EQUIVALENCE (IFLAG , ECPT(8) )
-      DATA PI23/2.0943952/                                              
-C                                                                       
+      DATA PI23/2.0943952/
+C
 C     THIS ROUTINE COMPUTES A MASS MATRIX OF THE FOLLOWING FORM.
 C
 C                     TERM 0   0   0   0   0

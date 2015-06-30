@@ -30,9 +30,9 @@ C
       COMMON  /SMA1ET/  ECPT(200)
 C
 C
-      DATA     NLINKS / 10 /                                                   
-      DATA     NOGOO  /  0 /                                                   
-      DATA     IFCSTM,IFMPT,IFECPT,IFGPCT,IFDIT / 101,102,103,104,105 /    
-      DATA     IFKGG,IF4GG,IFGPST / 201,202,203 /                       
-      DATA     INRW,CLSRW,CLSNRW,EOR,NEOR,OUTRW / 0,1,2,1,0,1 /  
+      DATA     NLINKS / 10 /
+      DATA     NOGOO  /  0 /
+      DATA     IFCSTM,IFMPT,IFECPT,IFGPCT,IFDIT / 101,102,103,104,105 /
+      DATA     IFKGG,IF4GG,IFGPST / 201,202,203 /
+      DATA     INRW,CLSRW,CLSNRW,EOR,NEOR,OUTRW / 0,1,2,1,0,1 /
       END

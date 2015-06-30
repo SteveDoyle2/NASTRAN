@@ -35,22 +35,22 @@ C
 C
 C INPUT FILES
 C
-      DATA     USET,GO,KDFF /101,102,103/                               
-C                                                                       
-C OUTPUT FILE                                                           
-C                                                                       
-      DATA     KDAA /201/                                               
-C                                                                       
-C SCRATCH FILES                                                         
-C                                                                       
-      DATA     SCR1,SCR2,KDAAB,KDAO,KDOO /301,302,303,304,305/          
-C                                                                       
-C USET BIT POSITIONS                                                    
-C                                                                       
-      DATA     UF,UA,UO/26,25,30/                                       
-C                                                                       
-C  TEST FOR PRESENCE OF KDFF                                            
-C                                                                       
+      DATA     USET,GO,KDFF /101,102,103/
+C
+C OUTPUT FILE
+C
+      DATA     KDAA /201/
+C
+C SCRATCH FILES
+C
+      DATA     SCR1,SCR2,KDAAB,KDAO,KDOO /301,302,303,304,305/
+C
+C USET BIT POSITIONS
+C
+      DATA     UF,UA,UO/26,25,30/
+C
+C  TEST FOR PRESENCE OF KDFF
+C
       MCB(1)=KDFF
       CALL RDTRL(MCB)
       IF(MCB(1).LT.0) RETURN

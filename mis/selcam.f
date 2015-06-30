@@ -9,8 +9,8 @@ C
       EQUIVALENCE (   MODEL,PD( 1,1)) , (  PLOTER,PD( 2,1))
      1,           (XYMAX(1),PD( 7,1)) , ( EDGE(1),PD( 9,1))
      2,           (  CAMNUM,PD(11,1)) ,(ORIGIN(1),PD( 8,2))
-      DATA CON10,CAM10 / 1,2, 1,2,3 /                                   
-C                                                                       
+      DATA CON10,CAM10 / 1,2, 1,2,3 /
+C
        DO 101 I = 1,2
       SAVE(I,1) = EDGE(I)
       EDGE(I) = 0.

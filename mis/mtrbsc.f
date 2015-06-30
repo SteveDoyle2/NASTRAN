@@ -34,10 +34,10 @@ C
      2         ,MRR(36)
 C     DIMENSION MNAME(9)
 C     DIMENSION NASTER(130)
-C     DATA (MNAME(I), I = 1,9) /6H1(MAA),6H (MAB),6H (MAC),6H (MBA),    
-C    $6H (MBB),6H (MBC),6H (MCA),6H (MCB),6H (MCC) /                    
-C     DATA NASTER /130*1H*/                                             
-C                                                                       
+C     DATA (MNAME(I), I = 1,9) /6H1(MAA),6H (MAB),6H (MAC),6H (MBA),
+C    $6H (MBB),6H (MBC),6H (MCA),6H (MCB),6H (MCC) /
+C     DATA NASTER /130*1H*/
+C
       COMMON /SMA2IO/ DUM1(10), IFMGG, DUM2(25)
       COMMON /SMA2CL/  DUM3(2), NPVT
      2,                  DUMCL(7)
@@ -623,45 +623,45 @@ C 210 WRITE(6,3295) MNAME(I), (A(J), J = NPOINT,NLAST)
 C
       RETURN
 C
-C 119 FORMAT(///31H DISPLAY OF FULL G MATRIX (3X3)// (25X,3D20.5  ))    
-C 129 FORMAT(///26H DISPLAY OF D MATRIX (3X3)// 6H EYE =,E19.5,3D20.5/, 
-C    $ (25X,3D20.5  ))                                                  
-C 139 FORMAT(8H XSUBB =,D20.5,4X,7H XBSQ =,D20.5,4X,7H YCSQ =,D20.5,/   
+C 119 FORMAT(///31H DISPLAY OF FULL G MATRIX (3X3)// (25X,3D20.5  ))
+C 129 FORMAT(///26H DISPLAY OF D MATRIX (3X3)// 6H EYE =,E19.5,3D20.5/,
+C    $ (25X,3D20.5  ))
+C 139 FORMAT(8H XSUBB =,D20.5,4X,7H XBSQ =,D20.5,4X,7H YCSQ =,D20.5,/
 C    18H XSUBC =,D20.5,4X,7H XCSQ =,D20.5,4X,7H XCYC =,D20.5,/8H YSUBC =
-C    2,D20.5)                                                           
-C 149 FORMAT(/130A1,//15H H MATRIX (6X6),/ (5X,6D20.5  ))               
+C    2,D20.5)
+C 149 FORMAT(/130A1,//15H H MATRIX (6X6),/ (5X,6D20.5  ))
 C 159 FORMAT(56H DISPLAY OF FULL G MATRIX (2X2) AND J MATRIX (G INVERSE)
-C    1// 9H DETERM =,D20.5,10X,4HG2X2,2X,2D20.5,/  45X,2D20.5,/         
-C    2   /39X,4HJ2X2,2X,2D20.5,/  45X,2D20.5   )                        
-C 169 FORMAT(17H HYQ MATRIX (2X3),/ (5X,3D20.5  ))                      
-C 179 FORMAT(/26H RECOMPUTED H MATRIX (6X6),/ (5X,6D20.5  ))            
-C 189 FORMAT(//16H H INVERSE (6X6),/6(5X,6D20.5,/),130A1,/)             
-C 199 FORMAT(18H1SIIJ MATRIX (7X7),/)                                   
-C 209 FORMAT(5X,7D18.5)                                                 
-C 219 FORMAT(//22H M-BAR-AA MATRIX (3X3),/ (2X,3D20.5  ))               
-C 229 FORMAT(//17H MAR MATRIX (3X6),/ (5X,6D20.5  ))                    
-C 239 FORMAT(//17H MRR MATRIX (6X6),/ (5X,6D20.5  ))                    
-C2395 FORMAT(15H S MATRIX (6X3),/ (5X,3D20.5  ))                        
-C 249 FORMAT(1H1,         31H M MATRIX - UNPARTITIONED (6X6),//         
-C    $ (5X,6D20.5  ))                                                   
+C    1// 9H DETERM =,D20.5,10X,4HG2X2,2X,2D20.5,/  45X,2D20.5,/
+C    2   /39X,4HJ2X2,2X,2D20.5,/  45X,2D20.5   )
+C 169 FORMAT(17H HYQ MATRIX (2X3),/ (5X,3D20.5  ))
+C 179 FORMAT(/26H RECOMPUTED H MATRIX (6X6),/ (5X,6D20.5  ))
+C 189 FORMAT(//16H H INVERSE (6X6),/6(5X,6D20.5,/),130A1,/)
+C 199 FORMAT(18H1SIIJ MATRIX (7X7),/)
+C 209 FORMAT(5X,7D18.5)
+C 219 FORMAT(//22H M-BAR-AA MATRIX (3X3),/ (2X,3D20.5  ))
+C 229 FORMAT(//17H MAR MATRIX (3X6),/ (5X,6D20.5  ))
+C 239 FORMAT(//17H MRR MATRIX (6X6),/ (5X,6D20.5  ))
+C2395 FORMAT(15H S MATRIX (6X3),/ (5X,3D20.5  ))
+C 249 FORMAT(1H1,         31H M MATRIX - UNPARTITIONED (6X6),//
+C    $ (5X,6D20.5  ))
 C 259 FORMAT(//36H M MATRIX - PARTITIONED INTO 4 (3X3),//6H (MBB),//3(5X
 C    1,3D20.5,/),/6H (MBC),//3(5X,3D20.5,/),/6H (MCB),//3(5X,3D20.5,/),/
-C    26H (MCC),//3(5X,3D20.5,/),/130A1)                                 
-C 269 FORMAT(//33H MAI MATRIX - UNPARTITIONED (3X6),// (5X,6D20.5  ))   
+C    26H (MCC),//3(5X,3D20.5,/),/130A1)
+C 269 FORMAT(//33H MAI MATRIX - UNPARTITIONED (3X6),// (5X,6D20.5  ))
 C 279 FORMAT(//38H MAI MATRIX - PARTITIONED INTO 2 (3X3),//3(5X,3D20.5,/
-C    $),// (5X,3D20.5  ))                                               
-C 289 FORMAT(11X,    1HT,/21H PRODUCT (S ) * (MBB),/11X,1HB,/3(25X,     
-C    13D20.5,/),/11X,1HT,/21H PRODUCT (S ) * (MBC),/11X,1HC,/3(25X,     
-C    23D20.5,/),/6H (MAB),/ (5X,3D20.5  ))                              
+C    $),// (5X,3D20.5  ))
+C 289 FORMAT(11X,    1HT,/21H PRODUCT (S ) * (MBB),/11X,1HB,/3(25X,
+C    13D20.5,/),/11X,1HT,/21H PRODUCT (S ) * (MBC),/11X,1HC,/3(25X,
+C    23D20.5,/),/6H (MAB),/ (5X,3D20.5  ))
 C 299 FORMAT(//11X,1HT,8X,1HT,/22H PRODUCT (S ) * (MBC ),/11X,1HB,/3(25X
-C    1,3D20.5,/),/11X,1HT,/    21H PRODUCT (S )* (MBC),/11X,1HC,/3(25X, 
-C    23D20.5,/),//6H (MAC),/ (5X,3D20.5  ))                             
-C 309 FORMAT(1H1,10X,1HT,8X,1HT,/22H PRODUCT (S ) * (MAB ),/11X,1HB,/   
+C    1,3D20.5,/),/11X,1HT,/    21H PRODUCT (S )* (MBC),/11X,1HC,/3(25X,
+C    23D20.5,/),//6H (MAC),/ (5X,3D20.5  ))
+C 309 FORMAT(1H1,10X,1HT,8X,1HT,/22H PRODUCT (S ) * (MAB ),/11X,1HB,/
 C    13(25X,3D20.5,/),/11X,1HT,8X,1HT,/22H PRODUCT (S ) * (MAC ),/11X,1H
-C    2C,/3(25X,3D20.5,/),//26H PRODUCT (M-BAR-AB) * (S ),/25X,1HB,      
-C    3  /3(25X,3D20.5,/),//26H PRODUCT (M-BAR-AC) * (S ),/25X,1HC,      
-C    4  /3(25X,3D20.5,/),//6H (MAA),/ (5X,3D20.5))                      
-C 319 FORMAT(//6H (MBA),/ (5X,3D20.5  ))                                
-C 329 FORMAT(//6H (MCA),/ (5X,3D20.5  ))                                
-C3295 FORMAT(//A6,/(5X,3D20.5))                                         
+C    2C,/3(25X,3D20.5,/),//26H PRODUCT (M-BAR-AB) * (S ),/25X,1HB,
+C    3  /3(25X,3D20.5,/),//26H PRODUCT (M-BAR-AC) * (S ),/25X,1HC,
+C    4  /3(25X,3D20.5,/),//6H (MAA),/ (5X,3D20.5))
+C 319 FORMAT(//6H (MBA),/ (5X,3D20.5  ))
+C 329 FORMAT(//6H (MCA),/ (5X,3D20.5  ))
+C3295 FORMAT(//A6,/(5X,3D20.5))
       END

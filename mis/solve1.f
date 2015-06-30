@@ -43,8 +43,8 @@ C
    50 CONTINUE
 C     IF (CONT .GE. 0.0) RETURN
 C     WRITE (6,100) BB,RT,PSI1,PSI2,LAM2,LAM3,LAM4
-C 100 FORMAT (1H0,10X, 5HBB = ,E15.8, 4X, 5HRT = ,E15.8, 4X, 7HPSI1 = , 
-C    1 E15.8, 4X, 7HPSI2 = ,E15.8 // 11X, 7HLAM2 = ,E15.8, 4X, 7HLAM3 = 
-C    2 ,E15.8, 4X, 7HLAM4 = ,E15.8 )                                    
+C 100 FORMAT (1H0,10X, 5HBB = ,E15.8, 4X, 5HRT = ,E15.8, 4X, 7HPSI1 = ,
+C    1 E15.8, 4X, 7HPSI2 = ,E15.8 // 11X, 7HLAM2 = ,E15.8, 4X, 7HLAM3 =
+C    2 ,E15.8, 4X, 7HLAM4 = ,E15.8 )
       RETURN
       END

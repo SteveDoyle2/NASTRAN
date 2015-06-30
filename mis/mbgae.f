@@ -12,8 +12,8 @@ C
      *  BOXL,BOXW,BOXA ,NCB,NSB,NSBD,NTOTE,KC,KC1,KC2,KCT,KC1T,KC2T
       COMMON /SYSTEM/ SYSBUF,N6
       COMMON /AMGMN  / MCB(7)
-      DATA    DEBUG /.FALSE./                                           
-C                                                                       
+      DATA    DEBUG /.FALSE./
+C
       GCK  =  GC * BOXW
       DO 10 I=1,NJJ
    10 A(I) = (0.0,0.0)
@@ -69,15 +69,15 @@ C
       IF(.NOT.DEBUG) RETURN
       IF(MOOD.GT.1) GO TO 2100
       WRITE  (N6 , 1900 )  MACH ,  BOXL , EK , BOXW
- 1900 FORMAT  ( 1H1 , 31X , 30HGENERALIZED AERODYNAMIC FORCE            
-     *      , 12HCOEFFICIENTS / 1H0 , 9X , 11HMACH NUMBER , F9.3 ,      
-     *        40X , 10HBOX LENGTH , F12.6 / 1H0                         
-     *      , 9X , 33HREDUCED FREQUENCY  ( ROOT CHORD ) , F10.5 , 17X   
+ 1900 FORMAT  ( 1H1 , 31X , 30HGENERALIZED AERODYNAMIC FORCE
+     *      , 12HCOEFFICIENTS / 1H0 , 9X , 11HMACH NUMBER , F9.3 ,
+     *        40X , 10HBOX LENGTH , F12.6 / 1H0
+     *      , 9X , 33HREDUCED FREQUENCY  ( ROOT CHORD ) , F10.5 , 17X
      *      , 9HBOX WIDTH , F13.6 / 1H0 , 42X , 21H- -  A ( I , J )  - -
      *      / 6H-  ROW , 9X , 4HREAL , 10X , 4HIMAG , 14X , 4HREAL , 10X
-     *      , 4HIMAG , 14X , 4HREAL , 10X , 4HIMAG )                    
+     *      , 4HIMAG , 14X , 4HREAL , 10X , 4HIMAG )
  2100 WRITE(N6,2000) MOOD, (A(J),J=1,NJJ)
- 2000 FORMAT  ( 1H0 , I4 , 3 ( E18.4 , E14.4 ) / ( 1H0 , 4X , 3 ( E18.4 
-     *        , E14.4 ) ) )                                             
+ 2000 FORMAT  ( 1H0 , I4 , 3 ( E18.4 , E14.4 ) / ( 1H0 , 4X , 3 ( E18.4
+     *        , E14.4 ) ) )
       RETURN
       END

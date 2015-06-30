@@ -84,11 +84,11 @@ C
 C
 C
 C
-      DATA                                                              
-     1                   ISCALR /0/                                     
-C                                                                       
-C                                                                       
-C                                                                       
+      DATA
+     1                   ISCALR /0/
+C
+C
+C
       IARG = IJKLMN
 C
 C MAKE THE ECPT-S FOR ALL ELAS ELEMENTS LOOK EXACTLY LIKE THE ECPT FOR

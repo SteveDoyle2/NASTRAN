@@ -10,8 +10,8 @@ C
       COMMON /SYSTEM/ KSYSM(100)
       EQUIVALENCE     (NOUT ,KSYSM(2)),  (SOLN ,KSYSM(22)),
      1                (IN   ,KSYSM(4)),  (INTRA,KSYSM(86))
-      DATA    P,S,C,B / 1HP, 1HS, 1HC, 1H /                             
-C                                                                       
+      DATA    P,S,C,B / 1HP, 1HS, 1HC, 1H /
+C
       INTRA=IABS(INTRA)
       NOUT = 6
       DO 10 I=1,10
@@ -36,18 +36,18 @@ C
  60   PARAM(J)=0
       GO TO 20
  70   WRITE (NOUT,80) J,SOLN
- 80   FORMAT (/,' OPTION',I3,' IS NOT AVAILABLE FOR SOLUTION',I3)       
+ 80   FORMAT (/,' OPTION',I3,' IS NOT AVAILABLE FOR SOLUTION',I3)
       GO TO 20
 C
- 110  FORMAT (9X,'1. EXIT',                                             
-     1       /9X,'2. STRUCTURE PLOTS - UNDEFORMED',                     
-     3       /9X,'3. STRUCTURE PLOTS - DEFORMED',                       
-     4       /9X,'4. XYPLOTS',                                          
-     5       /9X,'5. SCAN OUTPUT - SORT1',                              
-     6       /9X,'6. SCAN OUTPUT - SORT2',                              
-     7       //9X,'SELECT ONE OPTION FROM MENU -')                      
+ 110  FORMAT (9X,'1. EXIT',
+     1       /9X,'2. STRUCTURE PLOTS - UNDEFORMED',
+     3       /9X,'3. STRUCTURE PLOTS - DEFORMED',
+     4       /9X,'4. XYPLOTS',
+     5       /9X,'5. SCAN OUTPUT - SORT1',
+     6       /9X,'6. SCAN OUTPUT - SORT2',
+     7       //9X,'SELECT ONE OPTION FROM MENU -')
  120  FORMAT (/9X,'OUTPUT TO SCREEN, OR TO PRINTFILE, OR CANCEL OPTION (
-     1S/P/C) -')                                                        
- 130  FORMAT (I1)                                                       
- 140  FORMAT (A1)                                                       
+     1S/P/C) -')
+ 130  FORMAT (I1)
+ 140  FORMAT (A1)
       END

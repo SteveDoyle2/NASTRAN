@@ -9,8 +9,8 @@
       COMMON  /REGEAN/ IM(7),IK(7),IEV(7),SCR1,SCR2,SCR3,SCR4,SCR5,LCORE
      1 , RMAX,RMIN,MZ,NEV,EPSI,RMINR,NE,NIT,NEVM,SCR6,SCR7
      2  ,NFOUND,LAMA
-      DATA NAME/4HDETE,4HRM  /                                          
-C                                                                       
+      DATA NAME/4HDETE,4HRM  /
+C
 C     RMAX = APPROXIMATE MAGNITUDE OF LARGEST EIGENVALUE OF INTEREST
 C
 C     RMIN = LOWEST  NON-ZERO  EIGENVALUE

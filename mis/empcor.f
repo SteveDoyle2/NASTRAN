@@ -16,7 +16,7 @@ C     N        SIZE OF THE COMPLETE MATRIX.
 C     A        LOCATION OF THE COMPLETE MATRIX.
 C
       COMMON /PACKX/IT1,IT2,II,JJ,INCR
-      DATA  MCB /7*0/                                                   
+      DATA  MCB /7*0/
       MT1 = MT1X
       MT2 = MT2X
       N   = NX

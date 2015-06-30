@@ -4,11 +4,11 @@ C PERFORMS LINE INTEGRAL FROM (X1,Y1,Z1) TO (X2,Y2,Z2) OF BIOT-SAVART
 C FILED DOTTED INTO THE LINE, IE INT(HC.DL)
 C
       DIMENSION XI(4),W(4)
-      DATA XI/.06943184,.33000948,.66999052,.93056816/                  
-      DATA W/.17392742,2*.32607258,.173927423/                          
-C                                                                       
-C COMPONENTS OF LINE SEGMENT                                            
-C                                                                       
+      DATA XI/.06943184,.33000948,.66999052,.93056816/
+      DATA W/.17392742,2*.32607258,.173927423/
+C
+C COMPONENTS OF LINE SEGMENT
+C
       HCDL=0.
       SEGX=X2-X1
       SEGY=Y2-Y1

@@ -1,5 +1,5 @@
-      PROGRAM NASTRN        
-C        
+      PROGRAM NASTRN
+C
       CHARACTER*44    VALUE, DSNAMES
       CHARACTER*5     TMP
       INTEGER         SPERLK,DEBUG
@@ -7,16 +7,16 @@ C
       COMMON /DSNAME/ DSNAMES(80)
       COMMON /SOFDSN/ SDSN(10)
       CHARACTER*60    SDSN
-C        
-C     SAVE STARTING CPU TIME AND WALL CLOCK TIME IN /SYSTEM/        
-C      
-      CALL KLOCK  (ISYSTM(18))        
-      CALL WALTIM (ISYSTM(32))        
-C        
+C
+C     SAVE STARTING CPU TIME AND WALL CLOCK TIME IN /SYSTEM/
+C
+      CALL KLOCK  (ISYSTM(18))
+      CALL WALTIM (ISYSTM(32))
+C
 C     EXECUTE NASTRAN SUPER LINK
-C        
-      SPERLK = 1        
-      ISYSTM(11) = 1        
+C
+      SPERLK = 1
+      ISYSTM(11) = 1
       VALUE = ' '
       LEN = 44
       CALL GETENV ( 'DIRCTY', VALUE )
@@ -48,7 +48,7 @@ C
       CALL GETENV ( 'DICTNM', VALUE )
       DSNAMES(76) = VALUE
       CALL GETENV ( 'PUNCHNM', VALUE )
-      DSNAMES(77) = VALUE 
+      DSNAMES(77) = VALUE
       CALL GETENV ( 'SOF1', VALUE )
       SDSN(1) = VALUE
       CALL GETENV ( 'SOF2', VALUE )
@@ -80,6 +80,6 @@ C
      & OPEN ( 76, FILE=DSNAMES(76),STATUS='UNKNOWN')
       IF ( DSNAMES(77) .NE. 'none' )
      & OPEN ( 77, FILE=DSNAMES(77),STATUS='UNKNOWN')
-      CALL XSEM00       
+      CALL XSEM00
       STOP
-      END        
+      END

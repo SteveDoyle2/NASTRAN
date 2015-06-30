@@ -83,7 +83,7 @@ C
      3             ,(TJTE(1),A(100))   ,(TITE(1),S(1),A(82))
      4                 ,(J2X2(1),A(92))     ,(TI(1),A(118))
 C
-      DATA NO /81,190/                                                  
+      DATA NO /81,190/
       NTYPE = 0
       IF( IOPT.GT.0 ) NTYPE = 1
       IF (NTYPE .EQ. 1) GOTO 100

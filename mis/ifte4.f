@@ -1,5 +1,5 @@
       SUBROUTINE IFTE4(THA,RP,CP)
-      DATA THAO,EPSI /.1,1.E-9 /                                        
+      DATA THAO,EPSI /.1,1.E-9 /
       IF(ABS(THA) .LT. THAO) GO TO 100
       D = THA**4/24.
       RP = ((.5*(THA*THA))-1.+ COS(THA))/D

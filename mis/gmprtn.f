@@ -26,10 +26,10 @@ C
       COMMON / PARMEG /       IA(7)    ,IA11(7)  ,IA21(7)  ,IA12(7)
      1                       ,IA22(7)  ,LCR      ,RULE
 C
-      DATA NAME / 4HGMPR , 4HTN   /                                     
-C                                                                       
+      DATA NAME / 4HGMPR , 4HTN   /
+C
 C***********************************************************************
-C                                                                       
+C
 C     GET TRAILERS FOR INPUTS
 C
       RP(1) = RPART

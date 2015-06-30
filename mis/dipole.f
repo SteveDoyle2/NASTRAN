@@ -6,8 +6,8 @@ C THE FORMULATION COMES FROM DARRELL NIXONS REPORT 27-23 MARCH 1972
 C
       REAL MX,MY,MZ,MIN,MAX,MXA,MYB,MZC
       DIMENSION  BUF(50),IBUF(50)
-      DATA FPI/12.566371/                                               
-C                                                                       
+      DATA FPI/12.566371/
+C
       HC1=0.
       HC2=0.
       HC3=0.

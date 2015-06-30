@@ -23,10 +23,10 @@ C*******
      3                 ,RDP      ,CSP      ,CDP
       COMMON  /SYSTEM/  KSYSTM   ,NOUT
       EQUIVALENCE       (AADUM(42),ISCR6)
-      DATA   NAME       /4HCF2F,4HBS  /                                 
-C                                                                       
+      DATA   NAME       /4HCF2F,4HBS  /
+C
       IF (QPR) WRITE (NOUT,8887) TPOSE(1),SYMMET,NSWP,ISCR6
- 8887 FORMAT(1H0,12HENTER CF2FBS,8X,11HTRANSPOSE =,L2,L9,2I10)          
+ 8887 FORMAT(1H0,12HENTER CF2FBS,8X,11HTRANSPOSE =,L2,L9,2I10)
                JUNK = 0
       IF (TPOSE(1) .AND. .NOT.SYMMET) GO TO 399
 C*******
@@ -41,15 +41,15 @@ C*******
   110 IF (EOL) 3010,120,3010
   120 CALL ZNTPKI
                IF (QPR) WRITE (NOUT,8882) DA,II,EOL,J
- 8882          FORMAT(1H ,4HDA =,2D16.8,4X,4HII =,I6,                   
-     2                4X,5HEOL =,I2,4X,3HJ =,I4)                        
+ 8882          FORMAT(1H ,4HDA =,2D16.8,4X,4HII =,I6,
+     2                4X,5HEOL =,I2,4X,3HJ =,I4)
       IF (J-II) 184,130,110
 C*******
 C     PERFORM THE REQUIRED ROW INTERCHANGE
 C*******
   130 IN1 = ( J + IFIX(SNGL(DA(1))) )*2 - 1
                IF (QPR) WRITE (NOUT,8883) IN1,EOL
- 8883          FORMAT(1H ,3X,5HIN1 =,I6,4X,5HEOL =,I2)                  
+ 8883          FORMAT(1H ,3X,5HIN1 =,I6,4X,5HEOL =,I2)
       IN2 = IN1+1
       J2 = 2*J
       UNIDUM = XOUT(J2)
@@ -77,7 +77,7 @@ C     BEGIN BACKWARD PASS USING THE UPPER TRIANGLE
 C*******
       IOFF = MCBUT(7)-1
                IF (QPR) WRITE (NOUT,8866) IOFF,MCBLT,MCBUT
- 8866          FORMAT(1H ,15(1X,I7))                                    
+ 8866          FORMAT(1H ,15(1X,I7))
       CALL GOPEN (MCBUT(1),IOBUF(1),RDREW)
       J = NSWP
  210  CALL INTPK(*3020,MCBUT(1),0,CDP,0)
@@ -96,8 +96,8 @@ C*******
       XOUT(I2) = (DA(1)*XOUT(I2)-DA(2)*XOUT(I1))*UNIDUM
       XOUT(I1) = DTEMP
                IF (QPR) WRITE (NOUT,8884)
- 8884          FORMAT(1H ,6X,8HDIAGONAL)                                
-C*******                                                                
+ 8884          FORMAT(1H ,6X,8HDIAGONAL)
+C*******
 C     SUBTRACT OFF REMAINING TERMS
 C*******
   255 IF (I.GT.J) GO TO 230
@@ -134,19 +134,19 @@ C     BEGIN THE FORWARD PASS USING THE UPPER TRIANGLE
 C*******
   399 IOFF = MCBUT(7)-1
                IF (QPR) WRITE (NOUT,2216) IOFF
- 2216          FORMAT(1H ,30X,6HIOFF =,I10)                             
+ 2216          FORMAT(1H ,30X,6HIOFF =,I10)
       MCSAVE = MCBUT(1)
       MCBUT(1) = ISCR6
       CALL GOPEN (MCBUT(1),IOBUF(1),RDREW)
       DO 500  I = 1,NSWP
                IF (QPR) WRITE (NOUT,2218) I
- 2218          FORMAT(1H ,12HLOOP INDEX =,I6)                           
+ 2218          FORMAT(1H ,12HLOOP INDEX =,I6)
       J = I+I
       CALL INTPK(*500,MCBUT(1),0,CDP,0)
   410 CALL ZNTPKI
                IF (QPR) WRITE (NOUT,2224) II,EOL,DA
- 2224          FORMAT(1H ,4HII =,I14,6X,5HEOL =,I2,                     
-     2                8X,4HDA =,2D16.8)                                 
+ 2224          FORMAT(1H ,4HII =,I14,6X,5HEOL =,I2,
+     2                8X,4HDA =,2D16.8)
       IF (II-I) 430,420,440
 C*******
 C     DIVIDE BY THE DIAGONAL
@@ -203,11 +203,11 @@ C     PERFORM THE INTERCHANGE
 C*******
       INTCHN = IFIX(SNGL(DA(1)))*2
                IF (QPR) WRITE (NOUT,2226) INTCHN
- 2226          FORMAT(1H ,4X,11HINTERCHANGE,I6)                         
+ 2226          FORMAT(1H ,4X,11HINTERCHANGE,I6)
       GO TO 590
   530 IN1 = J+INTCHN
                IF (QPR) WRITE (NOUT,2232) J,INTCHN,IN1
- 2232          FORMAT(1H ,15X,3I6)                                      
+ 2232          FORMAT(1H ,15X,3I6)
       DTEMP = XOUT(J)
       XOUT(J) = XOUT(IN1)
       XOUT(IN1) = DTEMP
@@ -233,8 +233,8 @@ C*******
  3040 CALL MESAGE (-5,J,NAME)
  4000 CONTINUE
                IF (QPR.AND.JUNK.EQ.0) WRITE (NOUT,5516)
- 5516          FORMAT(1H0,30X,13HIOFF NOT USED,/1H )                    
+ 5516          FORMAT(1H0,30X,13HIOFF NOT USED,/1H )
                IF (QPR.AND.JUNK.NE.0) WRITE (NOUT,5518)
- 5518          FORMAT(1H0,30X,13HIOFF WAS USED,/1H )                    
+ 5518          FORMAT(1H0,30X,13HIOFF WAS USED,/1H )
       RETURN
       END

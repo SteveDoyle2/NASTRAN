@@ -19,10 +19,10 @@ C
 C
       EQUIVALENCE (IFILA(2),NCOL),(IFILL(5),TYPEL),(SR2FIL,DUM(2))
 C
-      DATA SUB/4HONET,4HWO  /                                           
-C                                                                       
+      DATA SUB/4HONET,4HWO  /
+C
 C ----------------------------------------------------------------------
-C                                                                       
+C
       IBUF1 = NX-SYSBUF
       IBUF2 = IBUF1-SYSBUF
       IBUF3 = IBUF2-SYSBUF

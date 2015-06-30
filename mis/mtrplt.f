@@ -123,8 +123,8 @@ C
      3                                 ,(D2(1),A(4))
      4                                 ,(HQ(1),A(1))
 C
-      DATA M/ 1,2,4,   2,3,4,   3,1,4 /                                 
-C                                                                       
+      DATA M/ 1,2,4,   2,3,4,   3,1,4 /
+C
       ELTEMP = ECPT(25)
 C     DETERMINE PIVOT POINT NUMBER
 C
@@ -141,10 +141,10 @@ C
    20 THETA = ECPT(5) * DEGRA
       SINANG = SIN( THETA )
       COSANG = COS( THETA )
-C     FORMATION OF THE R-MATRIX CONTAINING COORDINATES OF THE           
+C     FORMATION OF THE R-MATRIX CONTAINING COORDINATES OF THE
 C     SUB TRIANGLES. (2X4) FOR TRIANGULAR PLATE. (COLUMN 4 BLANK)
-C     FORMATION ALSO OF THE I,J, AND K VECTORS USED IN THE E-MATRIX.    
-C                                                                       
+C     FORMATION ALSO OF THE I,J, AND K VECTORS USED IN THE E-MATRIX.
+C
 C     ZERO OUT R-MATRIX
       DO 30 I=1,8
    30 REQUIV(I)=0.0D0
@@ -683,32 +683,32 @@ C
   390 CONTINUE
       RETURN
 C
-C 109 FORMAT(1H1)                                                       
-C 119 FORMAT(15H MTRPLT PRINTER)                                        
+C 109 FORMAT(1H1)
+C 119 FORMAT(15H MTRPLT PRINTER)
 C 129 FORMAT(15X,5HIVECT,5X,3D20.5/15X,5HJVECT,5X,3D20.5/15X,5HKVECT,5X,
-C    $ 3D20.5,//7X,13HR COORDINATES,5X,4D20.5/25X,4D20.5)               
-C 139 FORMAT(6H XSUBB,D20.5/6H XSUBC,D20.5/6H YSUBC,D20.5)              
-C 149 FORMAT(24H MASS MATRIX FROM MTRBSC)                               
-C 159 FORMAT(3(5X,3D20.5),/)                                            
-C1590 FORMAT(21H S MATRIX FROM MTRBSC)                                  
-C1594 FORMAT(29H H INVERSE MATRIX FROM MTRBSC)                          
-C1595 FORMAT(5X,6D20.5)                                                 
-C1599 FORMAT(10H T MATRIX,/(5X,3D20.5))                                 
-C 169 FORMAT(5H MSUM,/ (5X,3D20.5))                                     
-C 179 FORMAT(13X,5HTEMPI,18X,2HLI,18X,2HSI,18X,2HCI,18X,2HXI,18X,2HYI)  
-C 189 FORMAT(2H 1,3X,6D20.5/2H 2,3X,6D20.5)                             
-C 199 FORMAT(/10H HQ MATRIX,/(5X,6D20.5))                               
-C 209 FORMAT(14H PROD12 MATRIX,/(5X,6D20.5))                            
-C 219 FORMAT(//12H HABC MATRIX,/(5X,3D20.5))                            
-C 229 FORMAT(  9H G MATRIX,/(5X,6D20.5))                                
-C 239 FORMAT(  9H E MATRIX,/(5X,3D20.5))                                
-C 249 FORMAT(10H TI MATRIX,/(5X,3D20.5))                                
-C 259 FORMAT(12H TITE MATRIX,/(5X,3D20.5))                              
-C 269 FORMAT(12H TJTE MATRIX,/(5X,6D20.5))                              
-C 279 FORMAT(12H M6X6 MATRIX,/(5X,6D20.5))                              
-C 289 FORMAT(12H MOUT MATRIX,/(5X,6D20.5))                              
-C 299 FORMAT(10H TJ MATRIX,/(5X,3D20.5))                                
-C                                                                       
+C    $ 3D20.5,//7X,13HR COORDINATES,5X,4D20.5/25X,4D20.5)
+C 139 FORMAT(6H XSUBB,D20.5/6H XSUBC,D20.5/6H YSUBC,D20.5)
+C 149 FORMAT(24H MASS MATRIX FROM MTRBSC)
+C 159 FORMAT(3(5X,3D20.5),/)
+C1590 FORMAT(21H S MATRIX FROM MTRBSC)
+C1594 FORMAT(29H H INVERSE MATRIX FROM MTRBSC)
+C1595 FORMAT(5X,6D20.5)
+C1599 FORMAT(10H T MATRIX,/(5X,3D20.5))
+C 169 FORMAT(5H MSUM,/ (5X,3D20.5))
+C 179 FORMAT(13X,5HTEMPI,18X,2HLI,18X,2HSI,18X,2HCI,18X,2HXI,18X,2HYI)
+C 189 FORMAT(2H 1,3X,6D20.5/2H 2,3X,6D20.5)
+C 199 FORMAT(/10H HQ MATRIX,/(5X,6D20.5))
+C 209 FORMAT(14H PROD12 MATRIX,/(5X,6D20.5))
+C 219 FORMAT(//12H HABC MATRIX,/(5X,3D20.5))
+C 229 FORMAT(  9H G MATRIX,/(5X,6D20.5))
+C 239 FORMAT(  9H E MATRIX,/(5X,3D20.5))
+C 249 FORMAT(10H TI MATRIX,/(5X,3D20.5))
+C 259 FORMAT(12H TITE MATRIX,/(5X,3D20.5))
+C 269 FORMAT(12H TJTE MATRIX,/(5X,6D20.5))
+C 279 FORMAT(12H M6X6 MATRIX,/(5X,6D20.5))
+C 289 FORMAT(12H MOUT MATRIX,/(5X,6D20.5))
+C 299 FORMAT(10H TJ MATRIX,/(5X,3D20.5))
+C
   400 CALL MESAGE(30,26,ECPT(1))
 C
 C  SET FLAG FOR FATAL ERROR WHILE ALLOWING ERROR MESSAGES TO ACCUMULATE

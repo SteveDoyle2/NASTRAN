@@ -61,8 +61,8 @@ C
       EQUIVALENCE (C(1,1),CA(1)), (C(1,3),CB(1)), (C(1,5),CC(1))
       EQUIVALENCE (E(1),IVEC(1)), (E(4),JVEC(1)), (E(7),KVEC(1))
 C
-      DATA IPART/ 28,46,1,   37,55,10,   0,0,19 /                       
-C                                                                       
+      DATA IPART/ 28,46,1,   37,55,10,   0,0,19 /
+C
 C     V    = R   - R   ,      V    = R   - R
 C      12     B     A          13     C     B
 C

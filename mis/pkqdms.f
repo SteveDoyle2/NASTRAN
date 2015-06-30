@@ -29,7 +29,7 @@ C
       EQUIVALENCE        (K3X3  ( 1),KIJ   ( 1))
      1                  ,(NECPT ( 1),ECPT  ( 1))
 C
-      DATA  M / 1, 2, 4, 2, 3, 1, 3, 4, 2, 4, 1, 3 /                    
+      DATA  M / 1, 2, 4, 2, 3, 1, 3, 4, 2, 4, 1, 3 /
 C     ******************************************************************
 C          ECPT                       ECPT
 C       RECEIVED BY                REQUIRED BY

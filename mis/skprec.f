@@ -2,10 +2,10 @@
 C
       INTEGER NAME(2)
 C
-      DATA NAME /4HSKPR,2HEC /                                          
-C                                                                       
+      DATA NAME /4HSKPR,2HEC /
+C
 C ----------------------------------------------------------------------
-C                                                                       
+C
       IF( K ) 10,30,20
 C
    10 M=IABS(K)

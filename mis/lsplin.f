@@ -9,7 +9,7 @@
       INTEGER SIZE
 C
       DIMENSION XYI(1),XYD(1),G(1),NAME(2)
-      DATA NAME/4HLSPL,4HIN  /                                          
+      DATA NAME/4HLSPL,4HIN  /
       SPEC = .FALSE.
       BONE = .FALSE.
       BNONE = .FALSE.

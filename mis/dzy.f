@@ -2,32 +2,32 @@
      1                BETA,FMACH,LSH,IDZDY,DZDYR,DZDYI)
 C
 C     CALCULATION OF THE DZ AND DY MATRICES USED IN SLENDER BODY FLOW
-C                                                                   
-C     X        X- COORDINATE OF THE RECEIVING POINT             
-C     Y        Y - COORDINATE OF THE RECEIVING POINT            
-C     Z        Z - COORDINATE OF THE RECEIVING POINT            
-C     SGR      SINE OF THE RECEIVING POINT DIHEDRAL ANGLE       
-C     CGR      COSINE OF RECEIVING POINT DIHEDRAL ANGLE         
-C     XI1                                                        
-C     XI2                                                       
-C     ETA                                                       
-C     ZETA                                                      
-C     AR       ASPECT RATIO OF THE SENDING BODY                 
-C     A0       RADIUS OF THE SENDING BODY                       
-C     KR       REDUCED FREQUENCY                                
-C     CBAR     REFERENCE CHORD LENGTH                           
-C     BETA     SQRT(1.0-M**2)                                   
-C     FMACH    MACH NUMBER                                      
-C     IDZDY    FLAG INDICATING WHETHER DZ OF DY IS TO BE        
-C              CALCULATED.  =0  DZ, OTHERWISE DY            
-C     DZDYR    REAL PART OF DZ OR DY                            
-C     DZDYI    IMAGINARY PART OF DZ OR DY                       
-C                                                                   
-C 
+C
+C     X        X- COORDINATE OF THE RECEIVING POINT
+C     Y        Y - COORDINATE OF THE RECEIVING POINT
+C     Z        Z - COORDINATE OF THE RECEIVING POINT
+C     SGR      SINE OF THE RECEIVING POINT DIHEDRAL ANGLE
+C     CGR      COSINE OF RECEIVING POINT DIHEDRAL ANGLE
+C     XI1
+C     XI2
+C     ETA
+C     ZETA
+C     AR       ASPECT RATIO OF THE SENDING BODY
+C     A0       RADIUS OF THE SENDING BODY
+C     KR       REDUCED FREQUENCY
+C     CBAR     REFERENCE CHORD LENGTH
+C     BETA     SQRT(1.0-M**2)
+C     FMACH    MACH NUMBER
+C     IDZDY    FLAG INDICATING WHETHER DZ OF DY IS TO BE
+C              CALCULATED.  =0  DZ, OTHERWISE DY
+C     DZDYR    REAL PART OF DZ OR DY
+C     DZDYI    IMAGINARY PART OF DZ OR DY
+C
+C
       REAL   KD1PR, KD1PI, KD2PR, KD2PI, KD1MR, KD1MI, KD2MR, KD2MI
-      DATA   PI16 / 50.265482 /                                          
-C                                                                       
-C                                                                       
+      DATA   PI16 / 50.265482 /
+C
+C
 C     THE COMPLEX NUMBERS IN THIS ROUTINE ARE TREATED SEPERATLY AS
 C     THE REAL PART,  NAME APPENDED BY AN  -R- ,  AND THE
 C     IMAGINARY PART, NAME APPENDED BY AN  -I- .
@@ -67,7 +67,7 @@ C
       Z02 = Z01
       Y01 = Y - (ETA+E)
       Y02 = Y - (ETA-E)
-C     GO TO 300          
+C     GO TO 300
 C
 C     ****  DZ AR .GE. 1  ****
 C     ****  DY AR .LE. 1  ****
@@ -82,7 +82,7 @@ C
       R1FOR = R1SQR**2
       R2FOR = R2SQR**2
 C
-      CALL FLLD (X01,X02,Y01,Z01,SGR,CGR,SGS,CGS,KR,CBAR,FMACH,E,L, 
+      CALL FLLD (X01,X02,Y01,Z01,SGR,CGR,SGS,CGS,KR,CBAR,FMACH,E,L,
      1           KD1PR,KD1PI,KD2PR,KD2PI)
 C
       IF (AR .NE. 1.0)  GO TO 320

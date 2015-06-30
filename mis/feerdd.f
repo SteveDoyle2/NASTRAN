@@ -10,14 +10,14 @@ C*******
 C
       COMMON   /FEERCX/  IFRCX(37)
 C
-      DATA               JFRCX   /                                      
-     1                   101,6*0   ,102,6*0  ,201,6*0  ,202,6*0  /      
-      DATA               KFRCX   /                                      
-     1                   301       ,302      ,303      ,304      /      
-      DATA               LFRCX   /                                      
-     1                   305       ,306      ,307      ,308      /      
-      DATA               MFRCX   /   204   /                            
-C                                                                       
+      DATA               JFRCX   /
+     1                   101,6*0   ,102,6*0  ,201,6*0  ,202,6*0  /
+      DATA               KFRCX   /
+     1                   301       ,302      ,303      ,304      /
+      DATA               LFRCX   /
+     1                   305       ,306      ,307      ,308      /
+      DATA               MFRCX   /   204   /
+C
       DO 10 I = 1,28
    10 IFRCX(I) = JFRCX(I)
       DO 20 I = 1,4

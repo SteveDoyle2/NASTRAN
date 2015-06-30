@@ -138,10 +138,10 @@ C
      4                                      ,(I63 , INTEG(27))
      5                                      ,(I64 , INTEG(28))
 C
-      DATA FAC/1.0E0,1.0E0,2.0E0,6.0E0,24.0E0,120.0E0,720.0E0/          
-      DATA NA /1,1,1,2,3,3,3/                                           
-      DATA ONE/1.0E0/                                                   
-C                                                                       
+      DATA FAC/1.0E0,1.0E0,2.0E0,6.0E0,24.0E0,120.0E0,720.0E0/
+      DATA NA /1,1,1,2,3,3,3/
+      DATA ONE/1.0E0/
+C
       COSTH=1.0
       SINTH=0.0
       N = NECPT(1) - ( (NECPT(1)/1000)*1000 ) - 1

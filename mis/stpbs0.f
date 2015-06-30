@@ -5,7 +5,7 @@ C     COMPUTES J0(X)  IF X IS GREATER THAN -3.
 C     COMPUTES Y0(X)  IF (X IS GREATER THAN E AND NCODE = 1 ),
 C           WHERE
       INTEGER NAME(2)
-      DATA NAME /4HSTPB,4HS0  /                                         
+      DATA NAME /4HSTPB,4HS0  /
       E=0.00001
 C                 REF. US DEPT OF COMMERCE HANDBOOK (AMS 55)  PG. 369
       A=ABS(X)

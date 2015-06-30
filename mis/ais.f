@@ -18,10 +18,10 @@ C
      1                 GKL,ZERO,ONE,TWO,THREE,PR,RA,RB,R(4),RAK,RBK,
      2                 ZA,ZB,Z(4)
       DIMENSION        RR(4),ZZ(4)
-      DATA       EPS / .01D0 /                                                
-      DATA       ZERO, ONE,TWO,THREE / 0.0D0, 1.0D0, 2.0D0, 3.0D0 /            
-      DATA       NAM / 4HAIS , 1H    /                                          
-C                                                                       
+      DATA       EPS / .01D0 /
+      DATA       ZERO, ONE,TWO,THREE / 0.0D0, 1.0D0, 2.0D0, 3.0D0 /
+      DATA       NAM / 4HAIS , 1H    /
+C
       DO 5 M = 1,NP
       R(M) = RR(M)
     5 Z(M) = ZZ(M)

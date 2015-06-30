@@ -8,7 +8,7 @@
       COMMON /PSTONC/ NJJ,NMACH,NTHRY,NTHICK,NALPHA,NXIS,NTAUS,NSTRIP,
      *                SECLAM
       COMMON / CONDAS / PI,TWOPI,RADG,DEGRA
-      DATA A /9*0.0/ , H /9*0.0/                                        
+      DATA A /9*0.0/ , H /9*0.0/
       BREF = REFC * .5
       RFC = RFK/BREF
       II = NROW +1

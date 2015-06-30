@@ -7,23 +7,23 @@ C     FOUR REAL NUMBERS AND AN INPUT OPTION.
 C
 C     WRITTEN BY D. H. LARSON, STRUCTURAL MECHANICS MDAC 11/70
 C
-C     X01  -   X - XI1     
-C     X02  -   X - XI2     
-C     Y0   -   Y - ETA     
-C     Z0   -   Z - ZETA    
-C     SGR  -   SIN ( GAMMA-R) 
-C     CGR  -   COS ( GAMMA-R) 
-C     SGS  -   SIN ( GAMMA-S) 
-C     CGS  -   COS ( GAMMA-S) 
-C     KR   -   REDUCED FREQUENCY 
-C     BR   -   REFERENCE LENGTH  
-C     FMACH-   MACH NUMBER       
-C     E    -                     
-C     L    -   OPTION FLAG USED IN TKER  
-C     KD1R -   REAL PART OF  KD1         
-C     KD1I -   IMAGINARY PART OF KD1     
-C     KD2R -   REAL PART OF  KD2         
-C     KD2I -   IMAGINARY PART OF KD2     
+C     X01  -   X - XI1
+C     X02  -   X - XI2
+C     Y0   -   Y - ETA
+C     Z0   -   Z - ZETA
+C     SGR  -   SIN ( GAMMA-R)
+C     CGR  -   COS ( GAMMA-R)
+C     SGS  -   SIN ( GAMMA-S)
+C     CGS  -   COS ( GAMMA-S)
+C     KR   -   REDUCED FREQUENCY
+C     BR   -   REFERENCE LENGTH
+C     FMACH-   MACH NUMBER
+C     E    -
+C     L    -   OPTION FLAG USED IN TKER
+C     KD1R -   REAL PART OF  KD1
+C     KD1I -   IMAGINARY PART OF KD1
+C     KD2R -   REAL PART OF  KD2
+C     KD2I -   IMAGINARY PART OF KD2
 C
       REAL           KR,KK1R,KK1I,KK2R,KK2I,KD1R,KD1I,KD2R,KD2I,K10T1,
      1               K20T2P,K1RT1,K10,K2IT2P,K20,K2RT2P,K1IT1

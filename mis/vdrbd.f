@@ -19,25 +19,25 @@ C
 C
 C DATA DEFINING POSITION OF PARAMETERS IN CASE CONTROL RECORD.
 C
-      DATA   IDISP  / 20/ ,IVEL   / 32/ ,IACC   / 29/ ,ISPCF  / 35/     
-     1      ,ILOADS / 17/ ,ISTR   / 23/ ,IELF   / 26/ ,IADISP /151/     
-     2      ,IAVEL  /154/ ,IAACC  /157/ ,IPNL   / 10/ ,ITTL   / 39/     
-     3      ,ILSYM  /200/ ,IFROUT /145/ ,IDLOAD / 13/                   
-C                                                                       
-C DATA DEFINING GINO FILE NAMES                                         
-C                                                                       
-      DATA   CASECC /101/ ,EQDYN  /102/ ,USETD  /103/ ,INFILE /104/     
-     1      ,OEIGS  /105/ ,PP     /105/ ,XYCDB  /106/ ,PNL    /107/     
-     2      ,OUTFLE /201/ ,OPNL1  /202/ ,SCR1   /301/ ,SCR2   /302/     
-C                                                                       
-C MISC DATA                                                             
-C                                                                       
-      DATA   BUF   /50*0/ ,NAM    /4HVDR ,4H    /                       
-     1      ,MASKS /4,8,16,32,64,128/,XSET0/100000000/                  
-C                                                                       
-C DATA DEFINING RIGID FORMATS AND PROBLEM TYPES                         
-C                                                                       
-      DATA   CEI    /4HCEIG,4HEN  /,FRQ   /4HFREQ,4HRESP/               
-     1      ,TRN    /4HTRAN,4HRESP/,MODAL /4HMODA,4HL   /               
-     2      ,DIRECT /4HDIRE,4HCT  /                                     
+      DATA   IDISP  / 20/ ,IVEL   / 32/ ,IACC   / 29/ ,ISPCF  / 35/
+     1      ,ILOADS / 17/ ,ISTR   / 23/ ,IELF   / 26/ ,IADISP /151/
+     2      ,IAVEL  /154/ ,IAACC  /157/ ,IPNL   / 10/ ,ITTL   / 39/
+     3      ,ILSYM  /200/ ,IFROUT /145/ ,IDLOAD / 13/
+C
+C DATA DEFINING GINO FILE NAMES
+C
+      DATA   CASECC /101/ ,EQDYN  /102/ ,USETD  /103/ ,INFILE /104/
+     1      ,OEIGS  /105/ ,PP     /105/ ,XYCDB  /106/ ,PNL    /107/
+     2      ,OUTFLE /201/ ,OPNL1  /202/ ,SCR1   /301/ ,SCR2   /302/
+C
+C MISC DATA
+C
+      DATA   BUF   /50*0/ ,NAM    /4HVDR ,4H    /
+     1      ,MASKS /4,8,16,32,64,128/,XSET0/100000000/
+C
+C DATA DEFINING RIGID FORMATS AND PROBLEM TYPES
+C
+      DATA   CEI    /4HCEIG,4HEN  /,FRQ   /4HFREQ,4HRESP/
+     1      ,TRN    /4HTRAN,4HRESP/,MODAL /4HMODA,4HL   /
+     2      ,DIRECT /4HDIRE,4HCT  /
       END

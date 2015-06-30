@@ -34,19 +34,19 @@ C
       LOG5=LOQ5
       LOG6=LOQ6
       IF (IPRTC .EQ. 1) WRITE(LOG2,1)
-1     FORMAT(1HT)                                                       
+1     FORMAT(1HT)
       PI=3.141592653589
       C1=180.0/PI
       HMIN=50.0
       VMIN = 25.0
       IF (IPRTC .EQ. 1) WRITE(LOG2,50)
 50    FORMAT(1H1,37X, 53HPROGRAM ALG - COMPRESSOR DESIGN - AERODYNAMIC S
-     1ECTION,/,38X,53(1H*))                                             
+     1ECTION,/,38X,53(1H*))
       LNCT=2
       CALL ALG02
       ICASE=1
   100 IF (IPRTC .EQ. 1) WRITE(LOG2,104) ICASE
-104   FORMAT(1H1,9X,20HOUTPUT FOR POINT NO.,I2,/,10X,22(1H*))           
+104   FORMAT(1H1,9X,20HOUTPUT FOR POINT NO.,I2,/,10X,22(1H*))
       LNCT=2
       DO 106 I=1,30
       DO 106 J=1,59
@@ -259,7 +259,7 @@ C
 550   IF(IPASS.LE.NFORCE)GO TO 590
       IF(LNCT+1.LE.NPAGE)GO TO 570
       IF (IPRTC .EQ. 1) WRITE(LOG2,560)
-560   FORMAT(1H1)                                                       
+560   FORMAT(1H1)
       LNCT=1
 570   LNCT=LNCT+1
       X1=VM(1,I)/VMLOLD(1)
@@ -268,7 +268,7 @@ C
       IF (IPRTC .EQ. 1) WRITE(LOG2,580) IPASS,I,X1,X2,X3
 580   FORMAT(5X,4HPASS,I3,9H  STATION,I3,66H  VM PROFILE NOT CONVERGED W
      1ITH LOSS RECALC   VM NEW/VM PREV  HUB=,F9.6,6H  MID=,F9.6,7H  CASE
-     2=,F9.6)                                                           
+     2=,F9.6)
 590   IF(NBL.EQ.1.AND.(IFAILO.EQ.0.OR.IPASS.LE.NFORCE))CALL ALG10
       DO 600 J=1,NSTRMS
       XIM1(J)=X(J,I)
@@ -323,13 +323,13 @@ C
       IF(IFAILO.NE.0)GO TO 750
       IF(NPUNCH.EQ.0)GO TO 680
       WRITE(LOG3,660)(DELF(J),J=1,NSTRMS)
-660   FORMAT(6F12.8)                                                    
+660   FORMAT(6F12.8)
       WRITE(LOG3,670)((R(J,I),X(J,I),XL(J,I),I,J,J=1,NSTRMS),I=1,NSTNS)
-670   FORMAT(3F12.8,2I3)                                                
+670   FORMAT(3F12.8,2I3)
 680   DO 700 I=1,NSTNS
       IF(NOUT1(I).EQ.0)GO TO 700
       WRITE(LOG3,690)(R(J,I),J,I,J=1,NSTRMS)
-690   FORMAT(F12.8,60X,2I4)                                             
+690   FORMAT(F12.8,60X,2I4)
 700   CONTINUE
       L1=LOG3
       IF(NARBIT.NE.0)L1=LOG6
@@ -338,7 +338,7 @@ C
       L2=IS1(I)
       L3=L2+NSPEC(I)-1
       WRITE(L1,710)NSPEC(I),(XSTN(K),RSTN(K),K=L2,L3)
-710   FORMAT(I3,/,(2F12.7))                                             
+710   FORMAT(I3,/,(2F12.7))
       XN=SPEED(I)
       IF(I.EQ.NSTNS)GO TO 714
       IF(SPEED(I).NE.SPEED(I+1).AND.NWORK(I+1).NE.0)XN=SPEED(I+1)
@@ -346,7 +346,7 @@ C
       DO 720 J=1,NSTRMS
 720   XX1(J)=ATAN((VW(J,I)-XN*R(J,I))/VM(J,I))*C1
       WRITE(L1,730)(R(J,I),XX1(J),J,I,J=1,NSTRMS)
-730   FORMAT(2F12.8,48X,2I4)                                            
+730   FORMAT(2F12.8,48X,2I4)
 740   CONTINUE
 750   IF(NSTPLT.EQ.0)GO TO 759
       L1=IPASS
@@ -355,13 +355,13 @@ C
 754   PASS(K)=FLOAT(K)
       DO 758 K=1,NSTNS
       IF (IPRTC .EQ. 1) WRITE(LOG2,756) K
-756   FORMAT(1H1,53X,19HDELTA L FOR STATION,I3,/,2X)                    
+756   FORMAT(1H1,53X,19HDELTA L FOR STATION,I3,/,2X)
 758   CALL ALG25(L1,IPASS,LOG2,PASS,DELTAR(1,K))
 759   IF(ICASE.GE.NCASE)GO TO 760
       ICASE=ICASE+1
       IFAILK=IFAILO
       GO TO 100
   760 IF (IPRTC .EQ. 1) WRITE(LOG2,770)
-770   FORMAT(1HS)                                                       
+770   FORMAT(1HS)
       RETURN
       END

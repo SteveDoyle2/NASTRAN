@@ -11,9 +11,9 @@ C
       DOUBLE PRECISION P(2,1)
       INTEGER KEDGE(2,10), K(2,10)
 C
-      DATA KEDGE/ 1,2,  2,3,  3,4,  4,5,  5,6,  6,7,  7,8,  8,9,  9,10, 
-     1  10,1/                                                           
-C                                                                       
+      DATA KEDGE/ 1,2,  2,3,  3,4,  4,5,  5,6,  6,7,  7,8,  8,9,  9,10,
+     1  10,1/
+C
       DO 10 I=1,2
       DO 10 J=1,N
    10 K(I,J)= KEDGE(I,J)

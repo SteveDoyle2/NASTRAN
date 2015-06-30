@@ -21,10 +21,10 @@ C
 C
       EQUIVALENCE  (RCENT(1), ECPT(1))
 C
-      DATA SUBNAM /4HTRAN,2HEM/                                         
-C                                                                       
+      DATA SUBNAM /4HTRAN,2HEM/
+C
 C-----------------------------------------------------------------------
-C                                                                       
+C
       IF(NGRID .NE.3 .AND. NGRID.NE.4 )  CALL MESAGE(-61,0,SUBNAM)
 C*****
 C     FIND THE UNIT NORMAL OF THE ELEMENT

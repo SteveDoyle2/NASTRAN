@@ -16,8 +16,8 @@ C
      2 (VCOM(1),TITLE(101)),(N,VCOM(1)),(LAMA,VCOM(6)),(PHIA,VCOM(12)),
      3 (NFOUND,VCOM(10))
 C
-      DATA MCB/7*0/                                                     
-C                                                                       
+      DATA MCB/7*0/
+C
 C     D        ARRAY OF DIAGONALS
 C     O        ARRAY OF OFF DIAGONALS
 C     VAL      ARRAY OF EIGENVALUES

@@ -4,18 +4,18 @@ C     PLOTER = PLOTTER INDEX.
 C     MODEL = MODEL INDEX.
 C     PMODEL = PLOTTER MODEL ID.
 C
-C...  DATA FOR PLOTTER + MODEL RECOGNITION.                             
-C                                                                       
+C...  DATA FOR PLOTTER + MODEL RECOGNITION.
+C
       INTEGER PLOTER, PMODEL(2), PLTTER(2,6), PLTMDL(2,6)
 C
-      DATA PLTMDL /                                                     
+      DATA PLTMDL /
 C       NASTRAN GENERAL PURPOSE PLOTTER
      1   1HM,1, 1HT,1, 1HD,1,
      2   1HM,0, 1HT,0, 1HD,0/
-      DATA PLTTER /                                                     
-     1   1,-1,  2,-2,  2,-3,                                            
-     2   1,+1,  2,+2,  2,+3/                                            
-C                                                                       
+      DATA PLTTER /
+     1   1,-1,  2,-2,  2,-3,
+     2   1,+1,  2,+2,  2,+3/
+C
 C     FIND THE MODEL ID.
 C
       N = -1

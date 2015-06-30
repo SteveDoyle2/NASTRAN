@@ -41,9 +41,9 @@ C****
      *,                 RECORD(20)    , ICHAR(80)     , LIMIT(2)
      *,                 ICOUNT, IDMAP , ISCR  , NAME(2), MEMBER(2)
      *,                 IGNORE
-      DATA NUMS / 1H1, 1H2, 1H3, 1H4, 1H5, 1H6, 1H7, 1H8, 1H9, 1H0 /    
-      DATA DELIM/ 1H,, 1H-, 1H                                     /    
-C                                                                       
+      DATA NUMS / 1H1, 1H2, 1H3, 1H4, 1H5, 1H6, 1H7, 1H8, 1H9, 1H0 /
+      DATA DELIM/ 1H,, 1H-, 1H                                     /
+C
       DO 10 K = 1,3
       IF ( ICHAR( ICOL ) .NE. DELIM( K ) ) GO TO 10
       ITYPE = K + 1

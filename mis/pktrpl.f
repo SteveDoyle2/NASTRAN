@@ -120,8 +120,8 @@ C
      3                                 ,(D2(1),A(4))
      4                                 ,(HQ(1),A(1))
 C
-      DATA M/ 1,2,4,   2,3,4,   3,1,4 /                                 
-C                                                                       
+      DATA M/ 1,2,4,   2,3,4,   3,1,4 /
+C
 C     DETERMINE PIVOT POINT NUMBER
 C
       DO 10 I=1,3
@@ -137,10 +137,10 @@ C
    20 THETA = ECPT(5) * DEGRA
       SINANG = SIN( THETA )
       COSANG = COS( THETA )
-C     FORMATION OF THE R-MATRIX CONTAINING COORDINATES OF THE           
+C     FORMATION OF THE R-MATRIX CONTAINING COORDINATES OF THE
 C     SUB TRIANGLES. (2X4) FOR TRIANGULAR PLATE. (COLUMN 4 BLANK)
-C     FORMATION ALSO OF THE I,J, AND K VECTORS USED IN THE E-MATRIX.    
-C                                                                       
+C     FORMATION ALSO OF THE I,J, AND K VECTORS USED IN THE E-MATRIX.
+C
 C     ZERO OUT R-MATRIX
       DO 30 I=1,8
    30 REQUIV(I)=0.0D0

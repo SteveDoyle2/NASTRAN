@@ -5,8 +5,8 @@ C
       INTEGER NAME(2)
       REAL A(1),EIV(1)
       REAL M1K(1),M1B(1)
-      DATA NAME /4HFA1P,4HKA  /                                         
-      DATA NHEIGS,NHEIGE /4HEIGS,4HEIGE/                                
+      DATA NAME /4HFA1P,4HKA  /
+      DATA NHEIGS,NHEIGE /4HEIGS,4HEIGE/
       N2 = N*2
       IZ = 0
       IMK = N

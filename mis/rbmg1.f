@@ -9,16 +9,16 @@ C
 C*****
 C     INPUT DATA FILES
 C*****
-      DATA USET,KAA,MAA/101,102,103/                                    
-C*****                                                                  
+      DATA USET,KAA,MAA/101,102,103/
+C*****
 C     OUTPUT DATA FILES
 C*****
-      DATA  KLL,KLR,KRR,MLL,MLR,MRR/201,202,203,204,205,206/            
-C*****                                                                  
+      DATA  KLL,KLR,KRR,MLL,MLR,MRR/201,202,203,204,205,206/
+C*****
 C     SCRATCH DATA FILES
 C*****
-      DATA SCR1/301/                                                    
-C*****                                                                  
+      DATA SCR1/301/
+C*****
 C     PARTITION  KAA INTO KLL,KLR, AND KRR
 C     PARTITION  MAA INTO MLL,MLR, AND MRR
 C*****

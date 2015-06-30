@@ -62,8 +62,8 @@ C
 C
       EQUIVALENCE ( NECPT(1) , ECPT(1) )
       EQUIVALENCE (IFLAG , ECPT(8) )
-      DATA PI23/2.0943952/                                              
-C                                                                       
+      DATA PI23/2.0943952/
+C
 C     THIS ROUTINE COMPUTES A MASS MATRIX OF THE FOLLOWING FORM.
 C
 C   MASS MATRIX = (T1,T1,T1,T2,T2,T2,T3,T3,T3,IF REQ-D T4,T4,T4)  )

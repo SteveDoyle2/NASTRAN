@@ -4,8 +4,8 @@ C
 C
       DIMENSION X1(1), Y1(1), X2(1), Y2(1), LINE(121), XNUM(13)
 C
-      DATA SYMBOL/1H*/,DASH/1H-/,CROSS/1H+/,BLANK/1H /,XI/1HI/          
-C                                                                       
+      DATA SYMBOL/1H*/,DASH/1H-/,CROSS/1H+/,BLANK/1H /,XI/1HI/
+C
       YMIN=Y1(1)
       XMIN=X1(1)
       YMAX=YMIN
@@ -45,7 +45,7 @@ C
       MY=-YMAX
       WRITE (LOG1,20) MX,MY
 20    FORMAT (20X,46HSCALES -  X  IS SHOWN TIMES 10 TO THE POWER OF,I3,4
-     10H    Y  IS SHOWN TIMES 10 TO THE POWER OF,I3,/)                  
+     10H    Y  IS SHOWN TIMES 10 TO THE POWER OF,I3,/)
       YINC=(YH-YL)/54.0
       YINC2=YINC/2.0
       XRANGE=XH-XL
@@ -80,21 +80,21 @@ C
      1E.EQ.25.OR.KLINE.EQ.31.OR.KLINE.EQ.37.OR.KLINE.EQ.43.OR.KLINE.EQ.4
      29.OR.KLINE.EQ.55) GO TO 120
       WRITE (LOG1,110) LINE
-110   FORMAT (8X,121A1)                                                 
+110   FORMAT (8X,121A1)
       GO TO 140
 120   YNUM=YH*10.0**MY
       WRITE (LOG1,130) YNUM,LINE
-130   FORMAT (1X,F6.3,1X,121A1)                                         
+130   FORMAT (1X,F6.3,1X,121A1)
 140   YH=YH-YINC
       XNUM(1)=XL*10.0**MX
       XINC=((XH-XL)/12.0)*10.0**MX
       DO 150 I=2,13
 150   XNUM(I)=XNUM(I-1)+XINC
       WRITE (LOG1,160) XNUM
-160   FORMAT (6X,12(F6.3,4X),F6.3)                                      
+160   FORMAT (6X,12(F6.3,4X),F6.3)
       RETURN
 170   WRITE (LOG1,180)
 180   FORMAT (//,35X,54HNO PLOT HAS BEEN MADE BECAUSE  X  OR  Y  RANGE I
-     1S ZERO)                                                           
+     1S ZERO)
       RETURN
       END

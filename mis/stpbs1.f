@@ -5,7 +5,7 @@ C     COMPUTES J1(X) IF X IS GREATER THAN -3.
 C     COMPUTES Y1(X) IF (X IS GREATER THAN E AND NCODE = 1 ),
 C           WHERE
       INTEGER NAME(2)
-      DATA NAME /4HSTPB,4HS1  /                                         
+      DATA NAME /4HSTPB,4HS1  /
       E=0.00001
 C                 REF. US DEPT OF COMMERCE HANBOOK (AMS 58)  PG. 370
       A=ABS(X)

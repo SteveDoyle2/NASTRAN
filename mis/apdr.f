@@ -1,8 +1,8 @@
       SUBROUTINE APDR (FILE,Z,CORE,IN,OUT,WR,BUF,TYPE)
 C
       INTEGER FILE,OUT,CORE,WR,BUF,FLAG,Z(1),TYPE(3),NAME(2)
-      DATA    NAME /4HAPD ,4HR   /     
-C                                    
+      DATA    NAME /4HAPD ,4HR   /
+C
       WR = 0
       IN = 0
       CALL LOCATE (*20,Z(BUF),TYPE,FLAG)

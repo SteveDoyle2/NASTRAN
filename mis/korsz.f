@@ -1,7 +1,7 @@
-      INTEGER FUNCTION KORSZ (A)        
-C        
+      INTEGER FUNCTION KORSZ (A)
+C
       INTEGER         A(1),MSG(5),ZCORSZ
-      COMMON /MACHIN/ MACH        
+      COMMON /MACHIN/ MACH
       COMMON /L15 L8/ L15,L8,L13
 CZZ   COMMON /NOTZZZ/ LLOC
       COMMON /ZZZZZZ/ LLOC
@@ -23,5 +23,5 @@ C
    40 KORSZ = ZCORSZ(A)
       IF (L13 .NE. 0) CALL CDCKSZ (KORSZ)
 C
-   50 RETURN        
-      END        
+   50 RETURN
+      END

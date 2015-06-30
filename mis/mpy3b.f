@@ -45,10 +45,10 @@ C OPEN CORE POINTERS
 C
 C
 C
-      DATA NAME / 4HMPY3,4HB    /                                       
-C*****                                                                  
-C    INITIALIZATION.                                                    
-C*****                                                                  
+      DATA NAME / 4HMPY3,4HB    /
+C*****
+C    INITIALIZATION.
+C*****
       FILE = SCR1
       UTYP = PREC
       UROW1 = 1

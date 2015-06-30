@@ -12,8 +12,8 @@ C
 C
       COMMON/GPTA1 / NELEM, LAST, INCR, NE(1)
 C
-      DATA DUMTYP/53,54,55,56,57,58,59,60,61/                           
-C                                                                       
+      DATA DUMTYP/53,54,55,56,57,58,59,60,61/
+C
       DO 100 I = 1,9
       NGRIDS = IDUM(I) / 10000000
       NC = MOD( IDUM(I),10000000) / 10000

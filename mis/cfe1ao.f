@@ -25,7 +25,7 @@ C*******
       COMMON  /SYSTEM/  KSYS     ,NOUT
 C*******
       IF (QPR) WRITE (NOUT,8881) TPOSE
- 8881 FORMAT(1H0,12HENTER CFE1AO,8X,11HTRANSPOSE =,L2)                  
+ 8881 FORMAT(1H0,12HENTER CFE1AO,8X,11HTRANSPOSE =,L2)
       IF (TPOSE(1)) GO TO 50
 C*******
 C     PERFORM OPERATION (A)  = EIGENMATRIX MULTIPLICATION
@@ -36,8 +36,8 @@ C     MULTIPLY LOWER HALF OF INPUT VECTOR BY MASS MATRIX
 C*******
       CALL CFE1MY (TPOSE(1),V1(NORDP1),V3(1),IM(1),ZB(1))
       IF (QPR) WRITE (NOUT,8882) (V3(I),I=1,NORD)
- 8882 FORMAT(3H --,32(4H----),/(1H ,6E21.13))                           
-C*******                                                                
+ 8882 FORMAT(3H --,32(4H----),/(1H ,6E21.13))
+C*******
 C     MULTIPLY UPPER HALF OF INPUT VECTOR BY -(LAMBDA*M+B)
 C*******
       CALL CFE1MY (TPOSE(1),V1(1),V3(NORDP1),MCBLMB(1),ZB(1))

@@ -6,8 +6,8 @@ C OF GEMLOOP ARE IN RBUF=REAL AND BUF=INTEGER
 C
       INTEGER BUF(50),TI1,TI2
       DIMENSION RBUF(50),ZI(3),ZJ(3),ZK(3),ZJXI(3)
-      DATA FPI/12.566371/                                               
-C                                                                       
+      DATA FPI/12.566371/
+C
       HC1=0.
       HC2=0.
       HC3=0.

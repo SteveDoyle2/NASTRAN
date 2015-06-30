@@ -9,8 +9,8 @@ C
 C     SCRATCHES  1
 C
       INTEGER UHV,PHIDH,UDV,SCR1
-      DATA UHV,PHIDH,UDV,SCR1/101,102,201,301/                          
-C                                                                       
+      DATA UHV,PHIDH,UDV,SCR1/101,102,201,301/
+C
 C     TRANSFPRM TO MODAL DISPLACEMENTS
 C
       CALL SSG2B(PHIDH,UHV,0,UDV,0,1,1,SCR1)

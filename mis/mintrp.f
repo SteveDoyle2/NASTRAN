@@ -17,10 +17,10 @@ C
 C
       EQUIVALENCE (ALPHA(1),AR),(ALPHA(2),AI)
 C
-      DATA NAME /4HMINT,4HRP  /                                         
-C                                                                       
+      DATA NAME /4HMINT,4HRP  /
+C
 C-----------------------------------------------------------------------
-C                                                                       
+C
       SPEC = .FALSE.
       NOGO = 0
 C

@@ -1,5 +1,5 @@
       SUBROUTINE ALLMAT (A,LAMBDA,H,HL,VECT,MULT,INTH,INT,M,NCAL,IOPT1)
-C                                                        
+C
 C     SUBROUTINE ALLMAT (A,LAMBDA,M,IA,NCAL)
 C
 C     A ON ENTRY      = MATRIX TO BE ITERATED
@@ -15,9 +15,9 @@ C     PROG. AUTHORS JOHN RINZEL AND R.E.FUNDERLIC, UNION CARBIDE CORP.
 C     NUCLEAR DIVISION,CENTRAL DATA PROCESSING FACILITY,
 C     OAK RIDGE, TENNESSEE
 C
-      LOGICAL INTH(1),TWICE                                            
-      INTEGER INT(1),R,RP1,RP2                                         
-      COMPLEX A(M,M),H(M,M),HL(M,M),LAMBDA(2),VECT(1),MULT(1),         
+      LOGICAL INTH(1),TWICE
+      INTEGER INT(1),R,RP1,RP2
+      COMPLEX A(M,M),H(M,M),HL(M,M),LAMBDA(2),VECT(1),MULT(1),
      1        SHIFT(3),TEMP,SIN,COS,TEMP1,TEMP2
 C     COMPLEX A(IA,1),H(30,30),HL(30,30),LAMBDA(2),VECT(30)
 C
@@ -27,7 +27,7 @@ C
       IF (N .NE. 1) GO TO 1
       LAMBDA(1) = A(1,1)
       A(1,1) = 1.
-      GO TO 62                                                         
+      GO TO 62
     1 ICOUNT = 0
       SHIFT(1) = 0.
       IF (N .NE. 2) GO TO 4
@@ -180,7 +180,7 @@ C
 C
 C     CALCULATE VECTORS
 C
-   37 IF (NCAL.EQ.0 .OR. NVEC.EQ.0) GO TO 62                           
+   37 IF (NCAL.EQ.0 .OR. NVEC.EQ.0) GO TO 62
       N   = M
       NM1 = N - 1
       IF (N .NE. 2) GO TO 38
@@ -261,5 +261,5 @@ C
       DO 60 I = 1,N
    60 A(I,J) = A(I,J)/TEMP1
    61 CONTINUE
-   62 RETURN                                                          
+   62 RETURN
       END

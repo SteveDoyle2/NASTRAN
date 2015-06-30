@@ -26,10 +26,10 @@ C-----
      9,       TWO      ,THREE
      *,       ZA       ,ZB       ,ZERO     ,Z(1)
 C
-      DATA EPS / .01D0 /                                                
-      DATA ZERO,ONE,TWO,THREE / 0.0D0, 1.0D0, 2.0D0, 3.0D0 /            
-      DATA NAM / 4HDKL , 1H  /                                          
-C                                                                       
+      DATA EPS / .01D0 /
+      DATA ZERO,ONE,TWO,THREE / 0.0D0, 1.0D0, 2.0D0, 3.0D0 /
+      DATA NAM / 4HDKL , 1H  /
+C
       DKL = ZERO
       L1 = L+1
       L2 = L + 2

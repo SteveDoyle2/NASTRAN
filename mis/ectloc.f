@@ -21,10 +21,10 @@ C*****
 C
       COMMON/ GPTA1 / NELEM, LAST, INCR, ELEM(1)
 C
-      DATA PLOTEL/ 4HPLOT /                                             
-C                                                                       
-C READ A 3-WORD RECORD HEADER. IF NOT 3 WORDS, TRY NEXT RECORD          
-C                                                                       
+      DATA PLOTEL/ 4HPLOT /
+C
+C READ A 3-WORD RECORD HEADER. IF NOT 3 WORDS, TRY NEXT RECORD
+C
    10 CONTINUE
       CALL READ(*90,*10,ECT,BUF,3,0,NREAD)
 C

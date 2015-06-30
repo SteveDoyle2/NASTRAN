@@ -54,13 +54,13 @@ C
       EQUIVALENCE (PSGL(1),PARG(1))
       EQUIVALENCE (IB(1),BUFM6(1))
 C
-      DATA  GAUSS/      0.577350269189626D0    ,0.555555555555556D0     
-     1,                 0.774596669241483D0    ,0.888888888888889D0     
-     2,                 0.347854845137454D0    ,0.861136311594053D0     
-     3,                 0.652145154862546D0    ,0.339981043584856D0/    
-      DATA UFM /4H0***,4H USE,4HR FA,4HTAL ,4HMESS,4HAGE /              
-C                                                                       
-C*****                                                                  
+      DATA  GAUSS/      0.577350269189626D0    ,0.555555555555556D0
+     1,                 0.774596669241483D0    ,0.888888888888889D0
+     2,                 0.347854845137454D0    ,0.861136311594053D0
+     3,                 0.652145154862546D0    ,0.339981043584856D0/
+      DATA UFM /4H0***,4H USE,4HR FA,4HTAL ,4HMESS,4HAGE /
+C
+C*****
 C     COMPUTE EST POINTERS
 C*****
       NGP = 12*TYPE - 4
@@ -276,6 +276,6 @@ C
 C
 C
  7300 FORMAT(6A4,69H4005. AN ILLEGAL VALUE OF -NU- HAS BEEN SPECIFIED UN
-     2DER MATERIAL ID =,I10,17H FOR ELEMENT ID =,I10)                   
+     2DER MATERIAL ID =,I10,17H FOR ELEMENT ID =,I10)
       RETURN
       END

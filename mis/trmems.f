@@ -38,10 +38,10 @@ C
       EQUIVALENCE   (K(1),M(1)),(KOUT(1),MOUT(1)),(KSYSTM(2),IOUTPT)
       EQUIVALENCE   (KSYSTM(56), IHEAT), (ECPT(2), NGRID(1))
 C
-      DATA  IPART / 1,2, 3/                                             
-C                                                                       
-C                                                                       
-C                                                                       
+      DATA  IPART / 1,2, 3/
+C
+C
+C
       IP = IPREC
       DICT(1) = ESTID
 C

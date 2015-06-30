@@ -7,21 +7,21 @@ C
 C     THIS SUBROUTINE CALLS - SNPDF, IDF1, IDF2, FLLD
 C
 C     SL1, CL1, TL1  SIN(LAMBDA-1), COS(LAMBDA-1), TAN(LAMBDA-1)
-C     SL2, CL2, TL2  SIN(LAMBDA-2), .....  
-C     SGS, CGS       SIN(GAMMA-S),  .... 
-C     SGR, CGR       SIN(GAMMA-R),  .... 
-C     X01            X-XI1               
-C     X02            X-XI2               
-C     Y0             Y - ETA             
-C     Z0             Z - ZETA            
-C     E                                  
-C     BETA           SQRT(1-FMACH**2) 
-C     CV 
-C     BR 
-C     FMACH          MACH NO.  
-C     BRE            REAL PART OF B      (RETURNED) 
-C     BIM            IMAGINARY PART OF B (RETURNED) 
-C                                                                 
+C     SL2, CL2, TL2  SIN(LAMBDA-2), .....
+C     SGS, CGS       SIN(GAMMA-S),  ....
+C     SGR, CGR       SIN(GAMMA-R),  ....
+C     X01            X-XI1
+C     X02            X-XI2
+C     Y0             Y - ETA
+C     Z0             Z - ZETA
+C     E
+C     BETA           SQRT(1-FMACH**2)
+C     CV
+C     BR
+C     FMACH          MACH NO.
+C     BRE            REAL PART OF B      (RETURNED)
+C     BIM            IMAGINARY PART OF B (RETURNED)
+C
       REAL           KR, KD1, KD2
 C
 C     VARIABLES DIMENSIONED (2), FIRST WORD IS THE REAL PART OF THE
@@ -30,7 +30,7 @@ C
       DIMENSION      DKI(2), DKC(2), DKO(2), KD1(2), KD2(2)
 C
       DATA  PI48   / 150.79644720 /
-C                                      
+C
 C     CALCULATE  BS
 C
       L  = 1

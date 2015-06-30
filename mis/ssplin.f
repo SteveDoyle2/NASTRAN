@@ -2,7 +2,7 @@
       LOGICAL LX,LY,LONE,IKD,IKT
       DIMENSION    G(1),XYI(1),XYD(1),NAME(2)
       REAL DET
-      DATA NAME/4HSSPL,4HIN  /                                          
+      DATA NAME/4HSSPL,4HIN  /
       LONE = .TRUE.
       LX = .TRUE.
       LY = .TRUE.

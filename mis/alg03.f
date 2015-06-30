@@ -7,6 +7,6 @@ C
       IF(LNCT.LE.LIMIT)RETURN
       LNCT=1+L
       IF (IPRTC .NE. 0) WRITE(LQ,100)
-100   FORMAT(1H1)                                                       
+100   FORMAT(1H1)
       RETURN
       END
